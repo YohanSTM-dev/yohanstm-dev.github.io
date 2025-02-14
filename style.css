@@ -1,8 +1,105 @@
-h1{
-    background-color:red;
+/* Réinitialisation des marges et padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-p{
-    color:yellow;
-    background-color: black;
+/* Style général */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    background: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Sections */
+section {
+    background: white;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #333;
+    color: white;
+    margin-top: 20px;
+}
+/* ===================== */
+/* 💻 Mode Ordinateur (par défaut) */
+/* ===================== */
+/* Tout le CSS écrit jusqu'ici s'applique aux grands écrans */
+
+/* ===================== */
+/* 📱 Mode Mobile (moins de 768px) */
+/* ===================== */
+@media (max-width: 768px) {
+    /* Ajuster le menu */
+    nav ul {
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    nav ul li {
+        display: block; /* Empile les éléments du menu */
+        margin: 10px 0;
+    }
+
+    /* Modifier la taille du texte */
+    body {
+        font-size: 16px;
+    }
+
+    /* Adapter les sections */
+    section {
+        padding: 15px;
+        margin: 10px 0;
+    }
+}
+
+/* ===================== */
+/* 📱 Mode Très Petit Écran (moins de 480px) */
+/* ===================== */
+@media (max-width: 480px) {
+    header {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 20px; /* Réduire la taille du titre */
+    }
+
+    section {
+        padding: 10px;
+    }
 }
