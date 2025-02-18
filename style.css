@@ -125,18 +125,20 @@ footer {
     }
 
     aside {
-        width: 100%;
+        width: 80%; /* Réduire la largeur de la barre latérale sur les petits écrans */
         height: auto;
         position: relative; /* Retirer la position fixe */
+        margin: 0 auto; /* Centrer la barre latérale */
     }
 
     aside ul {
         display: flex;
-        justify-content: space-evenly;
+        flex-direction: column; /* Empiler les éléments de la barre latérale */
+        align-items: center;
     }
 
     aside ul li {
-        padding: 10px 0;
+        padding: 15px 0;
     }
 
     aside ul li a {
@@ -174,9 +176,10 @@ footer {
     }
 
     aside {
-        width: 100%;
+        width: 70%; /* Réduire la largeur de la barre latérale sur tablette */
         height: auto;
         position: relative; /* Retirer la position fixe */
+        margin: 0 auto;
     }
 
     aside ul {
