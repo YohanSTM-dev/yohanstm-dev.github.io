@@ -10,37 +10,6 @@ body {
     scroll-behavior: smooth; /* Effet de défilement fluide pour tout le document */
 }
 
-/* 🔳 En-tête et barre de navigation */
-header {
-    width: 100%;
-    background-color: #2c2c2c; /* Gris foncé pour le header */
-    padding: 15px 0;
-}
-
-header nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    padding: 0;
-    margin: 0;
-}
-
-header nav ul li {
-    margin: 0 20px;
-}
-
-header nav ul li a {
-    color: #4caf50; /* Vert doux */
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-header nav ul li a:hover {
-    color: #ffffff; /* Survol avec couleur blanche */
-}
-
 /* 📂 Barre latérale (aside) */
 aside {
     width: 250px;
@@ -145,4 +114,120 @@ footer {
     text-align: center;
     padding: 15px;
     margin-top: 40px;
+}
+
+/* 📱 Media Queries pour les appareils mobiles et tablettes */
+
+/* iPhone 15 - Viewport Size: 393px × 852px, DPR: 3 */
+@media (max-width: 393px) {
+    body {
+        flex-direction: column; /* Empile les éléments au lieu de les mettre côte à côte */
+    }
+
+    aside {
+        width: 100%;
+        height: auto;
+        position: relative; /* Retirer la position fixe */
+    }
+
+    aside ul {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    aside ul li {
+        padding: 10px 0;
+    }
+
+    aside ul li a {
+        font-size: 16px;
+    }
+
+    main {
+        margin-left: 0;
+        width: 100%;
+        padding-top: 50px; /* Moins d'espace en haut pour plus d'usage de l'écran */
+    }
+
+    .contenu-principal {
+        padding: 30px;
+    }
+
+    h1, h2 {
+        font-size: 24px;
+    }
+
+    .texte-contenue-principale {
+        font-size: 16px;
+    }
+
+    .groupeBouton button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
+
+/* Tablette (par exemple, iPad) */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column; /* Empile les éléments sur les petits écrans */
+    }
+
+    aside {
+        width: 100%;
+        height: auto;
+        position: relative; /* Retirer la position fixe */
+    }
+
+    aside ul {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    aside ul li {
+        padding: 15px 0;
+    }
+
+    aside ul li a {
+        font-size: 18px;
+    }
+
+    main {
+        margin-left: 0;
+        width: 100%;
+        padding-top: 70px; /* Plus d'espace en haut sur tablette */
+    }
+
+    .contenu-principal {
+        padding: 40px;
+    }
+
+    h1, h2 {
+        font-size: 28px;
+    }
+
+    .texte-contenue-principale {
+        font-size: 18px;
+    }
+
+    .groupeBouton button {
+        font-size: 18px;
+        padding: 12px 25px;
+    }
+}
+
+/* Version mobile générale */
+@media (max-width: 480px) {
+    h1, h2 {
+        font-size: 20px;
+    }
+
+    .texte-contenue-principale {
+        font-size: 14px;
+    }
+
+    .groupeBouton button {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
 }
