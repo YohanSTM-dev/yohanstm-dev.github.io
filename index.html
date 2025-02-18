@@ -4,32 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Mon Site Web - Yohan</title>
+    <title>Mon Portfolio - Yohan</title>
 </head>
 <body>
-    <header>
-        <h1>Mon Site</h1>
-        <nav>
+    <main>
+        <!-- Barre latérale (Aside) -->
+        <aside>
             <ul>
-                <li><a href="#">Accueil</a></li>
-                <li><a href="#">À propos</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#projects">Projets</a></li>
+                <li><a href="#contact">Me contacter</a></li>
             </ul>
-        </nav>
-    </header>
+        </aside>
 
-    <section>
-        <h2>Bienvenue sur mon site</h2>
-        <p>Ceci est une page d'exemple en HTML et CSS.</p>
-    </section>
+        <!-- Contenu principal -->
+        <section class="contenu-principal" id="home">
+            <div class="contenue-centrale">
+                <h1>Salut, moi c'est <span class="text-prenom">Yohan</span>,</h1>
+                <h2>Je suis étudiant en <span class="text-etudiant">Informatique</span></h2>
+                <p class="texte-contenue-principale">
+                    Je vous présente mon portfolio ! C'est mon tout premier site web, mais je suis fier de ce que je peux vous montrer.
+                </p>
+            </div>
+        </section>
 
-    <section>
-        <h2>À propos</h2>
-        <p>Quelques informations sur moi...</p>
-    </section>
+        <!-- Section À propos -->
+        <section class="contenu-principal" id="about" style="display:none;">
+            <h2>À propos de moi</h2>
+            <p>
+                Je suis passionné par le développement web et l'informatique en général. Je travaille actuellement sur plusieurs projets personnels pour améliorer mes compétences.
+            </p>
+        </section>
 
-    <footer>
-        <p>&copy; 2025 - Mon Site Web</p>
-    </footer>
+        <!-- Section Projets -->
+        <section class="contenu-principal" id="projects" style="display:none;">
+            <h2>Mes projets</h2>
+            <p>
+                Je travaille sur des projets variés, incluant des applications web et des sites dynamiques. Vous pouvez consulter mon GitHub pour en savoir plus.
+            </p>
+        </section>
+
+        <!-- Section Contact -->
+        <section class="contenu-principal" id="contact" style="display:none;">
+            <h2>Me contacter</h2>
+            <p>
+                
+            </p>
+        </section>
+    </main>
+
+    <script>
+        // Fonction pour afficher et masquer les sections en fonction de l'élément cliqué
+        const links = document.querySelectorAll('aside ul li a');
+        const sections = document.querySelectorAll('.contenu-principal');
+
+        links.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                // Masquer toutes les sections
+                sections.forEach(section => {
+                    section.style.display = 'none';
+                });
+                // Afficher la section correspondant au lien cliqué
+                const sectionId = link.getAttribute('href').substring(1);
+                const sectionToShow = document.getElementById(sectionId);
+                sectionToShow.style.display = 'block';
+
+                // Effet de défilement fluide vers la section correspondante
+                document.getElementById(sectionId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
