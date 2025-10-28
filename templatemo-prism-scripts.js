@@ -429,17 +429,13 @@ function openProjectDetail(projectId) {
         // Form submission
         const contactForm = document.getElementById('contactForm');
         contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
+            // Ne pas empêcher l'envoi, laisser Formspree gérer
+            // e.preventDefault(); ← COMMENTE cette ligne
             
-            // Get form data
-            const formData = new FormData(contactForm);
-            const data = Object.fromEntries(formData);
+            // Afficher un message de confirmation
+            alert('Merci ! Votre message a été envoyé. Je vous répondrai dans les 24 heures.');
             
-            // Show success message
-            alert(`Thank you ${data.name}! Your message has been transmitted successfully. We'll respond within 24 hours.`);
-            
-            // Reset form
-            contactForm.reset();
+            // Le formulaire s'enverra automatiquement à Formspree
         });
 
         // Loading screen
