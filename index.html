@@ -3,30 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio YohanSTM-Dev</title>
+    <title>Yohan Saint Marc - Portfolio Développeur Web | BTS SIO Chartres</title>
+    
+    <!-- Balises SEO fondamentales -->
+    <meta name="description" content="Je suis Yohan Saint Marc, étudiant en BTS SIO au lycée Fulbert à Chartres. Développeur web passionné spécialisé en Java, PHP, Symfony et SQLite. Découvrez mes projets et compétences.">
+    <meta name="keywords" content="Yohan Saint Marc, développeur web, BTS SIO, portfolio étudiant, développement web, Java, PHP, Symfony, SQLite, Chartres, Lycée Fulbert">
+    <meta name="author" content="Yohan Saint Marc">
+    
+    <!-- Google Search Console -->
+    <meta name="google-site-verification" content="cGKazEIFoFB0K-AE9XpuV8gkEWxeF0QKmug55s9QUm8" />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Yohan Saint Marc - Portfolio Développeur Web">
+    <meta property="og:description" content="Portfolio de Yohan Saint Marc, étudiant en BTS SIO passionné par le développement web et logiciel.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yohan-saint-marc-dev.com">
+    
+    <!-- Schema.org markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Yohan Saint Marc",
+      "url": "https://yohan-saint-marc-dev.com",
+      "jobTitle": "Étudiant en Développement Web",
+      "description": "Yohan Saint Marc - Étudiant en BTS SIO au lycée Fulbert à Chartres, passionné par le développement web et logiciel",
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Lycée Fulbert, Chartres"
+      },
+      "knowsAbout": ["Java", "PHP", "Symfony", "SQLite", "HTML/CSS", "JavaScript"],
+      "url": "https://yohan-saint-marc-dev.com"
+    }
+    </script>
+    
     <link rel="stylesheet" href="templatemo-prism-flux.css">
 </head>
 <body>
-    <!-- chargement dynamique  
-    <div class="loader" id="loader">
-        <div class="loader-content">
-            <div class="loader-prism">
-                <div class="prism-face"></div>
-                <div class="prism-face"></div>
-                <div class="prism-face"></div>
-            </div>
-            <div style="color: var(--accent-purple); font-size: 18px; text-transform: uppercase; letter-spacing: 3px;">PortFolio YohanSTM-Dev</div>
-        </div>
-    </div> -->
-
     <!-- Navigation Header -->
     <header class="header" id="header">
         <nav class="nav-container">
             <a href="#home" class="logo">
                 <div class="logo-icon">
                     <div class="logo-prism">
-                    <!-- ici pour le logo interative -->
-                    <!--<div class="prism-shape"></div> -->
                     </div>
                 </div>
                 <span class="logo-text">
@@ -54,8 +73,8 @@
     <!-- Hero Section Simple -->
     <section class="hero-simple" id="home">
         <div class="hero-content">
-            <h1 class="hero-title">Bienvenue sur mon Portfolio</h1>
-            <p class="hero-subtitle">Étudiant en BTS SIO - Développement Web & Logiciel</p>
+            <h1 class="hero-title">Yohan Saint Marc</h1>
+            <p class="hero-subtitle">Étudiant en BTS SIO - Développeur Web & Logiciel</p>
             <div class="hero-cta">
                 <button class="cta-btn" onclick="scrollToSection('about')">Découvrir mon profil</button>
                 <button class="cta-btn secondary" onclick="scrollToSection('projets')">Voir mes projets</button>
@@ -67,39 +86,45 @@
     </section>
 
     <!-- Section À propos -->
-<!-- Section À propos -->
-<section class="philosophy-section" id="about">
-    <div class="philosophy-container">
-        <div class="prism-line"></div>
-        <h2 class="philosophy-headline">
-            À propos<br>de Moi
-        </h2>
+    <section class="philosophy-section" id="about">
+        <div class="philosophy-container">
+            <div class="prism-line"></div>
+            <h2 class="philosophy-headline">
+                À propos<br>de moi
+            </h2>
 
-        <div class="about-content">
-            <div class="about-image">
-                <img src="images/cyber-defense.jpg" alt="Profil">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="images/cyber-defense.jpg" alt="Yohan Saint Marc - Photo de profil développeur web">
+                </div>
+                
+                <div class="about-text">
+                    <p class="philosophy-subheading">
+                        Je suis Yohan Saint Marc, actuellement étudiant en 2ème année de BTS SIO (Services Informatiques aux Organisations) au lycée Fulbert à Chartres. 
+                        Passionné par le développement web et logiciel, je découvre mon potentiel et mes capacités à travers des créations variées.
+                    </p>
+                    <p class="philosophy-subheading">
+                        Mon objectif est de concevoir des solutions innovantes qui allient performance et esthétique. 
+                        Mes compétences en développement couvrent le Java, PHP, Symfony, SQLite ainsi que les technologies front-end modernes.
+                    </p>
+                    <p class="philosophy-subheading">
+                        Basé à Chartres, j'aspire à devenir un développeur full-stack accompli, capable de relever des défis techniques complexes 
+                        et de contribuer à des projets ambitieux.
+                    </p>
+                </div>
             </div>
             
-            <div class="about-text">
-                <p class="philosophy-subheading">
-                    Je suis actuellement étudiant en 2ème année de BTS SIO (Services Informatiques aux Organisations) au lycée Fulbert à Chartres. 
-                    Passionné par le développement web et logiciel, je découvre mon potentiel et capacité à travers des créations variées. 
-                    Mon objectif est de concevoir des solutions innovantes qui allient performance et esthétique.
-                </p>
+            <div class="philosophy-particles" id="particles">
+                <!-- Particles will be generated by JavaScript -->
             </div>
         </div>
-        
-        <div class="philosophy-particles" id="particles">
-            <!-- Particles will be generated by JavaScript -->
-        </div>
-    </div>
-</section>
+    </section>
 
     <!-- Section Projets avec Carousel -->
     <section class="projects-section" id="projets">
         <div class="section-header">
-            <h2 class="section-title">Mes Projets</h2>
-            <p class="section-subtitle">Découvrez mes réalisations en développement</p>
+            <h2 class="section-title">Mes Projets Développement</h2>
+            <p class="section-subtitle">Découvrez mes réalisations en développement web et logiciel</p>
         </div>
         
         <div class="carousel-container">
@@ -122,8 +147,8 @@
     <section class="skills-section" id="skills">
         <div class="skills-container">
             <div class="section-header">
-                <h2 class="section-title">Mes Compétences</h2>
-                <p class="section-subtitle">Technologies et frameworks maîtrisés</p>
+                <h2 class="section-title">Mes Compétences Techniques</h2>
+                <p class="section-subtitle">Mon expertise en technologies de développement</p>
             </div>
             
             <div class="skill-categories">
@@ -143,7 +168,7 @@
     <section class="contact-section" id="contact">
         <div class="section-header">
             <h2 class="section-title">Me contacter</h2>
-            <p class="section-subtitle">N'hésitez pas à me contacter pour discuter de vos projets</p>
+            <p class="section-subtitle">Discutons de vos projets de développement</p>
         </div>
         
         <div class="contact-container">
@@ -173,33 +198,32 @@
                 </a>
             </div>
             
-<form class="contact-form" id="contactForm">
-    <!-- Tes champs normaux -->
-    <div class="form-group">
-        <label for="name">Nom</label>
-        <input type="text" id="name" name="name" required>
-    </div>
-    
-    <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
-    </div>
-    
-    <div class="form-group">
-        <label for="subject">Sujet</label>
-        <input type="text" id="subject" name="subject" required>
-    </div>
-    
-    <div class="form-group">
-        <label for="message">Message</label>
-        <textarea id="message" name="message" required></textarea>
-    </div>
-    
-    <button type="submit" class="submit-btn">Envoyer</button>
-</form>
-
-<!-- Ajoute une div pour les messages de confirmation -->
-<div id="formMessage" style="display: none; margin-top: 20px; padding: 15px; background: var(--accent-green); color: white; border-radius: 10px;"></div>
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="name">Nom</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Sujet</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Envoyer le message</button>
+            </form>
+            
+            <!-- Message de confirmation -->
+            <div id="formMessage" class="form-message"></div>
         </div>
     </section>
 
@@ -210,7 +234,6 @@
                 <div class="footer-logo">
                     <div class="logo-icon">
                         <div class="logo-prism">
-                            <!--<div class="prism-shape"></div>-->
                         </div>
                     </div>
                     <span class="logo-text">
@@ -219,7 +242,7 @@
                     </span>
                 </div>
                 <p class="footer-description">
-                    Étudiant en développement passionné par la création de solutions innovantes et performantes.
+                    Yohan Saint Marc - Étudiant en développement passionné par la création de solutions innovantes et performantes.
                 </p>
                 <div class="footer-social">
                     <a href="#" class="social-icon">f</a>
@@ -235,7 +258,6 @@
                     <a href="#home">Accueil</a>
                     <a href="#about">À propos</a>
                     <a href="#projets">Projets</a>
-                    <a href="#skills">Compétences</a>
                     <a href="#contact">Contact</a>
                 </div>
             </div>
@@ -253,7 +275,9 @@
             <div class="footer-section">
                 <h4>Ressources</h4>
                 <div class="footer-links">
-                    <a href="#">CV</a>
+                    <a href="#">Mon CV</a>
+                    <a href="#">Certifications</a>
+                    <a href="#">Veille technologique</a>
                     <a href="#contact">Contact</a>
                 </div>
             </div>
@@ -261,10 +285,10 @@
         
         <div class="footer-bottom">
             <div class="copyright">
-                © 2024 YohanSTM-Dev .
+                © 2024 Yohan Saint Marc - Tous droits réservés.
             </div>
             <div class="footer-credits">
-                Portfolio étudiant
+                Portfolio étudiant - Développeur Web
             </div>
         </div>
     </footer>
@@ -272,4 +296,3 @@
     <script src="templatemo-prism-scripts.js"></script>
 </body>
 </html>
-
