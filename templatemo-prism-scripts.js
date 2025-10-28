@@ -427,16 +427,57 @@ function openProjectDetail(projectId) {
         }
 
         // Form submission
-        const contactForm = document.getElementById('contactForm');
-        contactForm.addEventListener('submit', (e) => {
-            // Ne pas empêcher l'envoi, laisser Formspree gérer
-            // e.preventDefault(); ← COMMENTE cette ligne
-            
-            // Afficher un message de confirmation
-            alert('Merci ! Votre message a été envoyé. Je vous répondrai dans les 24 heures.');
-            
-            // Le formulaire s'enverra automatiquement à Formspree
+const contactForm = document.getElementById('contactForm');
+const formMessage = document.getElementById('formMessage');
+
+contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    // Afficher un indicateur de chargement
+    const submitBtn = contactForm.querySelector('.submit-btn');
+    submitBtn.textContent = 'Envoi en cours...';
+    submitBtn.disabled = true;
+    
+    try {
+        const formData = new FormData(contactForm);
+        
+        // Envoyer les données à Formspree via Fetch API
+        const response = await fetch('https://formspree.io/f/mnnopoon', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
         });
+        
+        if (response.ok) {
+            // Succès
+            formMessage.textContent = '✅ Message envoyé avec succès ! Je vous répondrai dans les 24 heures.';
+            formMessage.style.display = 'block';
+            formMessage.style.background = 'var(--accent-green)';
+            
+            // Reset du formulaire
+            contactForm.reset();
+            
+            // Cacher le message après 5 secondes
+            setTimeout(() => {
+                formMessage.style.display = 'none';
+            }, 5000);
+        } else {
+            throw new Error('Erreur lors de l\'envoi');
+        }
+        
+    } catch (error) {
+        // Erreur
+        formMessage.textContent = '❌ Erreur lors de l\'envoi. Veuillez réessayer.';
+        formMessage.style.display = 'block';
+        formMessage.style.background = 'var(--accent-red)';
+    } finally {
+        // Réactiver le bouton
+        submitBtn.textContent = 'Envoyer';
+        submitBtn.disabled = false;
+    }
+});
 
         // Loading screen
         window.addEventListener('load', () => {
@@ -454,3 +495,4 @@ function openProjectDetail(projectId) {
                 parallax.style.transform = `translateY(${scrolled * 0.5}px)`;
             }
         });
+
