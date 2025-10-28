@@ -173,40 +173,33 @@
                 </a>
             </div>
             
-        <form 
-            class="contact-form" 
-            id="contactForm"
-            action="https://formspree.io/f/mnnopoon"
-            method="POST"
-        >
-            <div class="form-group">
-                <label for="name">Nom</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="subject">Sujet</label>
-                <input type="text" id="subject" name="subject" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" required></textarea>
-            </div>
-            
-            <!-- Champ caché pour le sujet de l'email -->
-            <input type="hidden" name="_subject" value="Nouveau message depuis votre portfolio">
-            
-            <!-- Redirection après envoi (optionnel) -->
-            <input type="hidden" name="_next" value="https://tonportfolio.com/merci.html">
-            
-            <button type="submit" class="submit-btn">Envoyer</button>
-        </form>
+<form class="contact-form" id="contactForm">
+    <!-- Tes champs normaux -->
+    <div class="form-group">
+        <label for="name">Nom</label>
+        <input type="text" id="name" name="name" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="subject">Sujet</label>
+        <input type="text" id="subject" name="subject" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+    </div>
+    
+    <button type="submit" class="submit-btn">Envoyer</button>
+</form>
+
+<!-- Ajoute une div pour les messages de confirmation -->
+<div id="formMessage" style="display: none; margin-top: 20px; padding: 15px; background: var(--accent-green); color: white; border-radius: 10px;"></div>
         </div>
     </section>
 
@@ -279,3 +272,4 @@
     <script src="templatemo-prism-scripts.js"></script>
 </body>
 </html>
+
