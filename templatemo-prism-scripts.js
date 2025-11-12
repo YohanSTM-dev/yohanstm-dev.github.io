@@ -27,7 +27,16 @@ https://templatemo.com/tm-600-prism-flux
                 image: 'images/imgCluedo.jpeg',
                 slug: 'cluedo',
                 tech: ['PHP', 'SQLite', 'HTML/CSS', 'GitHub']
+            },
+            {
+                id:3,
+                title: 'Mon CV Professionne',
+                description: 'Mon CV en ligne, réalisé avec HTML/CSS',
+                image: 'images/imgCV.png',
+                slug: 'cv-yohanSTM',
+                tech: ['HTML', 'CSS']
             }
+
         ];
 
         // Skills data

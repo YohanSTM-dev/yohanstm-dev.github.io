@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon CV - Yohan Saint Marc | Portfolio Développeur</title>
+    
+    <!-- Balises SEO -->
+    <meta name="description" content="CV de Yohan Saint Marc - Étudiant en BTS SIO, développeur web passionné. Téléchargez mon CV en PDF ou consultez-le en ligne.">
+    <meta name="keywords" content="Yohan Saint Marc CV, développeur web CV, BTS SIO, stage développement, Chartres">
+    
+    <link rel="stylesheet" href="../templatemo-prism-flux.css">
+    <style>
+        .project-detail-container {
+            padding: 120px 30px 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+            color: var(--text-primary);
+            text-decoration: none;
+            border-radius: 30px;
+            margin-bottom: 40px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(153, 69, 255, 0.3);
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(153, 69, 255, 0.5);
+        }
+
+        .project-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .project-title {
+            font-size: 48px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--text-primary), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .download-section {
+            text-align: center;
+            margin: 40px 0;
+            padding: 30px;
+            background: linear-gradient(135deg, var(--carbon-medium), var(--carbon-dark));
+            border-radius: 15px;
+            border: 1px solid var(--metal-dark);
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 35px;
+            background: linear-gradient(135deg, var(--accent-green), #00cc66);
+            color: var(--text-primary);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 255, 136, 0.3);
+            font-size: 16px;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0, 255, 136, 0.5);
+        }
+
+        /* Styles du CV amélioré */
+        .cv-container {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            margin: 40px 0;
+            border: 1px solid var(--metal-light);
+        }
+
+        .cv-header {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .cv-name {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .cv-title {
+            font-size: 20px;
+            color: #3498db;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .cv-contact {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+        }
+
+        .cv-content {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            min-height: 800px;
+        }
+
+        .cv-sidebar {
+            background: #f8f9fa;
+            padding: 35px;
+            border-right: 3px solid #3498db;
+        }
+
+        .cv-main {
+            padding: 35px;
+            background: white;
+        }
+
+        .cv-section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            color: #2c3e50;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 3px solid #3498db;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .objective {
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #3498db;
+            margin-bottom: 30px;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .objective strong {
+            color: #2c3e50;
+        }
+
+        /* Timeline améliorée */
+        .timeline-item {
+            margin-bottom: 25px;
+            padding-left: 25px;
+            position: relative;
+            border-left: 2px solid #3498db;
+        }
+
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 14px;
+            height: 14px;
+            background: #3498db;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #3498db;
+        }
+
+        .date {
+            font-weight: 700;
+            color: #3498db;
+            font-size: 14px;
+            margin-bottom: 5px;
+            background: #e3f2fd;
+            padding: 4px 12px;
+            border-radius: 15px;
+            display: inline-block;
+        }
+
+        .position {
+            font-weight: 700;
+            font-size: 16px;
+            margin-bottom: 5px;
+            color: #2c3e50;
+        }
+
+        .company {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .description {
+            color: #555;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .description ul {
+            margin: 8px 0;
+            padding-left: 20px;
+        }
+
+        .description li {
+            margin-bottom: 4px;
+        }
+
+        /* Compétences améliorées */
+        .skills-grid {
+            display: grid;
+            gap: 15px;
+        }
+
+        .skill-category {
+            margin-bottom: 20px;
+        }
+
+        .skill-category-title {
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            font-size: 15px;
+            border-left: 3px solid #3498db;
+            padding-left: 10px;
+        }
+
+        .skill-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .skill-name {
+            font-weight: 600;
+            font-size: 14px;
+            color: #2c3e50;
+            min-width: 120px;
+        }
+
+        .skill-level {
+            flex: 1;
+            height: 8px;
+            background: #ecf0f1;
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #3498db, #2980b9);
+            border-radius: 4px;
+            transition: width 1s ease-in-out;
+        }
+
+        .skill-percentage {
+            font-size: 12px;
+            color: #666;
+            min-width: 35px;
+            text-align: right;
+        }
+
+        /* Loisirs améliorés */
+        .hobbies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 10px;
+        }
+
+        .hobby {
+            background: white;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid #e3f2fd;
+            transition: all 0.3s ease;
+        }
+
+        .hobby:hover {
+            border-color: #3498db;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.2);
+        }
+
+        .hobby-icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .hobby-name {
+            font-size: 12px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .cv-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .cv-sidebar {
+                border-right: none;
+                border-bottom: 3px solid #3498db;
+            }
+            
+            .cv-contact {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .project-title {
+                font-size: 36px;
+            }
+            
+            .cv-name {
+                font-size: 28px;
+            }
+            
+            .cv-title {
+                font-size: 18px;
+            }
+        }
+
+        /* Section disponibilités */
+        .availability {
+            background: linear-gradient(135deg, var(--carbon-medium), var(--carbon-dark));
+            border: 1px solid var(--metal-dark);
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 40px;
+        }
+
+        .availability-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .availability-card {
+            background: rgba(42, 42, 42, 0.5);
+            border: 1px solid var(--metal-dark);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .availability-icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+            color: var(--accent-cyan);
+        }
+    </style>
+</head>
+<body>
+    <header class="header" id="header">
+        <nav class="nav-container">
+            <a href="../index.html" class="logo">
+                <div class="logo-icon">
+                    <div class="logo-prism">
+                        <div class="prism-shape"></div>
+                    </div>
+                </div>
+                <span class="logo-text">
+                    <span class="prism">YohanSTM</span>
+                    <span class="flux">Dev</span>
+                </span>
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../index.html#home" class="nav-link">Accueil</a></li>
+                <li><a href="../index.html#about" class="nav-link">À propos</a></li>
+                <li><a href="../index.html#projets" class="nav-link">Projets</a></li>
+                <li><a href="../index.html#skills" class="nav-link">Compétences</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <div class="project-detail-container">
+        <a href="../index.html#projets" class="back-button">← Retour aux projets</a>
+        
+        <div class="project-header">
+            <h1 class="project-title">Mon Curriculum Vitae</h1>
+            <p class="project-subtitle">Étudiant en BTS SIO - Développeur Web Passionné</p>
+        </div>
+
+        <!-- Section Téléchargement -->
+        <div class="download-section">
+            <a href="../documents/cv-yohan-saint-marc.pdf" download="CV_Yohan_Saint_Marc.pdf" class="download-btn">
+                📄 Télécharger mon CV en PDF
+            </a>
+            <p style="margin-top: 15px; color: var(--text-secondary); font-size: 16px;">
+                Version optimisée pour l'impression et le partage professionnel
+            </p>
+        </div>
+
+        <!-- CV Version Web Améliorée -->
+        <div class="cv-container">
+            <!-- En-tête du CV -->
+            <div class="cv-header">
+                <div class="cv-name">YOHAN SAINT-MARC</div>
+                <div class="cv-title">Étudiant en BTS SIO - Développeur Web</div>
+                <div class="cv-contact">
+                    <div class="contact-item">📍 Chartres, France</div>
+                    <div class="contact-item">📱 07 49 61 66 00</div>
+                    <div class="contact-item">✉️ yohan.saint-marc@hotmail.com</div>
+                    <div class="contact-item">🌐 yohanstm-dev.github.io</div>
+                </div>
+            </div>
+
+            <div class="cv-content">
+                <!-- Colonne latérale -->
+                <div class="cv-sidebar">
+                    <!-- Objectif -->
+                    <div class="objective">
+                        <strong>🎯 Objectif Professionnel :</strong> 
+                        Recherche un stage de 8 semaines en développement web pour janvier-février 2026, 
+                        afin de mettre en pratique mes compétences techniques et découvrir de nouveaux environnements professionnels.
+                    </div>
+
+                    <!-- Compétences Techniques -->
+                    <div class="cv-section">
+                        <div class="section-title">Compétences Techniques</div>
+                        <div class="skills-grid">
+                            <div class="skill-category">
+                                <div class="skill-category-title">Développement Web</div>
+                                <div class="skill-item">
+                                    <div class="skill-name">HTML/CSS</div>
+                                    <div class="skill-level">
+                                        <div class="skill-progress" style="width: 85%"></div>
+                                    </div>
+                                    <div class="skill-percentage">85%</div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-name">JavaScript</div>
+                                    <div class="skill-level">
+                                        <div class="skill-progress" style="width: 80%"></div>
+                                    </div>
+                                    <div class="skill-percentage">80%</div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-name">PHP/Symfony</div>
+                                    <div class="skill-level">
+                                        <div class="skill-progress" style="width: 75%"></div>
+                                    </div>
+                                    <div class="skill-percentage">75%</div>
+                                </div>
+                            </div>
+
+                            <div class="skill-category">
+                                <div class="skill-category-title">Bases de Données</div>
+                                <div class="skill-item">
+                                    <div class="skill-name">MySQL</div>
+                                    <div class="skill-level">
+                                        <div class="skill-progress" style="width: 70%"></div>
+                                    </div>
+                                    <div class="skill-percentage">70%</div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-name">SQLite</div>
+                                    <div class="skill-level">
+                                        <div class="skill-progress" style="width: 75%"></div>
+                                    </div>
+                                    <div class="skill-percentage">75%</div>
+                                </div>
+                            </div>
+
+                            <div class="skill-category">
+                                <div class="skill-category-title">Outils</div>
+                                <div class="skill-item">
+                                    <div class="skill-name">Git/GitHub</div>
+                                    <div class="skill-level">
+                                        <div class="skill-progress" style="width: 80%"></div>
+                                    </div>
+                                    <div class="skill-percentage">80%</div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-name">WordPress</div>
+                                    <div class="skill-level">
+                                        <div class="skill-progress" style="width: 65%"></div>
+                                    </div>
+                                    <div class="skill-percentage">65%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Langues -->
+                    <div class="cv-section">
+                        <div class="section-title">Langues</div>
+                        <div class="skill-item">
+                            <div class="skill-name">Anglais</div>
+                            <div class="skill-level">
+                                <div class="skill-progress" style="width: 70%"></div>
+                            </div>
+                            <div class="skill-percentage">B2</div>
+                        </div>
+                    </div>
+
+                    <!-- Centres d'intérêt -->
+                    <div class="cv-section">
+                        <div class="section-title">Centres d'intérêt</div>
+                        <div class="hobbies-grid">
+                            <div class="hobby">
+                                <div class="hobby-icon">💻</div>
+                                <div class="hobby-name">Développement</div>
+                            </div>
+                            <div class="hobby">
+                                <div class="hobby-icon">🚀</div>
+                                <div class="hobby-name">Technologies</div>
+                            </div>
+                            <div class="hobby">
+                                <div class="hobby-icon">🏃</div>
+                                <div class="hobby-name">Sport</div>
+                            </div>
+                            <div class="hobby">
+                                <div class="hobby-icon">📱</div>
+                                <div class="hobby-name">Veille Tech</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contenu principal -->
+                <div class="cv-main">
+                    <!-- Formation -->
+                    <div class="cv-section">
+                        <div class="section-title">Formation</div>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="date">2024 – Présent</div>
+                                <div class="position">BTS Services Informatiques aux Organisations</div>
+                                <div class="company">Lycée Fulbert, Chartres</div>
+                                <div class="description">
+                                    Option SLAM (Solutions Logicielles et Applications Métiers)
+                                    <ul>
+                                        <li>Développement d'applications web et mobile</li>
+                                        <li>Gestion de bases de données et cybersécurité</li>
+                                        <li>Conduite de projets informatiques</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="date">2023 – 2024</div>
+                                <div class="position">I.U.T Informatique</div>
+                                <div class="company">Université d'Orléans</div>
+                                <div class="description">
+                                    Parcours découverte des fondamentaux de l'informatique
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="date">2022 – 2023</div>
+                                <div class="position">Baccalauréat STI2D</div>
+                                <div class="company">Lycée Émile Zola</div>
+                                <div class="description">
+                                    Option SIN (Systèmes d'Information et Numérique) - Mention Bien
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Expérience Professionnelle -->
+                    <div class="cv-section">
+                        <div class="section-title">Expérience Professionnelle</div>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="date">Juin 2025</div>
+                                <div class="position">Stage Développeur Web</div>
+                                <div class="company">Celinika Web, Chartres</div>
+                                <div class="description">
+                                    <ul>
+                                        <li>Développement de sites web avec WordPress et outils no-code</li>
+                                        <li>Participation à la mise en ligne et à la maintenance de sites clients</li>
+                                        <li>Optimisation SEO et expérience utilisateur</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="date">2024 – Présent</div>
+                                <div class="position">Vendeur - Job Étudiant</div>
+                                <div class="company">Action, Châteaudun</div>
+                                <div class="description">
+                                    <ul>
+                                        <li>Gestion des rayons et mise en valeur des produits</li>
+                                        <li>Service client et encaissement</li>
+                                        <li>Travail en équipe et respect des procédures</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="date">2021 – 2023</div>
+                                <div class="position">Serveur & Plongeur</div>
+                                <div class="company">Restaurant Galmotte, Bonneval</div>
+                                <div class="description">
+                                    <ul>
+                                        <li>Service en salle et relation client</li>
+                                        <li>Gestion des stocks et hygiène alimentaire</li>
+                                        <li>Adaptation aux pics d'activité</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projets -->
+                    <div class="cv-section">
+                        <div class="section-title">Projets & Réalisations</div>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="position">Portfolio Personnel</div>
+                                <div class="description">
+                                    Création d'un site portfolio responsive présentant mes compétences et projets
+                                    <ul>
+                                        <li>Technologies : HTML5, CSS3, JavaScript avancé</li>
+                                        <li>Design moderne et interface utilisateur optimisée</li>
+                                        <li>Hébergement sur GitHub Pages avec nom de domaine personnalisé</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="position">Projets Académiques BTS SIO</div>
+                                <div class="description">
+                                    <ul>
+                                        <li>Développement d'applications web avec architecture MVC</li>
+                                        <li>Création et gestion de bases de données relationnelles</li>
+                                        <li>Utilisation des frameworks Symfony et technologies associées</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Disponibilités -->
+        <div class="availability">
+            <h2 class="section-title" style="color: var(--accent-cyan);">Disponibilités & Recherche</h2>
+            <div class="availability-grid">
+                <div class="availability-card">
+                    <div class="availability-icon">🎯</div>
+                    <h3>Stage Développement</h3>
+                    <p>8 semaines<br>Janvier - Février 2026</p>
+                </div>
+                <div class="availability-card">
+                    <div class="availability-icon">📍</div>
+                    <h3>Mobilité</h3>
+                    <p>Chartres et<br>Région Centre-Val de Loire</p>
+                </div>
+                <div class="availability-card">
+                    <div class="availability-icon">💼</div>
+                    <h3>Type de Structure</h3>
+                    <p>ESN, Startup<br>Agence Web, Entreprise</p>
+                </div>
+                <div class="availability-card">
+                    <div class="availability-icon">🚀</div>
+                    <h3>Ambitions</h3>
+                    <p>Apprentissage<br>Innovation<br>Progression</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../templatemo-prism-scripts.js"></script>
+</body>
+</html>
