@@ -1,0 +1,8 @@
+﻿[
+  {"produit_id": 1, "emplacement_id": 1, "quantite": 9},
+  {"produit_id": 2, "emplacement_id": 2, "quantite": 18},
+  {"produit_id": 3, "emplacement_id": 3, "quantite": 11},
+  {"produit_id": 4, "emplacement_id": 1, "quantite": 6},
+  {"produit_id": 5, "emplacement_id": 3, "quantite": 16},
+  {"produit_id": 6, "emplacement_id": 4, "quantite": 5}
+]

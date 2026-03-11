@@ -3,45 +3,518 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon CV - Yohan Saint Marc | Portfolio Développeur</title>
+    <title>Yohan Saint Marc | Développeur Full-Stack & Créateur d'interfaces</title>
     
     <!-- Balises SEO -->
-    <meta name="description" content="CV de Yohan Saint Marc - Étudiant en BTS SIO, développeur web passionné. Téléchargez mon CV en PDF ou consultez-le en ligne.">
-    <meta name="keywords" content="Yohan Saint Marc CV, développeur web CV, BTS SIO, stage développement, Chartres">
+    <meta name="description" content="Portfolio de Yohan Saint Marc - Développeur Full-Stack créant des interfaces robustes et expériences utilisateur exceptionnelles.">
+    <meta name="keywords" content="Développeur Full-Stack, Portfolio, React, Node.js, Interfaces, UX, Frontend, Backend">
     
-    <link rel="stylesheet" href="../templatemo-prism-flux.css">
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
-        .project-detail-container {
-            padding: 120px 30px 60px;
-            max-width: 1200px;
-            margin: 0 auto;
+        * {
+            font-family: 'Inter', sans-serif;
         }
-
-        .back-button {
-            display: inline-flex;
-            align-items: center;
-            padding: 12px 24px;
-            background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
-            color: var(--text-primary);
-            text-decoration: none;
-            border-radius: 30px;
-            margin-bottom: 40px;
+        
+        /* Couleurs personnalisées */
+        :root {
+            --dark-bg: #0B1120;
+            --dark-secondary: #1a1f3a;
+            --neon-pink: #ff006e;
+            --neon-magenta: #dd00ff;
+            --accent-light: #f7f9fc;
+        }
+        
+        body {
+            background-color: var(--dark-bg);
+            color: #e0e7ff;
+        }
+        
+        /* Gradient Button Primary */
+        .btn-primary {
+            background: linear-gradient(135deg, var(--neon-pink), var(--neon-magenta));
+            color: white;
+            padding: 14px 32px;
+            border-radius: 12px;
             font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
             transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(153, 69, 255, 0.3);
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(255, 0, 110, 0.3);
+            border: none;
+            text-decoration: none;
+            display: inline-block;
         }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 0, 110, 0.5);
+        }
+        
+        /* Secondary Button - Outline */
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--neon-pink);
+            color: var(--neon-pink);
+            padding: 12px 30px;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 0, 110, 0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 0, 110, 0.2);
+        }
+        
+        /* Glassmorphism Effect */
+        .glass {
+            background: rgba(26, 31, 58, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 0, 110, 0.2);
+            border-radius: 16px;
+        }
+        
+        /* Project Cards Lift Effect */
+        .card-project {
+            background: var(--dark-secondary);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255, 0, 110, 0.1);
+            cursor: pointer;
+        }
+        
+        .card-project:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255, 0, 110, 0.4);
+            box-shadow: 0 20px 50px rgba(255, 0, 110, 0.2);
+        }
+        
+        /* Badge Skills */
+        .badge-skill {
+            display: inline-block;
+            padding: 6px 14px;
+            background: rgba(255, 0, 110, 0.15);
+            border: 1px solid rgba(255, 0, 110, 0.3);
+            border-radius: 20px;
+            color: var(--neon-pink);
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin: 4px 4px;
+        }
+        
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(135deg, var(--neon-pink), var(--neon-magenta));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Scroll smooth */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-[#0B1120]" style="background-color: #0B1120;">
 
-        .back-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(153, 69, 255, 0.5);
-        }
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 glass backdrop-blur-xl bg-opacity-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="text-2xl font-bold gradient-text">
+                    YS
+                </div>
+                <div class="hidden md:flex gap-8">
+                    <a href="#about" class="text-gray-300 hover:text-white transition">À propos</a>
+                    <a href="#projects" class="text-gray-300 hover:text-white transition">Projets</a>
+                    <a href="#skills" class="text-gray-300 hover:text-white transition">Compétences</a>
+                    <a href="#contact" class="btn-primary">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-        .project-header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <p class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-4">
+                        Bienvenue
+                    </p>
+                    <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                        <span class="text-white">Développeur</span><br>
+                        <span class="gradient-text">Full-Stack & Créateur</span><br>
+                        <span class="text-white">d'interfaces robustes</span>
+                    </h1>
+                    <p class="text-lg text-gray-300 mb-8 max-w-lg leading-relaxed">
+                        Je construis des applications web performantes et des expériences utilisateur exceptionnelles. 
+                        Passionné par le design et la technologie.
+                    </p>
+                    <div class="flex gap-4 flex-wrap">
+                        <button class="btn-primary">
+                            Voir mes projets
+                        </button>
+                        <button class="btn-secondary">
+                            Télécharger CV
+                        </button>
+                    </div>
+                </div>
+                <div class="flex justify-center lg:justify-end">
+                    <div class="relative w-80 h-80 lg:w-96 lg:h-96">
+                        <!-- Placeholder pour illustration/photo -->
+                        <div class="w-full h-full bg-gradient-to-br from-pink-500/20 to-purple-500/20 rounded-3xl border border-pink-500/30 flex items-center justify-center">
+                            <svg class="w-40 h-40 text-pink-500/40" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 px-4 border-t border-gray-800">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <!-- Left: Text with Glassmorphism -->
+                <div>
+                    <h2 class="text-4xl sm:text-5xl font-bold mb-8">
+                        <span class="text-white">À propos de</span> <span class="gradient-text">Yohan</span>
+                    </h2>
+                    <div class="glass p-8 mb-6">
+                        <p class="text-gray-300 leading-relaxed mb-4">
+                            Je suis un développeur passionné avec une expertise en full-stack development. 
+                            Spécialisé dans la création d'interfaces modernes, performantes et accessibles.
+                        </p>
+                        <p class="text-gray-300 leading-relaxed">
+                            Avec une approche centrée sur l'utilisateur, je transforme des concepts en produits 
+                            numériques fonctionnels et magnifiques. De la conception à la mise en production.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="glass p-4">
+                            <p class="text-2xl font-bold gradient-text">15+</p>
+                            <p class="text-gray-400 text-sm">Projets réalisés</p>
+                        </div>
+                        <div class="glass p-4">
+                            <p class="text-2xl font-bold gradient-text">3+</p>
+                            <p class="text-gray-400 text-sm">Ans d'expérience</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right: Profile Photo -->
+                <div class="flex justify-center">
+                    <div class="w-72 h-72 bg-gradient-to-br from-pink-500/20 to-purple-500/20 rounded-2xl border-2 border-pink-500/30 flex items-center justify-center flex-col">
+                        <svg class="w-48 h-48 text-pink-500/40" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                        </svg>
+                        <p class="text-gray-500 text-sm mt-2">[Photo profil]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 px-4 border-t border-gray-800">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl sm:text-5xl font-bold mb-4 text-center">
+                <span class="text-white">Mes </span><span class="gradient-text">Projets</span>
+            </h2>
+            <p class="text-gray-400 text-center mb-16 max-w-2xl mx-auto">
+                Une sélection de projets showcasing my expertise en design et développement
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project Card 1 -->
+                <div class="card-project">
+                    <div class="w-full h-48 bg-gradient-to-br from-pink-500/20 to-purple-500/20 flex items-center justify-center border-b border-gray-700">
+                        <svg class="w-20 h-20 text-pink-500/30" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4V5h12v10z" />
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">E-Commerce Platform</h3>
+                        <p class="text-gray-400 text-sm mb-4">
+                            Plateforme e-commerce avec panier, paiement sécurisé et admin dashboard.
+                        </p>
+                        <div class="mb-4">
+                            <span class="badge-skill">React</span>
+                            <span class="badge-skill">Node.js</span>
+                            <span class="badge-skill">MongoDB</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="#" class="text-pink-400 hover:text-pink-300 text-sm font-semibold transition">→ Live</a>
+                            <a href="#" class="text-pink-400 hover:text-pink-300 text-sm font-semibold transition">→ Github</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="card-project">
+                    <div class="w-full h-48 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 flex items-center justify-center border-b border-gray-700">
+                        <svg class="w-20 h-20 text-blue-500/30" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Analytics Dashboard</h3>
+                        <p class="text-gray-400 text-sm mb-4">
+                            Dashboard analytique avec visualisations temps réel et rapports détaillés.
+                        </p>
+                        <div class="mb-4">
+                            <span class="badge-skill">Vue.js</span>
+                            <span class="badge-skill">Express</span>
+                            <span class="badge-skill">PostgreSQL</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="#" class="text-pink-400 hover:text-pink-300 text-sm font-semibold transition">→ Live</a>
+                            <a href="#" class="text-pink-400 hover:text-pink-300 text-sm font-semibold transition">→ Github</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="card-project">
+                    <div class="w-full h-48 bg-gradient-to-br from-green-500/20 to-emerald-500/20 flex items-center justify-center border-b border-gray-700">
+                        <svg class="w-20 h-20 text-green-500/30" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M2 5a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V5zm3.293 1.293a1 1 0 011.414 0L9 9.586l2.293-2.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Task Manager App</h3>
+                        <p class="text-gray-400 text-sm mb-4">
+                            Application de gestion de tâches avec collaboration en temps réel.
+                        </p>
+                        <div class="mb-4">
+                            <span class="badge-skill">React</span>
+                            <span class="badge-skill">Firebase</span>
+                            <span class="badge-skill">Tailwind</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="#" class="text-pink-400 hover:text-pink-300 text-sm font-semibold transition">→ Live</a>
+                            <a href="#" class="text-pink-400 hover:text-pink-300 text-sm font-semibold transition">→ Github</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 4 -->
+                <div class="card-project">
+                    <div class="w-full h-48 bg-gradient-to-br from-orange-500/20 to-red-500/20 flex items-center justify-center border-b border-gray-700">
+                        <svg class="w-20 h-20 text-orange-500/30" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M5.5 13a3.5 3.5 0 01-.369-6.98 4 4 0 117.753-1.3A4.5 4.5 0 1113.5 13H11V9.413l1.293 1.293a1 1 0 001.414-1.414l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13H5.5z" />
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">SaaS Landing Page</h3>
+                        <p class="text-gray-400 text-sm mb-4">
+                            Landing page haute conversion optimisée SEO et analytics.
+                        </p>
+                        <div class="mb-4">
+                            <span class="badge-skill">Next.js</span>
+                            <span class="badge-skill">Prisma</span>
+                            <span class="badge-skill">Stripe</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="#" class="text-pink-400 hover:text-pink-300 text-sm font-semibold transition">→ Live</a>
+                            <a href="#" class="text-pink-400 hover:text-pink-300 text-sm font-semibold transition">→ Github</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 5 -->
+                <div class="card-project">
+                    <div class="w-full h-48 bg-gradient-to-br from-indigo-500/20 to-purple-500/20 flex items-center justify-center border-b border-gray-700">
+                        <svg class="w-20 h-20 text-indigo-500/30" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 6H6.28l-.31-1.243A1 1 0 005 3H3z" />
+                            <path d="M5 16a2 2 0 11-4 0 2 2 0 014 0z" />
+                            <path d="M16 16a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Mobile Shop App</h3>
+                        <p class="text-gray-400 text-sm mb-4">
+                            Application mobile shopping native avec paiement intégré.
+                        </p>
+                        <div class="mb-4">
+                            <span class="badge-skill">React Native</span>
+                            <span class="badge-skill">Expo</span>
+                            <span class="badge-skill">Redux</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="#" class="text-pink-400 hover:text-pink-300 text-sm font-semibold transition">→ Live</a>
+                            <a href="#" class="text-pink-400 hover:text-pink-300 text-sm font-semibold transition">→ Github</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 6 -->
+                <div class="card-project">
+                    <div class="w-full h-48 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 flex items-center justify-center border-b border-gray-700">
+                        <svg class="w-20 h-20 text-cyan-500/30" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Code Portfolio Site</h3>
+                        <p class="text-gray-400 text-sm mb-4">
+                            Plateforme de showcase de code avec syntax highlighting avancé.
+                        </p>
+                        <div class="mb-4">
+                            <span class="badge-skill">TypeScript</span>
+                            <span class="badge-skill">Three.js</span>
+                            <span class="badge-skill">Vite</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="#" class="text-pink-400 hover:text-pink-300 text-sm font-semibold transition">→ Live</a>
+                            <a href="#" class="text-pink-400 hover:text-pink-300 text-sm font-semibold transition">→ Github</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 px-4 border-t border-gray-800">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl sm:text-5xl font-bold mb-4 text-center">
+                <span class="text-white">Mes </span><span class="gradient-text">Compétences</span>
+            </h2>
+            <p class="text-gray-400 text-center mb-16 max-w-2xl mx-auto">
+                Un ensemble diversifié de technologies et outils maîtrisés
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <!-- Stack Maîtrisée -->
+                <div class="glass p-8">
+                    <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                        <span class="w-8 h-8 rounded-full bg-gradient-to-br from-pink-500 to-magenta-500 flex items-center justify-center text-white text-sm font-bold">1</span>
+                        Stack Maîtrisée
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 text-gray-300">
+                            <span class="w-2 h-2 rounded-full bg-pink-400"></span>
+                            Frontend: React, Vue.js, Next.js, TypeScript
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-300">
+                            <span class="w-2 h-2 rounded-full bg-pink-400"></span>
+                            Styling: Tailwind CSS, SCSS, Material UI
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-300">
+                            <span class="w-2 h-2 rounded-full bg-pink-400"></span>
+                            State Management: Redux, Zustand, Pinia
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-300">
+                            <span class="w-2 h-2 rounded-full bg-pink-400"></span>
+                            Testing: Jest, Vitest, Cypress, RTL
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Backend & Bases de données -->
+                <div class="glass p-8">
+                    <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                        <span class="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white text-sm font-bold">2</span>
+                        Backend & BD
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 text-gray-300">
+                            <span class="w-2 h-2 rounded-full bg-blue-400"></span>
+                            Runtimes: Node.js, Deno, Python
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-300">
+                            <span class="w-2 h-2 rounded-full bg-blue-400"></span>
+                            Frameworks: Express, NestJS, FastAPI
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-300">
+                            <span class="w-2 h-2 rounded-full bg-blue-400"></span>
+                            Bases: PostgreSQL, MongoDB, Firebase, Redis
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-300">
+                            <span class="w-2 h-2 rounded-full bg-blue-400"></span>
+                            APIs: REST, GraphQL, WebSockets, gRPC
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Outils & DevOps -->
+                <div class="glass p-8">
+                    <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                        <span class="w-8 h-8 rounded-full bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center text-white text-sm font-bold">3</span>
+                        Outils & DevOps
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 text-gray-300">
+                            <span class="w-2 h-2 rounded-full bg-green-400"></span>
+                            Build Tools: Webpack, Vite, Turbopack, Rollup
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-300">
+                            <span class="w-2 h-2 rounded-full bg-green-400"></span>
+                            Version Control: Git, GitHub, GitLab
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-300">
+                            <span class="w-2 h-2 rounded-full bg-green-400"></span>
+                            Cloud: Docker, Kubernetes, AWS, Vercel, Netlify
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-300">
+                            <span class="w-2 h-2 rounded-full bg-green-400"></span>
+                            CI/CD: GitHub Actions, GitLab CI, Jenkins
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="py-24 px-4 border-t border-gray-800">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl sm:text-5xl font-bold mb-6">
+                <span class="text-white">Prêt à</span> <span class="gradient-text">collaborer</span><span class="text-white">?</span>
+            </h2>
+            <p class="text-lg text-gray-300 mb-8">
+                Vous avez un projet en tête? Contactez-moi pour discuter de comment je peux transformer vos idées en réalité.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="btn-primary">
+                    Me contacter
+                </button>
+                <button class="btn-secondary">
+                    + 33 6 XX XX XX XX
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 py-8 px-4 mt-12">
+        <div class="max-w-6xl mx-auto text-center">
+            <p class="text-gray-400 text-sm">
+                © 2024 Yohan Saint Marc. Tous droits réservés.
+            </p>
+            <div class="flex justify-center gap-6 mt-4">
+                <a href="#" class="text-gray-400 hover:text-pink-400 transition">LinkedIn</a>
+                <a href="#" class="text-gray-400 hover:text-pink-400 transition">GitHub</a>
+                <a href="#" class="text-gray-400 hover:text-pink-400 transition">Twitter</a>
+                <a href="#" class="text-gray-400 hover:text-pink-400 transition">Email</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
 
         .project-title {
             font-size: 48px;
@@ -113,7 +586,7 @@
 
         .cv-title {
             font-size: 20px;
-            color: #3498db;
+            color: #ff0055;
             font-weight: 600;
             margin-bottom: 20px;
         }
@@ -142,7 +615,7 @@
         .cv-sidebar {
             background: #f8f9fa;
             padding: 35px;
-            border-right: 3px solid #3498db;
+            border-right: 3px solid #6200ea;
         }
 
         .cv-main {
@@ -160,16 +633,16 @@
             font-weight: 700;
             margin-bottom: 20px;
             padding-bottom: 8px;
-            border-bottom: 3px solid #3498db;
+            border-bottom: 3px solid #6200ea;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
         .objective {
-            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            background: linear-gradient(135deg, #f3e5f5, #f8bbd0);
             padding: 20px;
             border-radius: 10px;
-            border-left: 5px solid #3498db;
+            border-left: 5px solid #ff0055;
             margin-bottom: 30px;
             font-size: 15px;
             line-height: 1.6;
@@ -184,7 +657,7 @@
             margin-bottom: 25px;
             padding-left: 25px;
             position: relative;
-            border-left: 2px solid #3498db;
+            border-left: 2px solid #6200ea;
         }
 
         .timeline-item:before {
@@ -194,18 +667,18 @@
             top: 0;
             width: 14px;
             height: 14px;
-            background: #3498db;
+            background: #ff0055;
             border-radius: 50%;
             border: 3px solid white;
-            box-shadow: 0 0 0 3px #3498db;
+            box-shadow: 0 0 0 3px #ff0055;
         }
 
         .date {
             font-weight: 700;
-            color: #3498db;
+            color: #6200ea;
             font-size: 14px;
             margin-bottom: 5px;
-            background: #e3f2fd;
+            background: #f3e5f5;
             padding: 4px 12px;
             border-radius: 15px;
             display: inline-block;
@@ -255,7 +728,7 @@
             color: #2c3e50;
             margin-bottom: 12px;
             font-size: 15px;
-            border-left: 3px solid #3498db;
+            border-left: 3px solid #ff0055;
             padding-left: 10px;
         }
 
@@ -284,7 +757,7 @@
 
         .skill-progress {
             height: 100%;
-            background: linear-gradient(90deg, #3498db, #2980b9);
+            background: linear-gradient(90deg, #ff0055, #6200ea);
             border-radius: 4px;
             transition: width 1s ease-in-out;
         }
@@ -308,14 +781,14 @@
             padding: 12px;
             border-radius: 8px;
             text-align: center;
-            border: 2px solid #e3f2fd;
+            border: 2px solid #f3e5f5;
             transition: all 0.3s ease;
         }
 
         .hobby:hover {
-            border-color: #3498db;
+            border-color: #6200ea;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.2);
+            box-shadow: 0 5px 15px rgba(98, 0, 234, 0.2);
         }
 
         .hobby-icon {
@@ -337,7 +810,7 @@
             
             .cv-sidebar {
                 border-right: none;
-                border-bottom: 3px solid #3498db;
+                border-bottom: 3px solid #6200ea;
             }
             
             .cv-contact {

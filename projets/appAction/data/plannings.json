@@ -1,0 +1,8 @@
+﻿[
+  {"id": 1, "dateDebut": "2026-03-11", "dateFin": "2026-03-11", "statut": "planifie", "employe_id": 1},
+  {"id": 2, "dateDebut": "2026-03-11", "dateFin": "2026-03-12", "statut": "planifie", "employe_id": 2},
+  {"id": 3, "dateDebut": "2026-03-10", "dateFin": "2026-03-10", "statut": "en_cours", "employe_id": 3},
+  {"id": 4, "dateDebut": "2026-03-09", "dateFin": "2026-03-09", "statut": "termine", "employe_id": 5},
+  {"id": 5, "dateDebut": "2026-03-12", "dateFin": "2026-03-12", "statut": "planifie", "employe_id": 4},
+  {"id": 6, "dateDebut": "2026-03-13", "dateFin": "2026-03-13", "statut": "planifie", "employe_id": 6}
+]

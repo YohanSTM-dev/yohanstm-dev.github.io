@@ -1,0 +1,8 @@
+﻿[
+  {"id": 1, "code25": "P-0001", "codeBarre": "3560070000011", "libelleProduit": "Lait demi-ecreme", "prixVente": 2, "seuilAlerteStock": 12, "colisage": 6, "declaration_casse_id": null},
+  {"id": 2, "code25": "P-0002", "codeBarre": "3560070000028", "libelleProduit": "Cereales chocolat", "prixVente": 4, "seuilAlerteStock": 10, "colisage": 8, "declaration_casse_id": null},
+  {"id": 3, "code25": "P-0003", "codeBarre": "3560070000035", "libelleProduit": "Eau minerale 1.5L", "prixVente": 1, "seuilAlerteStock": 20, "colisage": 12, "declaration_casse_id": null},
+  {"id": 4, "code25": "P-0004", "codeBarre": "3560070000042", "libelleProduit": "Steak hache", "prixVente": 6, "seuilAlerteStock": 8, "colisage": 10, "declaration_casse_id": 1},
+  {"id": 5, "code25": "P-0005", "codeBarre": "3560070000059", "libelleProduit": "Jus d orange", "prixVente": 3, "seuilAlerteStock": 14, "colisage": 6, "declaration_casse_id": null},
+  {"id": 6, "code25": "P-0006", "codeBarre": "3560070000066", "libelleProduit": "Pizza surgeles", "prixVente": 5, "seuilAlerteStock": 7, "colisage": 8, "declaration_casse_id": null}
+]

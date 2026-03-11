@@ -1,0 +1,6 @@
+﻿[
+  {"id": 1, "couleur": "#1F6FEB", "nomCouleurRep": "Bleu action"},
+  {"id": 2, "couleur": "#10B981", "nomCouleurRep": "Vert priorite"},
+  {"id": 3, "couleur": "#F97316", "nomCouleurRep": "Orange stock"},
+  {"id": 4, "couleur": "#E11D48", "nomCouleurRep": "Rouge urgent"}
+]

@@ -1,0 +1,5 @@
+﻿[
+  {"id": 1, "heureContrat": "35h", "nomTypeContrat": "CDI"},
+  {"id": 2, "heureContrat": "24h", "nomTypeContrat": "CDD"},
+  {"id": 3, "heureContrat": "20h", "nomTypeContrat": "Alternance"}
+]

@@ -1,0 +1,6 @@
+﻿[
+  {"id": 1, "texteMessagerie": "Rappel inventaire frais a 18h", "dateEnvoi": "2026-03-10", "est_lu": false, "employe_id": 2},
+  {"id": 2, "texteMessagerie": "Reassort boissons termine au magasin Chartres", "dateEnvoi": "2026-03-09", "est_lu": true, "employe_id": 1},
+  {"id": 3, "texteMessagerie": "Demande de renfort caisse samedi", "dateEnvoi": "2026-03-10", "est_lu": false, "employe_id": 3},
+  {"id": 4, "texteMessagerie": "Controle stock surgeles effectue", "dateEnvoi": "2026-03-08", "est_lu": true, "employe_id": 5}
+]

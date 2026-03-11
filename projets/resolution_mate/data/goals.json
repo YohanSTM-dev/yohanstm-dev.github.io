@@ -1,0 +1,42 @@
+﻿{
+  "personal": [
+    {
+      "id": 1,
+      "title": "Valider le module API",
+      "description": "Construire les endpoints essentiels et tester les flux critiques.",
+      "progress": 0.65,
+      "due": "2026-03-28",
+      "status": "en_cours",
+      "steps": ["Spec API", "Tests unitaires", "Documentation", "Validation"]
+    },
+    {
+      "id": 2,
+      "title": "Plan d action sprint",
+      "description": "Decouper les taches pour le prochain sprint et definir les priorites.",
+      "progress": 0.35,
+      "due": "2026-04-05",
+      "status": "en_cours",
+      "steps": ["Backlog", "Estimation", "Roadmap"]
+    }
+  ],
+  "group": [
+    {
+      "id": 3,
+      "title": "Roadmap produit",
+      "description": "Aligner l equipe sur la vision et les objectifs trimestriels.",
+      "progress": 0.5,
+      "due": "2026-04-15",
+      "status": "en_cours",
+      "steps": ["Atelier vision", "Decoupage features", "Validation equipe"]
+    },
+    {
+      "id": 4,
+      "title": "Plan de resolution incident",
+      "description": "Formaliser une methode pour analyser les problemes recurrent.",
+      "progress": 0.15,
+      "due": "2026-03-30",
+      "status": "en_cours",
+      "steps": ["Collecte signaux", "Analyse cause", "Plan de correction"]
+    }
+  ]
+}

@@ -37,7 +37,7 @@ aside ul li {
 }
 
 aside ul li a {
-    color: #4caf50; /* Vert doux pour les liens */
+    color: #ff0055; /* Rouge/Rose pour les liens */
     text-decoration: none;
     font-size: 20px;
     font-weight: bold;
@@ -71,7 +71,7 @@ main {
 }
 
 h1, h2 {
-    color: #4caf50; /* Vert pour les titres */
+    color: #ff0055; /* Rouge/Rose pour les titres */
     font-size: 32px;
 }
 
@@ -92,8 +92,8 @@ h1, h2 {
 
 .groupeBouton button {
     background: #121212; /* Fond noir */
-    border: 2px solid #4caf50; /* Bordure verte */
-    color: #4caf50; /* Texte vert */
+    border: 2px solid #ff0055; /* Bordure Rouge/Rose */
+    color: #ff0055; /* Texte Rouge/Rose */
     padding: 12px 25px;
     font-size: 18px;
     cursor: pointer;
@@ -103,7 +103,7 @@ h1, h2 {
 }
 
 .groupeBouton button:hover {
-    background: #4caf50; /* Bouton vert au survol */
+    background: #ff0055; /* Bouton Rouge/Rose au survol */
     color: #121212; /* Texte en noir */
 }
 

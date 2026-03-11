@@ -1,0 +1,6 @@
+﻿[
+  {"id": 1, "dateDemande": "2026-03-10", "statut": "en_attente", "priorite": "haute", "produit_id": 4, "employe_id": 3},
+  {"id": 2, "dateDemande": "2026-03-09", "statut": "validee", "priorite": "normale", "produit_id": 1, "employe_id": 1},
+  {"id": 3, "dateDemande": "2026-03-10", "statut": "en_attente", "priorite": "critique", "produit_id": 6, "employe_id": 5},
+  {"id": 4, "dateDemande": "2026-03-08", "statut": "refusee", "priorite": "basse", "produit_id": 2, "employe_id": 2}
+]

@@ -1,507 +1,570 @@
-// JavaScript Document
+﻿const projectsData = [
+    {
+        title: 'FC Fulbert',
+        summary: 'Exercice SEO pour le site d un club de football amateur.',
+        details: 'Travail oriente SEO avec structure HTML propre, performances et contenu optimise.',
+        image: 'images/logoFCFulbert.png',
+        preview: 'fc-fulbert',
+        github: '',
+        tech: ['HTML', 'CSS', 'JavaScript', 'SEO']
+    },
+    {
+        title: 'Cluedo',
+        summary: 'Jeu de deduction realise avec logique serveur et persistance.',
+        details: 'Jeu complet avec mecanique d indices, logique de deduction et stockage de donnees.',
+        image: 'images/imgCluedo.jpeg',
+        preview: 'cluedo',
+        github: '',
+        tech: ['PHP', 'SQLite', 'JavaScript']
+    },
+    {
+        title: 'CV en ligne',
+        summary: 'Presentation professionnelle responsive orientee lisibilite.',
+        details: 'CV web clair et structure, avec une mise en page adaptee mobile.',
+        image: 'images/neural-network.jpg',
+        preview: 'cv-yohanStm',
+        github: '',
+        tech: ['HTML', 'CSS', 'UI']
+    },
+    {
+        title: 'AppAction',
+        summary: 'Application de gestion (en cours). Demo statique avec donnees JSON.',
+        details: 'Simulation complete basee sur le schema SQL, avec donnees mock et tableaux de bord.',
+        image: 'images/neural-network.jpg',
+        preview: 'appAction/',
+        github: '',
+        tech: ['Mock Data', 'JavaScript', 'UI']
+    },
+    {
+        title: 'IronPulse',
+        summary: 'Suivi sportif et nutritionnel. Interface mobile adaptee en demo web.',
+        details: 'Dashboard d entrainement et records personnels, avec planning et heatmap.',
+        image: 'images/neural-network.jpg',
+        preview: 'IronPulse/',
+        github: '',
+        tech: ['HTML', 'CSS', 'JS']
+    },
+    {
+        title: 'Resolution Mate',
+        summary: 'Outil d aide a la resolution de problemes. Demo interactive.',
+        details: 'Gestion d objectifs personnels et de groupe, filtrage et detail d action.',
+        image: 'images/neural-network.jpg',
+        preview: 'resolution_mate/',
+        github: '',
+        tech: ['HTML', 'CSS', 'JS']
+    }
+];
 
-/*
+const skillsData = [
+    { name: 'React.js', type: 'Frontend', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+    { name: 'Vite', type: 'Tooling', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg' },
+    { name: 'Node.js', type: 'Backend', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
+    { name: 'JavaScript', type: 'Frontend', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
+    { name: 'TypeScript', type: 'Frontend', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' },
+    { name: 'HTML5', type: 'Frontend', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
+    { name: 'CSS3', type: 'Frontend', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
+    { name: 'Flutter', type: 'Mobile', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg' },
+    { name: 'C# / .NET', type: 'Backend', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg' },
+    { name: 'PHP', type: 'Backend', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg' },
+    { name: 'Symfony', type: 'Backend', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/symfony/symfony-original.svg' },
+    { name: 'Python', type: 'Backend', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
+    { name: 'SQLite', type: 'Data', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg' },
+    { name: 'Firebase', type: 'Backend', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg' },
+    { name: 'Supabase', type: 'Backend', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg' },
+    { name: 'Git', type: 'Outils', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
+    { name: 'Docker', type: 'Outils', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
+    { name: 'Bash', type: 'Outils', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg' }
+];
 
-TemplateMo 600 Prism Flux
+let isProjectsDragging = false;
+let projectModalState = null;
 
-https://templatemo.com/tm-600-prism-flux
+function escapeHtml(value) {
+    return String(value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+}
 
-*/
+function openProject(slug) {
+    if (!slug) {
+        return;
+    }
 
-
-// Portfolio data for carousel
-
-        const portfolioData = [
-            {
-                id: 1,
-                title: 'FC Fulbert',
-                description: 'Exercice de referencement SEO pour le site d\'un club de football amateur.',
-                image: 'images/logoFCFulbert.png',
-                slug: 'fc-fulbert',
-                tech: ['HTML/CSS/JS', 'SEO', 'Google Analytics', 'Google Search Console']
-            },
-            {
-                id: 2,
-                title: 'Cluedo',
-                description: 'Jeu de Cluedo ',
-                image: 'images/imgCluedo.jpeg',
-                slug: 'cluedo',
-                tech: ['PHP', 'SQLite', 'HTML/CSS', 'GitHub']
-            },
-            {
-                id:3,
-                title: 'Mon CV Professionne',
-                description: 'Mon CV en ligne, réalisé avec HTML/CSS',
-                image: 'images/imgCV.png',
-                slug: 'cv-yohanSTM',
-                tech: ['HTML', 'CSS']
-            }
-
-        ];
-
-        // Skills data
-        const skillsData = [
-        { name: 'HTML', icon: '📄', level: 95, category: 'frontend' },
-        { name: 'CSS', icon: '🎨', level: 92, category: 'frontend' },
-        { name: 'JavaScript', icon: '✨', level: 90, category: 'frontend' },
-        { name: 'Java', icon: '☕', level: 85, category: 'backend' },
-        { name: 'C#', icon: '💠', level: 83, category: 'backend' },
-        { name: 'PHP', icon: '🐘', level: 88, category: 'backend' },
-        { name: 'Symfony', icon: '⚙️', level: 86, category: 'backend' },
-        { name: 'Bash', icon: '💻', level: 80, category: 'devops' },
-        { name: 'Python', icon: '🐍', level: 90, category: 'backend' },
-        { name: 'WPF', icon: '🖥️', level: 78, category: 'frontend' }
-
-
-        ];
-
-        // Scroll to section function
-        function scrollToSection(sectionId) {
-            const section = document.getElementById(sectionId);
-            const header = document.getElementById('header');
-            if (section) {
-                const headerHeight = header.offsetHeight;
-                const targetPosition = section.offsetTop - headerHeight;
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        }
-
-        // Initialize particles for philosophy section
-        function initParticles() {
-            const particlesContainer = document.getElementById('particles');
-            const particleCount = 15;
-            
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                
-                // Random horizontal position
-                particle.style.left = Math.random() * 100 + '%';
-                
-                // Start particles at random vertical positions throughout the section
-                particle.style.top = Math.random() * 100 + '%';
-                
-                // Random animation delay for natural movement
-                particle.style.animationDelay = Math.random() * 20 + 's';
-                
-                // Random animation duration for variety
-                particle.style.animationDuration = (18 + Math.random() * 8) + 's';
-                
-                particlesContainer.appendChild(particle);
-            }
-        }
-
-        // Initialize carousel
-        let currentIndex = 0;
-        const carousel = document.getElementById('carousel');
-        const indicatorsContainer = document.getElementById('indicators');
-
-        function createCarouselItem(data, index) {
-            const item = document.createElement('div');
-            item.className = 'carousel-item';
-            item.dataset.index = index;
-            
-            const techBadges = data.tech.map(tech => 
-                `<span class="tech-badge">${tech}</span>`
-            ).join('');
-            
-            item.innerHTML = `
-                <div class="card">
-                    <div class="card-number">0${data.id}</div>
-                    <div class="card-image">
-                        <img src="${data.image}" alt="${data.title}">
-                    </div>
-                    <h3 class="card-title">${data.title}</h3>
-                    <p class="card-description">${data.description}</p>
-                    <div class="card-tech">${techBadges}</div>
-<button class="card-cta" onclick="openProjectDetail(${data.id})">Voir le projet</button>            `;
-            
-            return item;
-        }
-
-function openProjectDetail(projectId) {
-    const project = portfolioData.find(p => p.id === projectId);
-    
-    // Vérifiez d'abord si le slug existe
-    if (project.slug) {
-        window.location.href = `projets/${project.slug}.html`;
-    } else {
-        // Fallback avec l'ancienne méthode
-        window.location.href = `projets/projet-${projectId}.html`;
+    // Cas 1: Le slug est une URL externe (pour Symfony, Heroku, etc.)
+    if (slug.startsWith('http')) {
+        window.open(slug, '_blank');
+    }
+    // Cas 2: Le slug est un dossier (pour un build React qui a un index.html)
+    else if (slug.endsWith('/')) {
+        window.location.href = `projets/${slug}index.html`;
+    }
+    // Cas 3: Le slug pointe deja vers un fichier .html
+    else if (slug.endsWith('.html')) {
+        window.location.href = `projets/${slug}`;
+    }
+    // Cas 4: Le slug est un simple fichier .html
+    else {
+        window.location.href = `projets/${slug}.html`;
     }
 }
 
-        function initCarousel() {
-            // Create carousel items
-            portfolioData.forEach((data, index) => {
-                const item = createCarouselItem(data, index);
-                carousel.appendChild(item);
-                
-                // Create indicator
-                const indicator = document.createElement('div');
-                indicator.className = 'indicator';
-                if (index === 0) indicator.classList.add('active');
-                indicator.dataset.index = index;
-                indicator.addEventListener('click', () => goToSlide(index));
-                indicatorsContainer.appendChild(indicator);
-            });
-            
-            updateCarousel();
-        }
-
-        function updateCarousel() {
-            const items = document.querySelectorAll('.carousel-item');
-            const indicators = document.querySelectorAll('.indicator');
-            const totalItems = items.length;
-            const isMobile = window.innerWidth <= 768;
-            const isTablet = window.innerWidth <= 1024;
-            
-            items.forEach((item, index) => {
-                // Calculate relative position
-                let offset = index - currentIndex;
-                
-                // Wrap around for continuous rotation
-                if (offset > totalItems / 2) {
-                    offset -= totalItems;
-                } else if (offset < -totalItems / 2) {
-                    offset += totalItems;
-                }
-                
-                const absOffset = Math.abs(offset);
-                const sign = offset < 0 ? -1 : 1;
-                
-                // Reset transform
-                item.style.transform = '';
-                item.style.opacity = '';
-                item.style.zIndex = '';
-                item.style.transition = 'all 0.8s cubic-bezier(0.4, 0.0, 0.2, 1)';
-                
-                // Adjust spacing based on screen size
-                let spacing1 = 400;
-                let spacing2 = 600;
-                let spacing3 = 750;
-                
-                if (isMobile) {
-                    spacing1 = 280;  // Was 400, now 100px closer
-                    spacing2 = 420;  // Was 600, now 180px closer
-                    spacing3 = 550;  // Was 750, now 200px closer
-                } else if (isTablet) {
-                    spacing1 = 340;
-                    spacing2 = 520;
-                    spacing3 = 650;
-                }
-                
-                if (absOffset === 0) {
-                    // Center item
-                    item.style.transform = 'translate(-50%, -50%) translateZ(0) scale(1)';
-                    item.style.opacity = '1';
-                    item.style.zIndex = '10';
-                } else if (absOffset === 1) {
-                    // Side items
-                    const translateX = sign * spacing1;
-                    const rotation = isMobile ? 25 : 30;
-                    const scale = isMobile ? 0.88 : 0.85;
-                    item.style.transform = `translate(-50%, -50%) translateX(${translateX}px) translateZ(-200px) rotateY(${-sign * rotation}deg) scale(${scale})`;
-                    item.style.opacity = '0.8';
-                    item.style.zIndex = '5';
-                } else if (absOffset === 2) {
-                    // Further side items
-                    const translateX = sign * spacing2;
-                    const rotation = isMobile ? 35 : 40;
-                    const scale = isMobile ? 0.75 : 0.7;
-                    item.style.transform = `translate(-50%, -50%) translateX(${translateX}px) translateZ(-350px) rotateY(${-sign * rotation}deg) scale(${scale})`;
-                    item.style.opacity = '0.5';
-                    item.style.zIndex = '3';
-                } else if (absOffset === 3) {
-                    // Even further items
-                    const translateX = sign * spacing3;
-                    const rotation = isMobile ? 40 : 45;
-                    const scale = isMobile ? 0.65 : 0.6;
-                    item.style.transform = `translate(-50%, -50%) translateX(${translateX}px) translateZ(-450px) rotateY(${-sign * rotation}deg) scale(${scale})`;
-                    item.style.opacity = '0.3';
-                    item.style.zIndex = '2';
-                } else {
-                    // Hidden items (behind)
-                    item.style.transform = 'translate(-50%, -50%) translateZ(-500px) scale(0.5)';
-                    item.style.opacity = '0';
-                    item.style.zIndex = '1';
-                }
-            });
-            
-            // Update indicators
-            indicators.forEach((indicator, index) => {
-                indicator.classList.toggle('active', index === currentIndex);
-            });
-        }
-
-        function nextSlide() {
-            currentIndex = (currentIndex + 1) % portfolioData.length;
-            updateCarousel();
-        }
-
-        function prevSlide() {
-            currentIndex = (currentIndex - 1 + portfolioData.length) % portfolioData.length;
-            updateCarousel();
-        }
-
-        function goToSlide(index) {
-            currentIndex = index;
-            updateCarousel();
-        }
-
-        // Initialize hexagonal skills grid
-        function initSkillsGrid() {
-            const skillsGrid = document.getElementById('skillsGrid');
-            const categoryTabs = document.querySelectorAll('.category-tab');
-            
-            function displaySkills(category = 'all') {
-                skillsGrid.innerHTML = '';
-                
-                const filteredSkills = category === 'all' 
-                    ? skillsData 
-                    : skillsData.filter(skill => skill.category === category);
-                
-                filteredSkills.forEach((skill, index) => {
-                    const hexagon = document.createElement('div');
-                    hexagon.className = 'skill-hexagon';
-                    hexagon.style.animationDelay = `${index * 0.1}s`;
-                    
-                    hexagon.innerHTML = `
-                        <div class="hexagon-inner">
-                            <div class="hexagon-content">
-                                <div class="skill-icon-hex">${skill.icon}</div>
-                                <div class="skill-name-hex">${skill.name}</div>
-                                <div class="skill-level">
-                                    <div class="skill-level-fill" style="width: ${skill.level}%"></div>
-                                </div>
-                                <div class="skill-percentage-hex">${skill.level}%</div>
-                            </div>
-                        </div>
-                    `;
-                    
-                    skillsGrid.appendChild(hexagon);
-                });
-            }
-            
-            categoryTabs.forEach(tab => {
-                tab.addEventListener('click', () => {
-                    categoryTabs.forEach(t => t.classList.remove('active'));
-                    tab.classList.add('active');
-                    displaySkills(tab.dataset.category);
-                });
-            });
-            
-            displaySkills();
-        }
-
-        // Event listeners
-        document.getElementById('nextBtn').addEventListener('click', nextSlide);
-        document.getElementById('prevBtn').addEventListener('click', prevSlide);
-
-        // Auto-rotate carousel
-        setInterval(nextSlide, 5000);
-
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') prevSlide();
-            if (e.key === 'ArrowRight') nextSlide();
-        });
-
-        // Update carousel on window resize
-        let resizeTimeout;
-        window.addEventListener('resize', () => {
-            clearTimeout(resizeTimeout);
-            resizeTimeout = setTimeout(() => {
-                updateCarousel();
-            }, 250);
-        });
-
-        // Initialize on load
-        initCarousel();
-        initSkillsGrid();
-        initParticles();
-
-        // Mobile menu toggle
-        const menuToggle = document.getElementById('menuToggle');
-        const navMenu = document.getElementById('navMenu');
-
-        menuToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            menuToggle.classList.toggle('active');
-        });
-
-        // Header scroll effect
-        const header = document.getElementById('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        // Smooth scrolling and active navigation
-        const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('.nav-link');
-
-        navLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href').substring(1);
-                const targetSection = document.getElementById(targetId);
-                
-                if (targetSection) {
-                    const headerHeight = header.offsetHeight;
-                    const targetPosition = targetSection.offsetTop - headerHeight;
-                    
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu if open
-                    navMenu.classList.remove('active');
-                    menuToggle.classList.remove('active');
-                }
-            });
-        });
-
-        // Update active navigation on scroll
-        function updateActiveNav() {
-            const scrollPosition = window.scrollY + 100;
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.offsetHeight;
-                const sectionId = section.getAttribute('id');
-                
-                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                    navLinks.forEach(link => {
-                        link.classList.remove('active');
-                        const href = link.getAttribute('href').substring(1);
-                        if (href === sectionId) {
-                            link.classList.add('active');
-                        }
-                    });
-                }
-            });
-        }
-
-        window.addEventListener('scroll', updateActiveNav);
-
-        // Animated counter for stats
-        function animateCounter(element) {
-            const target = parseInt(element.dataset.target);
-            const duration = 2000;
-            const step = target / (duration / 16);
-            let current = 0;
-            
-            const counter = setInterval(() => {
-                current += step;
-                if (current >= target) {
-                    element.textContent = target;
-                    clearInterval(counter);
-                } else {
-                    element.textContent = Math.floor(current);
-                }
-            }, 16);
-        }
-
-        // Intersection Observer for stats animation
-        const observerOptions = {
-            threshold: 0.5,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const statNumbers = entry.target.querySelectorAll('.stat-number');
-                    statNumbers.forEach(number => {
-                        if (!number.classList.contains('animated')) {
-                            number.classList.add('animated');
-                            animateCounter(number);
-                        }
-                    });
-                }
-            });
-        }, observerOptions);
-
-        const statsSection = document.querySelector('.stats-section');
-        if (statsSection) {
-            observer.observe(statsSection);
-        }
-
-        // Form submission
-const contactForm = document.getElementById('contactForm');
-const formMessage = document.getElementById('formMessage');
-
-contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    
-    // Afficher un indicateur de chargement
-    const submitBtn = contactForm.querySelector('.submit-btn');
-    submitBtn.textContent = 'Envoi en cours...';
-    submitBtn.disabled = true;
-    
-    try {
-        const formData = new FormData(contactForm);
-        
-        // Envoyer les données à Formspree via Fetch API
-        const response = await fetch('https://formspree.io/f/mnnopoon', {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'Accept': 'application/json'
-            }
-        });
-        
-        if (response.ok) {
-            // Succès
-            formMessage.textContent = '✅ Message envoyé avec succès ! Je vous répondrai dans les 24 heures.';
-            formMessage.style.display = 'block';
-            formMessage.style.background = 'var(--accent-green)';
-            
-            // Reset du formulaire
-            contactForm.reset();
-            
-            // Cacher le message après 5 secondes
-            setTimeout(() => {
-                formMessage.style.display = 'none';
-            }, 5000);
-        } else {
-            throw new Error('Erreur lors de l\'envoi');
-        }
-        
-    } catch (error) {
-        // Erreur
-        formMessage.textContent = '❌ Erreur lors de l\'envoi. Veuillez réessayer.';
-        formMessage.style.display = 'block';
-        formMessage.style.background = 'var(--accent-red)';
-    } finally {
-        // Réactiver le bouton
-        submitBtn.textContent = 'Envoyer';
-        submitBtn.disabled = false;
+function initProjectModal() {
+    const modal = document.getElementById('projectModal');
+    if (!modal) {
+        return null;
     }
-});
 
-        // Loading screen
-        window.addEventListener('load', () => {
+    const state = {
+        modal,
+        title: document.getElementById('projectModalTitle'),
+        description: document.getElementById('projectModalDesc'),
+        tech: document.getElementById('projectModalTech'),
+        image: document.getElementById('projectModalImage'),
+        preview: document.getElementById('projectModalPreview'),
+        github: document.getElementById('projectModalGithub'),
+        closeBtn: modal.querySelector('[data-modal-close]'),
+        backdrop: modal.querySelector('[data-modal-backdrop]')
+    };
+
+    const closeModal = () => {
+        state.modal.classList.remove('active');
+        state.modal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('modal-open');
+    };
+
+    if (state.closeBtn) {
+        state.closeBtn.addEventListener('click', closeModal);
+    }
+
+    if (state.backdrop) {
+        state.backdrop.addEventListener('click', closeModal);
+    }
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && state.modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+
+    state.close = closeModal;
+    return state;
+}
+
+function openProjectModal(project) {
+    if (!projectModalState) {
+        if (project.preview) {
+            openProject(project.preview);
+        }
+        return;
+    }
+
+    const summary = project.details || project.description || project.summary || '';
+    const techBadges = (project.tech || [])
+        .map((tech) => `<span>${escapeHtml(tech)}</span>`)
+        .join('');
+
+    projectModalState.title.textContent = project.title;
+    projectModalState.description.textContent = summary;
+    projectModalState.tech.innerHTML = techBadges;
+
+    if (projectModalState.image) {
+        projectModalState.image.src = project.image;
+        projectModalState.image.alt = `Apercu du projet ${project.title}`;
+    }
+
+    if (project.preview) {
+        projectModalState.preview.classList.remove('is-hidden');
+        projectModalState.preview.onclick = () => openProject(project.preview);
+    } else {
+        projectModalState.preview.classList.add('is-hidden');
+        projectModalState.preview.onclick = null;
+    }
+
+    if (project.github) {
+        projectModalState.github.classList.remove('is-hidden');
+        projectModalState.github.href = project.github;
+    } else {
+        projectModalState.github.classList.add('is-hidden');
+        projectModalState.github.removeAttribute('href');
+    }
+
+    projectModalState.modal.classList.add('active');
+    projectModalState.modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-open');
+}
+
+function createProjectCard(project) {
+    const card = document.createElement('article');
+    card.className = 'project-card';
+
+    const summary = project.summary || project.description || '';
+    const techBadges = (project.tech || [])
+        .map((tech) => `<span>${escapeHtml(tech)}</span>`)
+        .join('');
+
+    card.innerHTML = `
+        <div class="project-image">
+            <img src="${escapeHtml(project.image)}" alt="Apercu du projet ${escapeHtml(project.title)}" loading="lazy">
+        </div>
+        <div class="project-content">
+            <h3>${escapeHtml(project.title)}</h3>
+            <p>${escapeHtml(summary)}</p>
+            <div class="project-tech">${techBadges}</div>
+            <button class="btn btn-ghost" type="button">Voir le projet</button>
+        </div>
+    `;
+
+    const button = card.querySelector('button');
+    button.addEventListener('click', (event) => {
+        event.stopPropagation();
+        openProjectModal(project);
+    });
+    card.addEventListener('click', () => {
+        if (isProjectsDragging) {
+            return;
+        }
+        openProjectModal(project);
+    });
+
+    return card;
+}
+
+function renderProjects() {
+    const track = document.getElementById('projectsTrack');
+    if (!track) {
+        return;
+    }
+
+    projectsData.forEach((project) => {
+        track.appendChild(createProjectCard(project));
+    });
+}
+
+function setupProjectsSlider() {
+    const track = document.getElementById('projectsTrack');
+    const prev = document.getElementById('projectsPrev');
+    const next = document.getElementById('projectsNext');
+
+    if (!track || !prev || !next) {
+        return;
+    }
+
+    const getStep = () => {
+        const firstCard = track.querySelector('.project-card');
+        if (!firstCard) {
+            return 320;
+        }
+
+        const styles = window.getComputedStyle(track);
+        const gap = Number.parseInt(styles.columnGap || styles.gap || '0', 10);
+        return firstCard.clientWidth + (Number.isNaN(gap) ? 0 : gap);
+    };
+
+    prev.addEventListener('click', () => {
+        track.scrollBy({ left: -getStep(), behavior: 'smooth' });
+    });
+
+    next.addEventListener('click', () => {
+        track.scrollBy({ left: getStep(), behavior: 'smooth' });
+    });
+
+    track.addEventListener(
+        'wheel',
+        (event) => {
+            if (Math.abs(event.deltaY) <= Math.abs(event.deltaX)) {
+                return;
+            }
+
+            event.preventDefault();
+            track.scrollBy({ left: event.deltaY, behavior: 'smooth' });
+        },
+        { passive: false }
+    );
+
+    let isPointerDown = false;
+    let startX = 0;
+    let startScrollLeft = 0;
+    let hasDragged = false;
+
+    const shouldIgnoreDrag = (target) =>
+        Boolean(target.closest('button') || target.closest('a') || target.closest('input'));
+
+    const beginDrag = (clientX) => {
+        isPointerDown = true;
+        hasDragged = false;
+        isProjectsDragging = false;
+        startX = clientX;
+        startScrollLeft = track.scrollLeft;
+        track.classList.add('dragging');
+    };
+
+    const moveDrag = (clientX) => {
+        if (!isPointerDown) {
+            return;
+        }
+
+        const delta = clientX - startX;
+        if (Math.abs(delta) > 6) {
+            hasDragged = true;
+            isProjectsDragging = true;
+        }
+        track.scrollLeft = startScrollLeft - delta;
+    };
+
+    const stopDrag = () => {
+        if (!isPointerDown) {
+            return;
+        }
+        isPointerDown = false;
+        track.classList.remove('dragging');
+        if (hasDragged) {
             setTimeout(() => {
-                const loader = document.getElementById('loader');
-                loader.classList.add('hidden');
-            }, 1500);
+                isProjectsDragging = false;
+            }, 0);
+        }
+    };
+
+    track.addEventListener(
+        'click',
+        (event) => {
+            if (isProjectsDragging) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+        },
+        true
+    );
+
+    if (window.PointerEvent) {
+        track.addEventListener('pointerdown', (event) => {
+            if (event.button !== undefined && event.button !== 0) {
+                return;
+            }
+            if (shouldIgnoreDrag(event.target)) {
+                return;
+            }
+            event.preventDefault();
+            beginDrag(event.clientX);
         });
 
-        // Add parallax effect to hero section
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const parallax = document.querySelector('.hero');
-            if (parallax) {
-                parallax.style.transform = `translateY(${scrolled * 0.5}px)`;
+        track.addEventListener('pointermove', (event) => {
+            moveDrag(event.clientX);
+        });
+
+        track.addEventListener('pointerup', stopDrag);
+        track.addEventListener('pointercancel', stopDrag);
+        track.addEventListener('pointerleave', stopDrag);
+    } else {
+        track.addEventListener('mousedown', (event) => {
+            if (event.button !== 0) {
+                return;
+            }
+            if (shouldIgnoreDrag(event.target)) {
+                return;
+            }
+            event.preventDefault();
+            beginDrag(event.clientX);
+        });
+
+        window.addEventListener('mousemove', (event) => {
+            moveDrag(event.clientX);
+        });
+
+        window.addEventListener('mouseup', stopDrag);
+
+        track.addEventListener(
+            'touchstart',
+            (event) => {
+                if (event.touches.length > 0) {
+                    if (shouldIgnoreDrag(event.target)) {
+                        return;
+                    }
+                    beginDrag(event.touches[0].clientX);
+                }
+            },
+            { passive: true }
+        );
+
+        track.addEventListener(
+            'touchmove',
+            (event) => {
+                if (event.touches.length > 0) {
+                    moveDrag(event.touches[0].clientX);
+                }
+            },
+            { passive: true }
+        );
+
+        track.addEventListener('touchend', stopDrag);
+        track.addEventListener('touchcancel', stopDrag);
+    }
+}
+
+function renderSkills() {
+    const grid = document.getElementById('skillsGrid');
+    if (!grid) {
+        return;
+    }
+
+    const fragment = document.createDocumentFragment();
+
+    skillsData.forEach((skill) => {
+        const card = document.createElement('article');
+        card.className = 'skill-card';
+
+        card.innerHTML = `
+            <img class="skill-logo" src="${escapeHtml(skill.icon)}" alt="Logo ${escapeHtml(skill.name)}" loading="lazy">
+            <div>
+                <p class="skill-title">${escapeHtml(skill.name)}</p>
+                <p class="skill-type">${escapeHtml(skill.type)}</p>
+            </div>
+        `;
+
+        fragment.appendChild(card);
+    });
+
+    grid.appendChild(fragment);
+}
+
+function setupNavigation() {
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const header = document.getElementById('header');
+
+    if (!menuToggle || !navMenu || !header) {
+        return;
+    }
+
+    menuToggle.addEventListener('click', () => {
+        const isOpen = navMenu.classList.toggle('active');
+        menuToggle.classList.toggle('active', isOpen);
+        menuToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    const closeMenu = () => {
+        navMenu.classList.remove('active');
+        menuToggle.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+    };
+
+    const scrollToTarget = (id) => {
+        const target = document.getElementById(id);
+        if (!target) {
+            return;
+        }
+
+        const offset = header.offsetHeight;
+        const targetTop = target.getBoundingClientRect().top + window.scrollY - offset;
+
+        window.scrollTo({
+            top: targetTop,
+            behavior: 'smooth'
+        });
+    };
+
+    navLinks.forEach((link) => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
+            const targetId = link.getAttribute('href')?.replace('#', '');
+            if (targetId) {
+                scrollToTarget(targetId);
+                closeMenu();
             }
         });
+    });
 
+    const actionButtons = document.querySelectorAll('[data-scroll]');
+    actionButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+            const targetId = button.getAttribute('data-scroll');
+            if (targetId) {
+                scrollToTarget(targetId);
+            }
+        });
+    });
+
+    const sections = Array.from(document.querySelectorAll('section[id]'));
+
+    const updateActiveLink = () => {
+        const scrollPosition = window.scrollY + header.offsetHeight + 140;
+
+        sections.forEach((section) => {
+            const top = section.offsetTop;
+            const bottom = top + section.offsetHeight;
+            const id = section.getAttribute('id');
+
+            if (scrollPosition >= top && scrollPosition < bottom) {
+                navLinks.forEach((link) => {
+                    const isActive = link.getAttribute('href') === `#${id}`;
+                    link.classList.toggle('active', isActive);
+                });
+            }
+        });
+    };
+
+    window.addEventListener('scroll', updateActiveLink);
+    updateActiveLink();
+}
+
+function setupContactForm() {
+    const form = document.getElementById('contactForm');
+    const message = document.getElementById('formMessage');
+
+    if (!form || !message) {
+        return;
+    }
+
+    form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        const submitButton = form.querySelector('.submit-btn');
+        const defaultText = submitButton ? submitButton.textContent : 'Envoyer';
+
+        if (submitButton) {
+            submitButton.disabled = true;
+            submitButton.textContent = 'Envoi...';
+        }
+
+        message.textContent = '';
+        message.classList.remove('success', 'error');
+
+        try {
+            const response = await fetch('https://formspree.io/f/mnnopoon', {
+                method: 'POST',
+                body: new FormData(form),
+                headers: {
+                    Accept: 'application/json'
+                }
+            });
+
+            if (!response.ok) {
+                throw new Error('Erreur reseau');
+            }
+
+            message.textContent = 'Message envoye. Je te reponds rapidement.';
+            message.classList.add('success');
+            form.reset();
+        } catch (error) {
+            message.textContent = 'Envoi impossible pour le moment. Reessaie dans quelques instants.';
+            message.classList.add('error');
+        } finally {
+            if (submitButton) {
+                submitButton.disabled = false;
+                submitButton.textContent = defaultText || 'Envoyer';
+            }
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    projectModalState = initProjectModal();
+    renderProjects();
+    setupProjectsSlider();
+    renderSkills();
+    setupNavigation();
+    setupContactForm();
+});

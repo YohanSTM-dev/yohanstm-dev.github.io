@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IronPulse - Demo web</title>
+  <meta name="description" content="Demo statique IronPulse avec tableau de bord sportif.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="stage">
+    <div class="phone">
+      <header class="phone-header">
+        <div>
+          <p class="eyebrow">IronPulse</p>
+          <h1>Dashboard athlete</h1>
+        </div>
+        <button class="icon-btn" type="button" aria-label="Notifications">
+          <span class="dot"></span>
+          <span class="icon">!</span>
+        </button>
+      </header>
+
+      <nav class="tabs" role="tablist">
+        <button class="tab active" data-tab="dashboard" role="tab">Dashboard</button>
+        <button class="tab" data-tab="planning" role="tab">Planning</button>
+        <button class="tab" data-tab="records" role="tab">Records</button>
+      </nav>
+
+      <section class="tab-panel active" id="tab-dashboard">
+        <div class="card highlight">
+          <div class="card-row">
+            <div>
+              <p class="label">Seance du jour</p>
+              <p class="value" id="todayDate">--</p>
+            </div>
+            <span class="badge accent">GO</span>
+          </div>
+          <p class="muted">Lance ta session ou ajuste ton planning en 2 clics.</p>
+          <div class="actions">
+            <button class="primary" type="button">Demarrer</button>
+            <button class="ghost" type="button">Voir planning</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="summary" id="summary"></div>
+        </div>
+
+        <div class="card">
+          <h2>Activite recente</h2>
+          <div class="heatmap" id="heatmap"></div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h2>Derniers PR</h2>
+            <span class="link">Voir tout</span>
+          </div>
+          <div class="list" id="recordsList"></div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h2>Seances recentes</h2>
+            <span class="link">Tout voir</span>
+          </div>
+          <div class="list" id="workoutsList"></div>
+        </div>
+      </section>
+
+      <section class="tab-panel" id="tab-planning">
+        <div class="card">
+          <h2>Planning de la semaine</h2>
+          <div class="list" id="planningList"></div>
+        </div>
+      </section>
+
+      <section class="tab-panel" id="tab-records">
+        <div class="card">
+          <h2>Records personnels</h2>
+          <div class="list" id="recordsFullList"></div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

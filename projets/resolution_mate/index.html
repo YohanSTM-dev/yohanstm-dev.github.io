@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resolution Mate - Demo</title>
+  <meta name="description" content="Demo interactive Resolution Mate pour la gestion d objectifs.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">GoalMate</p>
+        <h1>Mes objectifs</h1>
+        <p class="date" id="todayDate">--</p>
+      </div>
+      <button class="primary" type="button" id="newGoalBtn">Nouvel objectif</button>
+    </header>
+
+    <div class="segmented" role="tablist">
+      <button class="segmented-btn active" data-filter="personal" role="tab">Moi</button>
+      <button class="segmented-btn" data-filter="group" role="tab">Groupe</button>
+    </div>
+
+    <section class="goals" id="goalsList"></section>
+  </div>
+
+  <aside class="drawer" id="goalDetail" aria-hidden="true">
+    <div class="drawer-header">
+      <h2 id="detailTitle">Objectif</h2>
+      <button class="ghost" type="button" id="closeDetail">Fermer</button>
+    </div>
+    <p class="drawer-desc" id="detailDesc"></p>
+    <div class="drawer-meta" id="detailMeta"></div>
+    <div class="steps" id="detailSteps"></div>
+  </aside>
+
+  <div class="modal" id="goalModal" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h2>Ajouter un objectif</h2>
+        <button class="ghost" type="button" id="closeModal">Annuler</button>
+      </div>
+      <form id="goalForm">
+        <label>
+          Titre
+          <input type="text" name="title" required>
+        </label>
+        <label>
+          Description
+          <textarea name="description" rows="3" required></textarea>
+        </label>
+        <label>
+          Date limite
+          <input type="date" name="due" required>
+        </label>
+        <label>
+          Type
+          <select name="type">
+            <option value="personal">Personnel</option>
+            <option value="group">Groupe</option>
+          </select>
+        </label>
+        <button class="primary" type="submit">Ajouter</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

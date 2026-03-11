@@ -1,0 +1,7 @@
+﻿[
+  {"id": 1, "nomTache": "Mise en rayon epicerie", "couleur_tache_id": 2},
+  {"id": 2, "nomTache": "Inventaire frais", "couleur_tache_id": 3},
+  {"id": 3, "nomTache": "Controle caisse", "couleur_tache_id": 1},
+  {"id": 4, "nomTache": "Reassort boissons", "couleur_tache_id": 2},
+  {"id": 5, "nomTache": "Signalement casse", "couleur_tache_id": 4}
+]

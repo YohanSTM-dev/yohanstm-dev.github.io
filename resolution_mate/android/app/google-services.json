@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "122337503894",
+    "project_id": "resolutionmate",
+    "storage_bucket": "resolutionmate.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:122337503894:android:d74591e050939a1aadb0b7",
+        "android_client_info": {
+          "package_name": "com.example.resolution_mate"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3WFi_Zi9mub2fb8nNA8KQJm5y82Nx4hA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

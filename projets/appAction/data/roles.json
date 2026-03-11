@@ -1,0 +1,7 @@
+﻿[
+  {"id": 1, "nomRole": "Manager"},
+  {"id": 2, "nomRole": "Responsable caisse"},
+  {"id": 3, "nomRole": "Chef rayon"},
+  {"id": 4, "nomRole": "Logistique"},
+  {"id": 5, "nomRole": "Employe polyvalent"}
+]

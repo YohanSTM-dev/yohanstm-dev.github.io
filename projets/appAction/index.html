@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AppAction - Demo statique</title>
+  <meta name="description" content="Demo statique AppAction avec donnees JSON et interface de gestion.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">AppAction</p>
+        <h1>Tableau de bord magasin</h1>
+        <p class="subtitle">Demo statique basee sur la structure SQL. Donnees chargees via JSON.</p>
+      </div>
+      <div class="header-actions">
+        <button class="ghost-btn" type="button">Exporter</button>
+        <button class="primary-btn" type="button">Nouvelle action</button>
+      </div>
+    </header>
+
+    <section class="metrics">
+      <article class="metric-card">
+        <p class="metric-label">Employes actifs</p>
+        <p class="metric-value" id="metricEmployees">--</p>
+        <p class="metric-meta" id="metricStores">-- magasins</p>
+      </article>
+      <article class="metric-card">
+        <p class="metric-label">Taches planifiees</p>
+        <p class="metric-value" id="metricTasks">--</p>
+        <p class="metric-meta" id="metricPlanning">-- en cours</p>
+      </article>
+      <article class="metric-card">
+        <p class="metric-label">Alertes stock</p>
+        <p class="metric-value" id="metricStock">--</p>
+        <p class="metric-meta">Produits sous seuil</p>
+      </article>
+      <article class="metric-card">
+        <p class="metric-label">Demandes reapro</p>
+        <p class="metric-value" id="metricReapro">--</p>
+        <p class="metric-meta">En attente</p>
+      </article>
+    </section>
+
+    <section class="grid">
+      <article class="panel">
+        <header class="panel-header">
+          <div>
+            <h2>Employes</h2>
+            <p>Equipes par magasin, roles et contrats.</p>
+          </div>
+          <button class="ghost-btn" type="button">Voir tout</button>
+        </header>
+        <ul class="employees" id="employeesList"></ul>
+      </article>
+
+      <article class="panel">
+        <header class="panel-header">
+          <div>
+            <h2>Planning</h2>
+            <p>Suivi des shifts et taches rattachees.</p>
+          </div>
+          <button class="ghost-btn" type="button">Calendrier</button>
+        </header>
+        <div class="planning" id="planningList"></div>
+      </article>
+
+      <article class="panel">
+        <header class="panel-header">
+          <div>
+            <h2>Taches magasin</h2>
+            <p>Couleurs et priorites pour l equipe terrain.</p>
+          </div>
+          <button class="ghost-btn" type="button">Creer une tache</button>
+        </header>
+        <div class="tasks" id="tasksList"></div>
+      </article>
+
+      <article class="panel">
+        <header class="panel-header">
+          <div>
+            <h2>Stock</h2>
+            <p>Seuils et zones de stockage.</p>
+          </div>
+          <button class="ghost-btn" type="button">Inventaire</button>
+        </header>
+        <div class="stock" id="stockTable"></div>
+      </article>
+
+      <article class="panel">
+        <header class="panel-header">
+          <div>
+            <h2>Demandes reapro</h2>
+            <p>Suivi des priorites et statuts.</p>
+          </div>
+          <button class="ghost-btn" type="button">Historique</button>
+        </header>
+        <div class="reapro" id="reaproList"></div>
+      </article>
+
+      <article class="panel">
+        <header class="panel-header">
+          <div>
+            <h2>Messagerie</h2>
+            <p>Derniers messages internes.</p>
+          </div>
+          <button class="ghost-btn" type="button">Ouvrir</button>
+        </header>
+        <div class="messages" id="messagesList"></div>
+      </article>
+    </section>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

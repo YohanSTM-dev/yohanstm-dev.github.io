@@ -1,0 +1,5 @@
+﻿[
+  {"id": 1, "ville": "Chartres", "rue": "Rue du Languedoc", "adresse": "12 Rue du Languedoc"},
+  {"id": 2, "ville": "Dreux", "rue": "Avenue du Centre", "adresse": "8 Avenue du Centre"},
+  {"id": 3, "ville": "Nogent-le-Rotrou", "rue": "Rue Nationale", "adresse": "2 Rue Nationale"}
+]

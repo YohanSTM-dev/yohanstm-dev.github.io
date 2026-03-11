@@ -1,0 +1,8 @@
+﻿[
+  {"id": 1, "nomEmploye": "Martin", "prenomEmploye": "Claire", "matriculeEmploye": "EMP-001", "mdpEmploye": "hash_demo", "date_embauche": "2023-09-12", "emailEmploye": "claire.martin@appaction.test", "magasin_id": 1, "type_contrat_id": 1},
+  {"id": 2, "nomEmploye": "Bernard", "prenomEmploye": "Lucas", "matriculeEmploye": "EMP-002", "mdpEmploye": "hash_demo", "date_embauche": "2022-02-21", "emailEmploye": "lucas.bernard@appaction.test", "magasin_id": 1, "type_contrat_id": 2},
+  {"id": 3, "nomEmploye": "Petit", "prenomEmploye": "Emma", "matriculeEmploye": "EMP-003", "mdpEmploye": "hash_demo", "date_embauche": "2021-11-02", "emailEmploye": "emma.petit@appaction.test", "magasin_id": 2, "type_contrat_id": 1},
+  {"id": 4, "nomEmploye": "Robert", "prenomEmploye": "Hugo", "matriculeEmploye": "EMP-004", "mdpEmploye": "hash_demo", "date_embauche": "2024-01-15", "emailEmploye": "hugo.robert@appaction.test", "magasin_id": 2, "type_contrat_id": 3},
+  {"id": 5, "nomEmploye": "Richard", "prenomEmploye": "Sarah", "matriculeEmploye": "EMP-005", "mdpEmploye": "hash_demo", "date_embauche": "2020-06-30", "emailEmploye": "sarah.richard@appaction.test", "magasin_id": 3, "type_contrat_id": 1},
+  {"id": 6, "nomEmploye": "Moreau", "prenomEmploye": "Nolan", "matriculeEmploye": "EMP-006", "mdpEmploye": "hash_demo", "date_embauche": "2023-04-08", "emailEmploye": "nolan.moreau@appaction.test", "magasin_id": 3, "type_contrat_id": 2}
+]
