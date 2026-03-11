@@ -31,7 +31,7 @@
         summary: 'Application de gestion (en cours). Demo statique avec donnees JSON.',
         details: 'Simulation complete basee sur le schema SQL, avec donnees mock et tableaux de bord.',
         image: 'images/neural-network.jpg',
-        preview: 'appAction/',
+        preview: 'app-action',
         github: '',
         tech: ['Mock Data', 'JavaScript', 'UI']
     },
@@ -40,7 +40,7 @@
         summary: 'Suivi sportif et nutritionnel. Interface mobile adaptee en demo web.',
         details: 'Dashboard d entrainement et records personnels, avec planning et heatmap.',
         image: 'images/neural-network.jpg',
-        preview: 'IronPulse/',
+        preview: 'ironpulse',
         github: '',
         tech: ['HTML', 'CSS', 'JS']
     },
@@ -49,7 +49,7 @@
         summary: 'Outil d aide a la resolution de problemes. Demo interactive.',
         details: 'Gestion d objectifs personnels et de groupe, filtrage et detail d action.',
         image: 'images/neural-network.jpg',
-        preview: 'resolution_mate/',
+        preview: 'resolution-mate',
         github: '',
         tech: ['HTML', 'CSS', 'JS']
     }
@@ -206,12 +206,14 @@ function createProjectCard(project) {
         .join('');
 
     card.innerHTML = `
-        <div class="project-image">
-            <img src="${escapeHtml(project.image)}" alt="Apercu du projet ${escapeHtml(project.title)}" loading="lazy">
-        </div>
         <div class="project-content">
-            <h3>${escapeHtml(project.title)}</h3>
-            <p>${escapeHtml(summary)}</p>
+            <div class="project-head">
+                <img class="project-logo" src="${escapeHtml(project.image)}" alt="Logo du projet ${escapeHtml(project.title)}" loading="lazy">
+                <div class="project-head-text">
+                    <h3>${escapeHtml(project.title)}</h3>
+                    <p>${escapeHtml(summary)}</p>
+                </div>
+            </div>
             <div class="project-tech">${techBadges}</div>
             <button class="btn btn-ghost" type="button">Voir le projet</button>
         </div>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resolution Mate - Presentation du projet</title>
+    <link rel="stylesheet" href="../templatemo-prism-flux.css">
+    <style>
+        .project-landing {
+            padding: 120px 20px 60px;
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+
+        .project-panel {
+            border: 1px solid rgba(255, 0, 85, 0.2);
+            border-radius: 20px;
+            background: linear-gradient(180deg, rgba(34, 52, 74, 0.6), rgba(18, 28, 44, 0.82));
+            padding: 28px;
+            display: grid;
+            gap: 18px;
+        }
+
+        .project-head {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .project-logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 18px;
+            object-fit: cover;
+            border: 1px solid rgba(191, 208, 229, 0.2);
+            background: rgba(232, 238, 246, 0.05);
+        }
+
+        .project-title {
+            margin: 0;
+            font-size: clamp(1.8rem, 3vw, 2.6rem);
+            font-weight: 700;
+        }
+
+        .project-subtitle {
+            margin: 6px 0 0;
+            color: var(--text-300);
+        }
+
+        .project-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+    </style>
+</head>
+<body>
+    <main class="project-landing">
+        <a class="btn btn-ghost" href="../index.html#projets">Retour aux projets</a>
+
+        <section class="project-panel">
+            <div class="project-head">
+                <img class="project-logo" src="../images/neural-network.jpg" alt="Visuel Resolution Mate">
+                <div>
+                    <h1 class="project-title">Resolution Mate</h1>
+                    <p class="project-subtitle">Outil d aide a la resolution de problemes.</p>
+                </div>
+            </div>
+
+            <p>
+                Gestion d objectifs personnels et de groupe, filtrage des resolutions et detail
+                des actions pour suivre la progression.
+            </p>
+
+            <div class="project-tech">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+            </div>
+
+            <div class="project-actions">
+                <a class="btn btn-primary" href="resolution_mate/index.html" target="_blank" rel="noopener">Lancer l'application</a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

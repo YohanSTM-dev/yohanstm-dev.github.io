@@ -34,6 +34,7 @@ body {
     margin: 0;
     font-family: 'Manrope', sans-serif;
     color: var(--text-100);
+    font-size: 17px;
     background:
         radial-gradient(80rem 50rem at 90% -20%, rgba(255, 0, 85, 0.08), transparent 60%),
         radial-gradient(60rem 40rem at 0% 0%, rgba(159, 179, 202, 0.06), transparent 55%),
@@ -236,11 +237,11 @@ main {
     font-weight: 700;
     letter-spacing: 0.02em;
     cursor: pointer;
-    transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+    transition: all 0.3s ease;
 }
 
 .btn:hover {
-    transform: translateY(-1px);
+    transform: translateY(-2px);
 }
 
 .btn-primary {
@@ -408,13 +409,15 @@ main {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    min-height: 390px;
+    min-height: 320px;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .project-card:hover {
     border-color: rgba(255, 0, 85, 0.45);
-    box-shadow: 0 20px 40px rgba(9, 12, 20, 0.5);
+    transform: translateY(-5px);
+    box-shadow: 0 24px 50px rgba(9, 12, 20, 0.55);
 }
 
 .project-image {
@@ -441,6 +444,34 @@ main {
     flex-direction: column;
     gap: 14px;
     flex: 1;
+}
+
+.project-head {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 12px;
+}
+
+.project-logo {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    object-fit: cover;
+    border: 1px solid rgba(191, 208, 229, 0.18);
+    background: rgba(232, 238, 246, 0.05);
+}
+
+.project-head-text h3 {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+.project-head-text p {
+    margin: 6px 0 0;
+    color: var(--text-300);
+    font-size: 0.92rem;
 }
 
 .project-content h3 {
@@ -475,6 +506,17 @@ main {
 .project-content .btn {
     margin-top: auto;
     width: fit-content;
+}
+
+.project-card .btn-ghost {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 0, 85, 0.35);
+}
+
+.project-card .btn-ghost:hover {
+    background: rgba(255, 0, 85, 0.2);
+    border-color: rgba(124, 58, 237, 0.7);
+    box-shadow: 0 12px 26px rgba(255, 0, 85, 0.25);
 }
 
 .projects-hint {
@@ -529,9 +571,7 @@ main {
 
 .project-modal__content {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
-    gap: 24px;
-    align-items: start;
+    gap: 18px;
 }
 
 .project-modal__media {
@@ -539,6 +579,7 @@ main {
     overflow: hidden;
     border: 1px solid rgba(191, 208, 229, 0.18);
     background: rgba(15, 23, 33, 0.6);
+    aspect-ratio: 16 / 9;
     min-height: 220px;
 }
 
@@ -557,19 +598,33 @@ main {
     font-weight: 700;
 }
 
-.project-modal__body h3 {
+.project-description {
+    padding: 6px 4px 2px;
+    display: grid;
+    gap: 10px;
+}
+
+.project-description h3 {
     margin: 0;
     font-size: 1.6rem;
     font-weight: 700;
 }
 
-.project-modal__body p {
-    margin: 12px 0 0;
+.project-description p {
+    margin: 0;
     color: var(--text-300);
 }
 
+.project-modal__label {
+    margin-top: 8px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--text-500);
+}
+
 .project-modal__tech {
-    margin-top: 16px;
+    margin-top: 6px;
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
@@ -594,10 +649,6 @@ main {
 }
 
 @media (max-width: 900px) {
-    .project-modal__content {
-        grid-template-columns: 1fr;
-    }
-
     .project-modal__close {
         position: static;
         margin-left: auto;
