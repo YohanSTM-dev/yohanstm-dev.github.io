@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Challenge SEO FC Fulbert - Portfolio YohanSTM-Dev</title>
-    <link rel="stylesheet" href="../templatemo-prism-flux.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../projects-theme.css">
     <style>
         .project-detail-container {
             padding: 120px 30px 60px;
@@ -174,13 +177,11 @@
     </style>
 </head>
 <body>
-    <header class="header" id="header">
+    <header class="site-header" id="header">
         <nav class="nav-container">
-            <a href="../index.html" class="logo">
-                <span class="logo-text">
-                    <span class="prism">YohanSTM</span>
-                    <span class="flux">Dev</span>
-                </span>
+            <a href="../index.html" class="brand">
+                <span class="brand-mark">YSM</span>
+                <span class="brand-text">YSM.</span>
             </a>
             
             <ul class="nav-menu" id="navMenu">
@@ -199,15 +200,30 @@
         </nav>
     </header>
 
-    <div class="project-detail-container">
-        <a href="../index.html#projets" class="back-button">← Retour aux projets</a>
-        
-        <div class="project-header">
-            <h1 class="project-title">Challenge SEO FC Fulbert</h1>
-            <p class="project-subtitle">Exercice de référencement - Compétition de positionnement Google</p>
-        </div>
+    <main class="project-page">
+        <a href="../index.html#projets" class="btn btn-ghost project-back">← Retour aux projets</a>
 
-        <div class="project-content">
+        <section class="project-hero">
+            <div class="project-hero__media">
+                <img src="../images/logoFCFulbert.png" alt="Logo FC Fulbert">
+            </div>
+            <div class="project-hero__content">
+                <p class="project-hero__eyebrow">Projet</p>
+                <h1 class="project-hero__title">Challenge SEO FC Fulbert</h1>
+                <p class="project-hero__subtitle">Exercice de référencement - compétition de positionnement Google.</p>
+                <div class="project-meta">
+                    <span>SEO</span>
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                </div>
+                <div class="project-actions">
+                    <a class="btn btn-primary" href="https://fcfulbertchartres.github.io/" target="_blank" rel="noopener">Voir le site</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="project-content project-sections">
             <!-- Section Concept -->
             <section class="project-section">
                 <h2 class="section-title">Concept du Challenge</h2>
@@ -303,7 +319,7 @@
                 <p><strong>Perspective :</strong> Expérience directement applicable pour le référencement de sites web professionnels et la stratégie de contenu.</p>
             </section>
         </div>
-    </div>
+    </main>
 
     <script src="../templatemo-prism-scripts.js"></script>
 </body>
