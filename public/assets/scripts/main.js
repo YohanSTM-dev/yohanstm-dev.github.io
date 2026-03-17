@@ -12,7 +12,7 @@
         title: 'Cluedo',
         summary: 'Jeu de deduction realise avec logique serveur et persistance.',
         details: 'Jeu complet avec mecanique d indices, logique de deduction et stockage de donnees. Cliquez sur "Voir la fiche" pour acceder au jeu interactif.',
-        image: 'images/Logo_moderne_avec_un__Y__stylisé-removebg-preview.png',
+        image: 'images/imgCluedo.jpeg',
         preview: 'cluedo.html',
         github: '',
         tech: ['PHP', 'SQLite', 'JavaScript']
@@ -21,7 +21,7 @@
         title: 'CV en ligne',
         summary: 'Presentation professionnelle responsive orientee lisibilite.',
         details: 'CV web clair et structure, avec une mise en page adaptee mobile.',
-        image: 'images/Logo_moderne_avec_un__Y__stylisé-removebg-preview.png',
+        image: 'images/neural-network.jpg',
         preview: 'cv-yohanStm.html',
         github: '',
         tech: ['HTML', 'CSS', 'UI']
@@ -30,7 +30,7 @@
         title: 'AppAction',
         summary: 'Application de gestion (en cours). Demo statique avec donnees JSON.',
         details: 'Simulation complete basee sur le schema SQL, avec donnees mock et tableaux de bord. Cliquez sur "Voir la fiche" pour acceder a la presentation et demo.',
-        image: 'images/Logo_moderne_avec_un__Y__stylisé-removebg-preview.png',
+        image: 'images/neural-network.jpg',
         preview: 'app-action.html',
         github: '',
         tech: ['Mock Data', 'JavaScript', 'UI']
@@ -39,7 +39,7 @@
         title: 'IronPulse',
         summary: 'Suivi sportif et nutritionnel. Interface mobile adaptee en demo web.',
         details: 'Dashboard d entrainement et records personnels, avec planning et heatmap. Cliquez sur "Voir la fiche" pour acceder a la presentation.',
-        image: 'images/Logo_moderne_avec_un__Y__stylisé-removebg-preview.png',
+        image: 'images/neural-network.jpg',
         preview: 'ironpulse.html',
         github: '',
         tech: ['HTML', 'CSS', 'JS']
@@ -48,7 +48,7 @@
         title: 'Resolution Mate',
         summary: 'Outil d aide a la resolution de problemes. Demo interactive.',
         details: 'Gestion d objectifs personnels et de groupe, filtrage et detail d action. Cliquez sur "Voir la fiche" pour acceder a la plateforme.',
-        image: 'images/Logo_moderne_avec_un__Y__stylisé-removebg-preview.png',
+        image: 'images/neural-network.jpg',
         preview: 'resolution-mate.html',
         github: '',
         tech: ['HTML', 'CSS', 'JS']

@@ -1,0 +1,53 @@
+# Environnement
+.env
+.env.local
+.env.*.local
+
+# Dépendances
+node_modules/
+*.npm
+package-lock.json
+yarn.lock
+
+# Build & Distribution
+dist/
+build/
+*.min.js
+*.min.css
+
+# Système
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+
+# Fichiers temporaires
+temp/
+tmp/
+.cache/
+
+# IDE
+.vscode/settings.json
+.vscode/extensions.json
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS spécifique
+.AppleDouble
+.LSOverride
+Windows/
+Thumbs.db
+
+# Fichiers locaux
+local.json
+config.local.js
