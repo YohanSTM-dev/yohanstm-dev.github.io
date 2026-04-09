@@ -3,44 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IronPulse - Presentation du projet</title>
+    <title>IronPulse | Case Study</title>
+    <meta name="description" content="Case study IronPulse : dashboard sport et nutrition avec suivi des performances et routines hebdomadaires.">
+    <meta name="theme-color" content="#08070d">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../projects-theme.css">
 </head>
 <body>
-    <main class="project-page">
-        <a class="btn btn-ghost project-back" href="../index.html#projets">Retour aux projets</a>
-
-        <section class="project-hero">
-            <div class="project-hero__media">
-                <img src="../images/neural-network.jpg" alt="Visuel IronPulse">
+    <header class="project-site-header">
+        <div class="project-nav">
+            <a href="../index.html" class="project-brand" aria-label="Retour au portfolio">
+                <span class="project-brand__mark">YSM</span>
+                <span class="project-brand__text">Yohan Saint-Marc</span>
+            </a>
+            <div class="project-nav__actions">
+                <a class="btn btn-ghost" href="../index.html#projets">Retour aux projets</a>
+                <a class="btn btn-primary" href="../index.html#contact">Me contacter</a>
             </div>
-            <div class="project-hero__content">
-                <p class="project-hero__eyebrow">Projet</p>
-                <h1 class="project-hero__title">IronPulse</h1>
-                <p class="project-hero__subtitle">Suivi sportif et nutritionnel en version demo web.</p>
+        </div>
+    </header>
+
+    <main class="project-page">
+        <section class="project-hero">
+            <div class="project-hero__copy">
+                <p class="project-kicker">Case study</p>
+                <h1 class="project-title">IronPulse</h1>
+                <p class="project-subtitle">
+                    Un dashboard sport et nutrition pour suivre des routines, lire ses performances rapidement
+                    et garder une vision claire de sa progression.
+                </p>
+
                 <div class="project-meta">
+                    <span>Sport tech</span>
                     <span>HTML</span>
                     <span>CSS</span>
                     <span>JavaScript</span>
                 </div>
+
                 <div class="project-actions">
-                    <a class="btn btn-primary" href="IronPulse/index.html" target="_blank" rel="noopener">Lancer l'application</a>
+                    <a class="btn btn-primary" href="IronPulse/index.html" target="_blank" rel="noopener">Voir la demo</a>
+                    <a class="btn btn-ghost" href="../index.html#projets">Retour au portfolio</a>
+                </div>
+            </div>
+
+            <div class="project-hero__visual">
+                <div class="project-hero__image">
+                    <img src="../images/blockchain-vault.jpg" alt="Visuel IronPulse">
+                </div>
+                <div class="project-floating-card">
+                    <span class="project-floating-card__label">Etat</span>
+                    <strong>Dashboard en demo</strong>
+                    <p>Une version web qui met en avant le suivi des records, des sessions et du rythme hebdomadaire.</p>
                 </div>
             </div>
         </section>
 
+        <section class="project-metrics" aria-label="Resume du projet">
+            <article class="metric-card">
+                <span class="metric-label">Univers</span>
+                <strong class="metric-value">Sport + data</strong>
+                <p class="metric-copy">Une interface motivee par le suivi personnel et les habitudes.</p>
+            </article>
+            <article class="metric-card">
+                <span class="metric-label">Focus</span>
+                <strong class="metric-value">Progression</strong>
+                <p class="metric-copy">Records, sessions et suivi rapide de l evolution.</p>
+            </article>
+            <article class="metric-card">
+                <span class="metric-label">Format</span>
+                <strong class="metric-value">Dashboard</strong>
+                <p class="metric-copy">Lecture synthetique et navigation simple entre les informations.</p>
+            </article>
+            <article class="metric-card">
+                <span class="metric-label">Etat</span>
+                <strong class="metric-value">Demo web</strong>
+                <p class="metric-copy">Une base visible pour presenter le concept et l experience.</p>
+            </article>
+        </section>
+
         <div class="project-sections">
             <section class="project-section">
-                <h2>Description</h2>
-                <p>
-                    Dashboard d entrainement avec suivi des records personnels, planning hebdomadaire
-                    et vues rapides pour analyser les progres.
+                <p class="project-section__tag">Vision</p>
+                <h2 class="project-section__title">Rendre les performances plus simples a lire et plus engageantes a suivre.</h2>
+                <p class="project-copy">
+                    IronPulse cherche a condenser l experience d une application sportive dans une interface plus directe :
+                    un espace qui montre les indicateurs utiles, pousse a garder une routine et donne envie de revenir consulter ses progres.
                 </p>
+            </section>
+
+            <section class="project-section">
+                <p class="project-section__tag">Ce que j ai travaille</p>
+                <div class="project-grid">
+                    <article class="project-card">
+                        <h3>Records personnels</h3>
+                        <p>Mettre en avant les performances importantes pour que l utilisateur repere vite son niveau actuel.</p>
+                    </article>
+                    <article class="project-card">
+                        <h3>Planning hebdomadaire</h3>
+                        <p>Une lecture cadencee des sessions pour suivre l activite sur plusieurs jours sans friction.</p>
+                    </article>
+                    <article class="project-card">
+                        <h3>Univers visuel energie</h3>
+                        <p>Un rendu sombre et impactant pour soutenir l aspect motivation, effort et progression.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="project-section">
+                <p class="project-section__tag">Stack</p>
+                <h2 class="project-section__title">Une demo front-end construite pour presenter l usage.</h2>
+                <div class="project-stack">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>Dashboard UI</span>
+                    <span>Mobile-inspired</span>
+                </div>
+                <ul class="project-list">
+                    <li>Hierarchie visuelle orientee tableaux de bord et indicateurs sportifs.</li>
+                    <li>Interface simple a ouvrir, lire et presenter dans un contexte portfolio.</li>
+                    <li>Demo front-end concue pour valoriser le concept avant une suite applicative plus complete.</li>
+                </ul>
+            </section>
+
+            <section class="project-callout">
+                <p class="project-section__tag">Suite</p>
+                <h2 class="project-callout__title">Explorer la demo et voir le concept prendre forme.</h2>
+                <p class="project-copy">
+                    La demo actuelle montre deja la direction produit, le type de dashboard imagine
+                    et la facon dont les donnees peuvent etre rendues plus motivantes visuellement.
+                </p>
+                <div class="project-actions">
+                    <a class="btn btn-primary" href="IronPulse/index.html" target="_blank" rel="noopener">Ouvrir la demo</a>
+                    <a class="btn btn-ghost" href="../index.html#contact">Parler du projet</a>
+                </div>
             </section>
         </div>
     </main>
+
+    <footer class="project-footer">
+        <div class="project-footer__shell">
+            <p>Projet presente dans le portfolio de Yohan Saint-Marc.</p>
+            <div class="project-footer__links">
+                <a href="../index.html#projets">Autres projets</a>
+                <a href="../index.html#contact">Contact</a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

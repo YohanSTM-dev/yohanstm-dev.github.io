@@ -3,324 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Challenge SEO FC Fulbert - Portfolio YohanSTM-Dev</title>
+    <title>FC Fulbert | Case Study</title>
+    <meta name="description" content="Case study FC Fulbert : challenge SEO autour du positionnement Google et de la structure de contenu.">
+    <meta name="theme-color" content="#08070d">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../projects-theme.css">
-    <style>
-        .project-detail-container {
-            padding: 120px 30px 60px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .back-button {
-            display: inline-flex;
-            align-items: center;
-            padding: 12px 24px;
-            background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
-            color: var(--text-primary);
-            text-decoration: none;
-            border-radius: 30px;
-            margin-bottom: 40px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(153, 69, 255, 0.3);
-        }
-
-        .back-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(153, 69, 255, 0.5);
-        }
-
-        .project-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .project-title {
-            font-size: 48px;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, var(--text-primary), var(--accent-purple));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .project-content {
-            display: grid;
-            gap: 60px;
-        }
-
-        .project-section {
-            background: linear-gradient(135deg, var(--carbon-medium), var(--carbon-dark));
-            border: 1px solid var(--metal-dark);
-            border-radius: 20px;
-            padding: 40px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .project-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--accent-purple), transparent);
-        }
-
-        .section-title {
-            font-size: 24px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-            color: var(--accent-cyan);
-        }
-
-        .challenge-concept {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 40px;
-            align-items: center;
-            margin: 30px 0;
-        }
-
-        .concept-visual {
-            text-align: center;
-            padding: 30px;
-            background: rgba(153, 69, 255, 0.1);
-            border-radius: 15px;
-            border: 2px solid var(--accent-purple);
-        }
-
-        .concept-icon {
-            font-size: 64px;
-            margin-bottom: 15px;
-        }
-
-        .concept-title {
-            font-size: 18px;
-            font-weight: 700;
-            color: var(--accent-purple);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .strategy-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-        }
-
-        .strategy-card {
-            background: rgba(42, 42, 42, 0.5);
-            border: 1px solid var(--metal-dark);
-            border-radius: 10px;
-            padding: 20px;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .strategy-card:hover {
-            border-color: var(--accent-green);
-            transform: translateY(-5px);
-        }
-
-        .strategy-icon {
-            font-size: 32px;
-            margin-bottom: 10px;
-            color: var(--accent-green);
-        }
-
-        .results-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-        }
-
-        .stat-card {
-            background: linear-gradient(135deg, var(--carbon-medium), var(--carbon-dark));
-            border: 1px solid var(--metal-dark);
-            border-radius: 10px;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 36px;
-            font-weight: 900;
-            color: var(--accent-cyan);
-            margin-bottom: 10px;
-        }
-
-        @media (max-width: 768px) {
-            .challenge-concept {
-                grid-template-columns: 1fr;
-            }
-            
-            .project-title {
-                font-size: 36px;
-            }
-        }
-        a{ color: var(--accent-purple); }
-    </style>
 </head>
 <body>
-    <header class="site-header" id="header">
-        <nav class="nav-container">
-            <a href="../index.html" class="brand">
-                <span class="brand-mark">YSM</span>
-                <span class="brand-text">YSM.</span>
+    <header class="project-site-header">
+        <div class="project-nav">
+            <a href="../index.html" class="project-brand" aria-label="Retour au portfolio">
+                <span class="project-brand__mark">YSM</span>
+                <span class="project-brand__text">Yohan Saint-Marc</span>
             </a>
-            
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="../index.html#home" class="nav-link">Accueil</a></li>
-                <li><a href="../index.html#about" class="nav-link">À propos</a></li>
-                <li><a href="../index.html#projets" class="nav-link">Projets</a></li>
-                <li><a href="../index.html#skills" class="nav-link">Compétences</a></li>
-                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
-            </ul>
-            
-            <div class="menu-toggle" id="menuToggle">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="project-nav__actions">
+                <a class="btn btn-ghost" href="../index.html#projets">Retour aux projets</a>
+                <a class="btn btn-primary" href="../index.html#contact">Me contacter</a>
             </div>
-        </nav>
+        </div>
     </header>
 
     <main class="project-page">
-        <a href="../index.html#projets" class="btn btn-ghost project-back">← Retour aux projets</a>
-
         <section class="project-hero">
-            <div class="project-hero__media">
-                <img src="../images/logoFCFulbert.png" alt="Logo FC Fulbert">
-            </div>
-            <div class="project-hero__content">
-                <p class="project-hero__eyebrow">Projet</p>
-                <h1 class="project-hero__title">Challenge SEO FC Fulbert</h1>
-                <p class="project-hero__subtitle">Exercice de référencement - compétition de positionnement Google.</p>
+            <div class="project-hero__copy">
+                <p class="project-kicker">Case study</p>
+                <h1 class="project-title">FC Fulbert</h1>
+                <p class="project-subtitle">
+                    Un challenge SEO construit autour d un mot-cle vierge pour comprendre la structure,
+                    le contenu et la diffusion necessaires a un meilleur positionnement Google.
+                </p>
+
                 <div class="project-meta">
                     <span>SEO</span>
                     <span>HTML</span>
                     <span>CSS</span>
                     <span>JavaScript</span>
                 </div>
+
                 <div class="project-actions">
                     <a class="btn btn-primary" href="https://fcfulbertchartres.github.io/" target="_blank" rel="noopener">Voir le site</a>
+                    <a class="btn btn-ghost" href="../index.html#projets">Retour au portfolio</a>
+                </div>
+            </div>
+
+            <div class="project-hero__visual">
+                <div class="project-hero__image">
+                    <img src="../images/logoFCFulbert.png" alt="Logo FC Fulbert">
+                </div>
+                <div class="project-floating-card">
+                    <span class="project-floating-card__label">Etat</span>
+                    <strong>Site accessible</strong>
+                    <p>Le projet est visible en ligne sur <a class="inline-link" href="https://fcfulbertchartres.github.io/" target="_blank" rel="noopener">fcfulbertchartres.github.io</a>.</p>
                 </div>
             </div>
         </section>
 
-        <div class="project-content project-sections">
-            <!-- Section Concept -->
+        <section class="project-metrics" aria-label="Resume du projet">
+            <article class="metric-card">
+                <span class="metric-label">Role</span>
+                <strong class="metric-value">SEO + contenu</strong>
+                <p class="metric-copy">Structure de page, travail editorial et logique de visibilite.</p>
+            </article>
+            <article class="metric-card">
+                <span class="metric-label">Objectif</span>
+                <strong class="metric-value">Positionnement</strong>
+                <p class="metric-copy">Faire emerger une requete inexistante sur le web au depart.</p>
+            </article>
+            <article class="metric-card">
+                <span class="metric-label">Format</span>
+                <strong class="metric-value">Challenge SEO</strong>
+                <p class="metric-copy">Un exercice pedagogique centre sur les leviers de referencement naturel.</p>
+            </article>
+            <article class="metric-card">
+                <span class="metric-label">Etat</span>
+                <strong class="metric-value">En ligne</strong>
+                <p class="metric-copy">Une vitrine publiee pour observer le rendu et la presence sur le web.</p>
+            </article>
+        </section>
+
+        <div class="project-sections">
             <section class="project-section">
-                <h2 class="section-title">Concept du Challenge</h2>
-                <div class="challenge-concept">
-                    <div class="concept-visual">
-                        <img src="../images/logoFCFulbert.png" alt="Logo FC Fulbert" style="width: 100px; height: auto; margin-bottom: 15px;">
-                        
-                        <div class="concept-title">Challenge SEO</div>
-                    </div>
-                    <div>
-                        <p><strong>Objectif :</strong> Référencer le mot-clé "FC Fulbert" qui n'existait pas sur Internet et voir qui obtiendrait la meilleure position sur Google.</p>
-                        <p><strong>Contexte :</strong> Exercice pédagogique en cours pour comprendre les mécanismes du référencement naturel (SEO) et l'impact des stratégies digitales.</p>
-                        <p><strong>Particularité :</strong> Compétition entre étudiants avec analyse des techniques utilisées par chacun.</p>
-                        <p><strong>Lien :</strong><a href="https://fcfulbertchartres.github.io/"> FC Fulbert</a></p>
-                    </div>
+                <p class="project-section__tag">Challenge</p>
+                <h2 class="project-section__title">Comprendre comment un mot-cle peut emerger a partir de zero.</h2>
+                <p class="project-copy">
+                    Le principe etait simple : travailler autour de "FC Fulbert", une requete encore vide, puis deployer
+                    un site assez clair et coherent pour lui donner une existence visible sur Google. Ce projet m a permis de
+                    lier structure technique, redaction et diffusion dans une meme logique de referencement.
+                </p>
+            </section>
+
+            <section class="project-section">
+                <p class="project-section__tag">Strategie</p>
+                <div class="project-grid">
+                    <article class="project-card">
+                        <h3>Structure semantique</h3>
+                        <p>Travailler la hierarchie HTML et la lisibilite des contenus pour aider la comprehension du sujet.</p>
+                    </article>
+                    <article class="project-card">
+                        <h3>Contenu cible</h3>
+                        <p>Mettre en avant le bon vocabulaire, le bon angle editorial et une coherence textuelle suffisante.</p>
+                    </article>
+                    <article class="project-card">
+                        <h3>Presence en ligne</h3>
+                        <p>Donner au projet une existence publique afin de mesurer sa visibilite et sa credibilite.</p>
+                    </article>
                 </div>
             </section>
 
-            <!-- Section Stratégies -->
             <section class="project-section">
-                <h2 class="section-title">Stratégies SEO Déployées</h2>
-                <div class="strategy-grid">
-                    <div class="strategy-card">
-                        <div class="strategy-icon">🌐</div>
-                        <h3>Création de Contenu</h3>
-                        <p>Pages web optimisées autour du mot-clé "FC Fulbert" avec contenu unique et pertinent.</p>
-                    </div>
-                    <div class="strategy-card">
-                        <div class="strategy-icon">📱</div>
-                        <h3>Réseaux Sociaux</h3>
-                        <p>Utilisation stratégique des plateformes sociales pour générer du buzz et des backlinks.</p>
-                    </div>
-                    <div class="strategy-card">
-                        <div class="strategy-icon">🔗</div>
-                        <h3>Netlinking</h3>
-                        <p>Création de liens entrants depuis différents sites pour améliorer l'autorité.</p>
-                    </div>
-                    <div class="strategy-card">
-                        <div class="strategy-icon">📊</div>
-                        <h3>Analyse Concurrentielle</h3>
-                        <p>Surveillance des stratégies des autres participants et adaptation en temps réel.</p>
-                    </div>
+                <p class="project-section__tag">Stack</p>
+                <h2 class="project-section__title">Un projet simple techniquement, mais precis dans son intention.</h2>
+                <div class="project-stack">
+                    <span>SEO</span>
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>Publishing</span>
                 </div>
+                <ul class="project-list">
+                    <li>Travail sur la structure du site et la logique de contenu plutot que sur une complexite applicative forte.</li>
+                    <li>Attention portee a la clarte de lecture, a la coherence des blocs et a la perception globale du site.</li>
+                    <li>Publication en ligne pour observer l impact concret de l execution et des choix de referencement.</li>
+                </ul>
             </section>
 
-            <!-- Section Apprentissages -->
-            <section class="project-section">
-                <h2 class="section-title">Compétences Développées</h2>
-                <div class="tech-stack">
-                    <span class="tech-badge">SEO Technique</span>
-                    <span class="tech-badge">Optimisation Contenu</span>
-                    <span class="tech-badge">Stratégie Digital</span>
-                    <span class="tech-badge">Analyse Concurrentielle</span>
-                    <span class="tech-badge">Réseaux Sociaux</span>
-                    <span class="tech-badge">Google Search Console</span>
+            <section class="project-callout">
+                <p class="project-section__tag">Suite</p>
+                <h2 class="project-callout__title">Voir le site en ligne et la direction SEO mise en place.</h2>
+                <p class="project-copy">
+                    Ce projet montre surtout ma capacite a penser un rendu simple, propre et intentionnel,
+                    avec une lecture SEO plus produit que purement decorative.
+                </p>
+                <div class="project-actions">
+                    <a class="btn btn-primary" href="https://fcfulbertchartres.github.io/" target="_blank" rel="noopener">Ouvrir le site</a>
+                    <a class="btn btn-ghost" href="../index.html#contact">Parler du projet</a>
                 </div>
-                
-                <div style="margin-top: 30px;">
-                    <h3 style="color: var(--accent-green); margin-bottom: 15px;">📈 Apprentissages Clés</h3>
-                    <ul class="feature-list">
-                        <li>Compréhension des algorithmes de recherche Google</li>
-                        <li>Importance de la qualité du contenu vs quantité</li>
-                        <li>Stratégies de netlinking efficaces</li>
-                        <li>Analyse des métriques SEO (positionnement, trafic)</li>
-                        <li>Adaptation face à la concurrence en temps réel</li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Section Résultats -->
-            <section class="project-section">
-                <h2 class="section-title">Bilan du Projet</h2>
-                <div class="results-stats">
-                    <div class="stat-card">
-                        <div class="stat-number">#1</div>
-                        <div>Objectif Position</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">0→100</div>
-                        <div>Création Ex Nihilo</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">15+</div>
-                        <div>Étudiants Participants</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">SEO</div>
-                        <div>Compétence Maîtrisée</div>
-                    </div>
-                </div>
-                
-                <p><strong>Impact :</strong> Ce projet a démontré l'importance du SEO dans la visibilité digitale et comment une stratégie bien pensée peut faire la différence face à la concurrence.</p>
-                <p><strong>Perspective :</strong> Expérience directement applicable pour le référencement de sites web professionnels et la stratégie de contenu.</p>
             </section>
         </div>
     </main>
 
-    <script src="../templatemo-prism-scripts.js"></script>
+    <footer class="project-footer">
+        <div class="project-footer__shell">
+            <p>Projet presente dans le portfolio de Yohan Saint-Marc.</p>
+            <div class="project-footer__links">
+                <a href="../index.html#projets">Autres projets</a>
+                <a href="../index.html#contact">Contact</a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

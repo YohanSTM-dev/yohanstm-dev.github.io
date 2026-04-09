@@ -3,378 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jeu Cluedo PHP - Portfolio YohanSTM-Dev</title>
+    <title>Cluedo | Case Study</title>
+    <meta name="description" content="Case study Cluedo : jeu de deduction en PHP avec logique de partie, navigation et persistance SQLite.">
+    <meta name="theme-color" content="#08070d">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../projects-theme.css">
-    <style>
-        .project-detail-container {
-            padding: 120px 30px 60px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .back-button {
-            display: inline-flex;
-            align-items: center;
-            padding: 12px 24px;
-            background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
-            color: var(--text-primary);
-            text-decoration: none;
-            border-radius: 30px;
-            margin-bottom: 40px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(153, 69, 255, 0.3);
-        }
-
-        .back-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(153, 69, 255, 0.5);
-        }
-
-        .project-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .project-title {
-            font-size: 48px;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, var(--text-primary), var(--accent-purple));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .project-content {
-            display: grid;
-            gap: 60px;
-        }
-
-        .project-section {
-            background: linear-gradient(135deg, var(--carbon-medium), var(--carbon-dark));
-            border: 1px solid var(--metal-dark);
-            border-radius: 20px;
-            padding: 40px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .project-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--accent-purple), transparent);
-        }
-
-        .section-title {
-            font-size: 24px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-            color: var(--accent-cyan);
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-        }
-
-        .feature-card {
-            background: rgba(42, 42, 42, 0.5);
-            border: 1px solid var(--metal-dark);
-            border-radius: 10px;
-            padding: 25px;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .feature-card:hover {
-            border-color: var(--accent-green);
-            transform: translateY(-5px);
-        }
-
-        .feature-icon {
-            font-size: 40px;
-            margin-bottom: 15px;
-        }
-
-        .architecture-diagram {
-            background: rgba(26, 26, 26, 0.8);
-            border: 1px solid var(--metal-dark);
-            border-radius: 10px;
-            padding: 30px;
-            margin: 30px 0;
-            font-family: 'Courier New', monospace;
-        }
-
-        .tech-highlights {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-        }
-
-        .tech-card {
-            background: linear-gradient(135deg, var(--carbon-medium), var(--carbon-dark));
-            border: 1px solid var(--metal-dark);
-            border-radius: 10px;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .tech-icon {
-            font-size: 36px;
-            margin-bottom: 10px;
-            color: var(--accent-blue);
-        }
-
-        .database-schema {
-            background: var(--primary-black);
-            border: 1px solid var(--metal-dark);
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px 0;
-            overflow-x: auto;
-        }
-
-        .database-schema pre {
-            margin: 0;
-            color: var(--accent-green);
-            font-family: 'Courier New', monospace;
-            font-size: 14px;
-        }
-
-        @media (max-width: 768px) {
-            .project-title {
-                font-size: 36px;
-            }
-        }
-    </style>
 </head>
 <body>
-    <header class="site-header" id="header">
-        <nav class="nav-container">
-            <a href="../index.html" class="brand">
-                <span class="brand-mark">YSM</span>
-                <span class="brand-text">YSM.</span>
+    <header class="project-site-header">
+        <div class="project-nav">
+            <a href="../index.html" class="project-brand" aria-label="Retour au portfolio">
+                <span class="project-brand__mark">YSM</span>
+                <span class="project-brand__text">Yohan Saint-Marc</span>
             </a>
-            
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="../index.html#home" class="nav-link">Accueil</a></li>
-                <li><a href="../index.html#about" class="nav-link">À propos</a></li>
-                <li><a href="../index.html#projets" class="nav-link">Projets</a></li>
-                <li><a href="../index.html#skills" class="nav-link">Compétences</a></li>
-                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
-            </ul>
-            
-            <div class="menu-toggle" id="menuToggle">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="project-nav__actions">
+                <a class="btn btn-ghost" href="../index.html#projets">Retour aux projets</a>
+                <a class="btn btn-primary" href="../index.html#contact">Me contacter</a>
             </div>
-        </nav>
+        </div>
     </header>
 
     <main class="project-page">
-        <a href="../index.html#projets" class="btn btn-ghost project-back">← Retour aux projets</a>
-
         <section class="project-hero">
-            <div class="project-hero__media">
-                <img src="../images/imgCluedo.jpeg" alt="Aperçu du projet Cluedo">
-            </div>
-            <div class="project-hero__content">
-                <p class="project-hero__eyebrow">Projet</p>
-                <h1 class="project-hero__title">Jeu Cluedo en PHP</h1>
-                <p class="project-hero__subtitle">Développement d'un jeu de société en ligne avec architecture web complète.</p>
+            <div class="project-hero__copy">
+                <p class="project-kicker">Case study</p>
+                <h1 class="project-title">Cluedo</h1>
+                <p class="project-subtitle">
+                    Un projet BTS centre sur la logique de jeu, la gestion d etat et la persistance,
+                    avec une version web du Cluedo construite autour de PHP et SQLite.
+                </p>
+
                 <div class="project-meta">
                     <span>PHP</span>
                     <span>SQLite</span>
                     <span>JavaScript</span>
+                    <span>Game logic</span>
                 </div>
+
                 <div class="project-actions">
-                    <a class="btn btn-primary" href="https://github.com/votre-username/cluedo-bts" target="_blank" rel="noopener">Voir le code</a>
+                    <a class="btn btn-ghost" href="../index.html#projets">Retour au portfolio</a>
+                    <a class="btn btn-primary" href="../index.html#contact">Parler du projet</a>
+                </div>
+            </div>
+
+            <div class="project-hero__visual">
+                <div class="project-hero__image">
+                    <img src="../images/imgCluedo.jpeg" alt="Visuel du projet Cluedo">
+                </div>
+                <div class="project-floating-card">
+                    <span class="project-floating-card__label">Etat</span>
+                    <strong>Projet scolaire</strong>
+                    <p>Une case study orientee logique applicative, avec une presentation disponible dans le portfolio.</p>
                 </div>
             </div>
         </section>
 
-        <div class="project-content project-sections">
-            <!-- Section Description -->
+        <section class="project-metrics" aria-label="Resume du projet">
+            <article class="metric-card">
+                <span class="metric-label">Role</span>
+                <strong class="metric-value">Back-end logic</strong>
+                <p class="metric-copy">Travail sur les regles du jeu, les etats et la progression.</p>
+            </article>
+            <article class="metric-card">
+                <span class="metric-label">Contexte</span>
+                <strong class="metric-value">Projet BTS</strong>
+                <p class="metric-copy">Un exercice complet pour concevoir une application web jouable en solo.</p>
+            </article>
+            <article class="metric-card">
+                <span class="metric-label">Focus</span>
+                <strong class="metric-value">Deduction</strong>
+                <p class="metric-copy">Gestion des hypotheses, des pieces, des armes et des personnages.</p>
+            </article>
+            <article class="metric-card">
+                <span class="metric-label">Data</span>
+                <strong class="metric-value">SQLite</strong>
+                <p class="metric-copy">Persistance locale pour supporter la logique et l etat de partie.</p>
+            </article>
+        </section>
+
+        <div class="project-sections">
             <section class="project-section">
-                <h2 class="section-title">Description du Projet</h2>
-                <p><strong>Contexte :</strong> Projet individuel de BTS SIO consistant à développer une version web du célèbre jeu de société Cluedo, jouable en solo avec une interface web complète.</p>
-                <p><strong>Objectif :</strong> Créer un jeu de déduction où le joueur doit découvrir le meurtrier, l'arme et la pièce du crime à travers un manoir virtuel.</p>
-                <p><strong>Compétences BTS :</strong> B2.1 (Conception et développement d'une solution applicative) et B2.3 (Gestion des données).</p>
+                <p class="project-section__tag">Vision</p>
+                <h2 class="project-section__title">Reproduire une mecanique de deduction dans une vraie interface web.</h2>
+                <p class="project-copy">
+                    L objectif etait de creer une version jouable du Cluedo en gardant la logique du jeu,
+                    tout en la traduisant dans une application web structuree. Ce projet m a surtout permis de travailler
+                    la logique applicative, les enchainements de conditions et la conservation des informations utiles au joueur.
+                </p>
             </section>
 
-            <!-- Section Fonctionnalités -->
             <section class="project-section">
-                <h2 class="section-title">Fonctionnalités Implémentées</h2>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">🎮</div>
-                        <h3>Système de Jeu Complet</h3>
-                        <p>Mécanique de déduction fidèle au Cluedo original avec personnages, armes et pièces aléatoires</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🏠</div>
-                        <h3>Navigation Dynamique</h3>
-                        <p>Déplacement entre pièces adjacentes avec gestion des portes et restrictions de mouvement</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🔍</div>
-                        <h3>Hypothèses Intelligentes</h3>
-                        <p>Formulation d'hypothèses avec validation et indices progressifs pour guider le joueur</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🏆</div>
-                        <h3>Gestion de Partie</h3>
-                        <p>Suivi des statistiques, fin de partie avec récapitulatif et possibilité de recommencer</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Section Architecture -->
-            <section class="project-section">
-                <h2 class="section-title">Architecture Technique</h2>
-                <div class="tech-highlights">
-                    <div class="tech-card">
-                        <div class="tech-icon">🌐</div>
-                        <h4>Frontend</h4>
-                        <p>HTML5/CSS3<br>Interface responsive</p>
-                    </div>
-                    <div class="tech-card">
-                        <div class="tech-icon">⚙️</div>
-                        <h4>Backend</h4>
-                        <p>PHP<br>Logique métier</p>
-                    </div>
-                    <div class="tech-card">
-                        <div class="tech-icon">💾</div>
-                        <h4>Base de Données</h4>
-                        <p>SQLite<br>Stockage des données</p>
-                    </div>
-                    <div class="tech-card">
-                        <div class="tech-icon">📦</div>
-                        <h4>Gestion de Version</h4>
-                        <p>GitHub<br>Collaboration</p>
-                    </div>
-                </div>
-
-                <div class="architecture-diagram">
-                    <h4 style="color: var(--accent-cyan); margin-bottom: 15px;">📊 Structure de la Base de Données</h4>
-                    <div class="database-schema">
-                        <pre>
-TABLE pieces (
-    id_piece INTEGER PRIMARY KEY,
-    nom_piece TEXT,
-    description TEXT
-)
-
-TABLE personnages (
-    id_personnage INTEGER PRIMARY KEY,
-    nom_personnage TEXT,
-    description TEXT
-)
-
-TABLE armes (
-    id_arme INTEGER PRIMARY KEY,
-    nom_arme TEXT
-)
-
-TABLE portes (
-    id_piece1 INTEGER,
-    id_piece2 INTEGER,
-    PRIMARY KEY(id_piece1, id_piece2),
-    FOREIGN KEY (id_piece1) REFERENCES pieces(id_piece),
-    FOREIGN KEY (id_piece2) REFERENCES pieces(id_piece)
-)
-                        </pre>
-                    </div>
+                <p class="project-section__tag">Ce que j ai travaille</p>
+                <div class="project-grid">
+                    <article class="project-card">
+                        <h3>Systeme de jeu</h3>
+                        <p>Generation des hypotheses, verification de la partie et progression des actions du joueur.</p>
+                    </article>
+                    <article class="project-card">
+                        <h3>Navigation par pieces</h3>
+                        <p>Gestion des deplacements et des interactions avec l environnement du manoir.</p>
+                    </article>
+                    <article class="project-card">
+                        <h3>Etat de partie</h3>
+                        <p>Suivi des informations pour maintenir une session coherente et lisible jusqu a la fin du jeu.</p>
+                    </article>
                 </div>
             </section>
 
-            <!-- Section Défis Techniques -->
             <section class="project-section">
-                <h2 class="section-title">Défis Techniques Relevés</h2>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">🧭</div>
-                        <h3>Graphe de Navigation</h3>
-                        <p>Implémentation d'un système de déplacement basé sur un graphe de pièces connectées</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🎲</div>
-                        <h3>Aléatoire Contrôlé</h3>
-                        <p>Génération aléatoire de la solution tout en maintenant la cohérence du jeu</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">💡</div>
-                        <h3>Logique de Dédution</h3>
-                        <p>Algorithme de révélation progressive des indices pour guider le joueur</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🔄</div>
-                        <h3>Gestion d'État</h3>
-                        <p>Maintenance de l'état de la partie entre les différentes pages PHP</p>
-                    </div>
+                <p class="project-section__tag">Stack</p>
+                <h2 class="project-section__title">Une logique serveur simple, mais un vrai travail de structure.</h2>
+                <div class="project-stack">
+                    <span>PHP</span>
+                    <span>SQLite</span>
+                    <span>JavaScript</span>
+                    <span>HTML</span>
+                    <span>CSS</span>
                 </div>
+                <ul class="project-list">
+                    <li>PHP pour gerer la logique, les regles et les enchainements de la partie.</li>
+                    <li>SQLite pour conserver les donnees necessaires au bon fonctionnement du jeu.</li>
+                    <li>Interface web pour rendre la navigation et la deduction plus naturelles a suivre.</li>
+                </ul>
             </section>
 
-            <!-- Section Compétences -->
-            <section class="project-section">
-                <h2 class="section-title">Compétences Développées</h2>
-                <div class="tech-stack">
-                    <span class="tech-badge">PHP Orienté Objet</span>
-                    <span class="tech-badge">SQL & SQLite</span>
-                    <span class="tech-badge">HTML/CSS</span>
-                    <span class="tech-badge">Architecture Web</span>
-                    <span class="tech-badge">Gestion de Projet</span>
-                    <span class="tech-badge">Git & GitHub</span>
-                    <span class="tech-badge">Algorithmie</span>
-                    <span class="tech-badge">UX/UI</span>
-                </div>
-                
-                <div style="margin-top: 30px;">
-                    <h3 style="color: var(--accent-green); margin-bottom: 15px;">📈 Apprentissages Clés</h3>
-                    <ul class="feature-list">
-                        <li>Conception d'une architecture web complète from scratch</li>
-                        <li>Gestion de la persistance des données avec SQLite</li>
-                        <li>Implémentation d'algorithmes de jeu complexes</li>
-                        <li>Développement d'une interface utilisateur intuitive</li>
-                        <li>Gestion de version collaborative avec GitHub</li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Section Résultats -->
-            <section class="project-section">
-                <h2 class="section-title">Résultats et Perspectives</h2>
-                <p><strong>Réalisation :</strong> Jeu Cluedo entièrement fonctionnel avec toutes les mécaniques de base implémentées et une interface utilisateur complète.</p>
-                <p><strong>Validation :</strong> Respect du cahier des charges et des contraintes techniques imposées.</p>
-                <p><strong>Évolutions Possibles :</strong> Mode multijoueur, intelligence artificielle, graphismes avancés, nouvelles fonctionnalités.</p>
-                
-                <div class="project-links" style="margin-top: 30px;">
-                    <a href="https://github.com/votre-username/cluedo-bts" target="_blank" class="project-link">
-                        Voir le Code Source
-                    </a>
+            <section class="project-callout">
+                <p class="project-section__tag">Suite</p>
+                <h2 class="project-callout__title">Un projet qui montre surtout la logique plus que l effet vitrine.</h2>
+                <p class="project-copy">
+                    Cluedo reste un bon exemple de ma facon d aborder un probleme : comprendre les regles,
+                    les traduire proprement en application, puis rendre le tout jouable et maintenable.
+                </p>
+                <div class="project-actions">
+                    <a class="btn btn-primary" href="../index.html#contact">En parler avec moi</a>
+                    <a class="btn btn-ghost" href="../index.html#projets">Retour aux projets</a>
                 </div>
             </section>
         </div>
     </main>
 
-    <script src="../templatemo-prism-scripts.js"></script>
+    <footer class="project-footer">
+        <div class="project-footer__shell">
+            <p>Projet presente dans le portfolio de Yohan Saint-Marc.</p>
+            <div class="project-footer__links">
+                <a href="../index.html#projets">Autres projets</a>
+                <a href="../index.html#contact">Contact</a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

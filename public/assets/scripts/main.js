@@ -3,7 +3,7 @@
         title: 'FC Fulbert',
         summary: 'Exercice SEO pour le site d un club de football amateur.',
         details: 'Travail oriente SEO avec structure HTML propre, performances et contenu optimise. Cliquez sur "Voir la fiche" pour acceder a la page de presentation qui contient le lien vers l application.',
-        image: 'images/logoFCFulbert.png',
+        image: 'assets/images/logoFCFulbert.png',
         preview: 'fc-fulbert.html',
         github: '',
         tech: ['HTML', 'CSS', 'JavaScript', 'SEO']
@@ -12,25 +12,16 @@
         title: 'Cluedo',
         summary: 'Jeu de deduction realise avec logique serveur et persistance.',
         details: 'Jeu complet avec mecanique d indices, logique de deduction et stockage de donnees. Cliquez sur "Voir la fiche" pour acceder au jeu interactif.',
-        image: 'images/imgCluedo.jpeg',
+        image: 'assets/images/imgCluedo.jpeg',
         preview: 'cluedo.html',
         github: '',
         tech: ['PHP', 'SQLite', 'JavaScript']
     },
     {
-        title: 'CV en ligne',
-        summary: 'Presentation professionnelle responsive orientee lisibilite.',
-        details: 'CV web clair et structure, avec une mise en page adaptee mobile.',
-        image: 'images/neural-network.jpg',
-        preview: 'cv-yohanStm.html',
-        github: '',
-        tech: ['HTML', 'CSS', 'UI']
-    },
-    {
         title: 'AppAction',
         summary: 'Application de gestion (en cours). Demo statique avec donnees JSON.',
         details: 'Simulation complete basee sur le schema SQL, avec donnees mock et tableaux de bord. Cliquez sur "Voir la fiche" pour acceder a la presentation et demo.',
-        image: 'images/neural-network.jpg',
+        image: 'assets/images/neural-network.jpg',
         preview: 'app-action.html',
         github: '',
         tech: ['Mock Data', 'JavaScript', 'UI']
@@ -39,7 +30,7 @@
         title: 'IronPulse',
         summary: 'Suivi sportif et nutritionnel. Interface mobile adaptee en demo web.',
         details: 'Dashboard d entrainement et records personnels, avec planning et heatmap. Cliquez sur "Voir la fiche" pour acceder a la presentation.',
-        image: 'images/neural-network.jpg',
+        image: 'assets/images/neural-network.jpg',
         preview: 'ironpulse.html',
         github: '',
         tech: ['HTML', 'CSS', 'JS']
@@ -48,7 +39,7 @@
         title: 'Resolution Mate',
         summary: 'Outil d aide a la resolution de problemes. Demo interactive.',
         details: 'Gestion d objectifs personnels et de groupe, filtrage et detail d action. Cliquez sur "Voir la fiche" pour acceder a la plateforme.',
-        image: 'images/neural-network.jpg',
+        image: 'assets/images/neural-network.jpg',
         preview: 'resolution-mate.html',
         github: '',
         tech: ['HTML', 'CSS', 'JS']
@@ -97,14 +88,14 @@ function openProject(slug) {
     if (slug.startsWith('http')) {
         window.open(slug, '_blank');
     }
-    // Cas 2: Le slug pointe vers une page de présentation HTML
+    // Cas 2: Le slug pointe vers une page de presentation HTML
     else if (slug.endsWith('.html')) {
-        window.location.href = `projets/${slug}`;
+        window.location.href = `pages/projects/${slug}`;
     }
     // Cas 3: Le slug est un simple nom (pages intermédiaires)
     else {
-        // Redirection vers pages de présentation intermediaires (ex: projets/fc-fulbert.html)
-        window.location.href = `projets/${slug}.html`;
+        // Redirection vers pages de presentation intermediaires
+        window.location.href = `pages/projects/${slug}.html`;
     }
 }
 

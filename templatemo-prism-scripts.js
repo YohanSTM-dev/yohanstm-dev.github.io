@@ -18,15 +18,6 @@
         tech: ['PHP', 'SQLite', 'JavaScript']
     },
     {
-        title: 'CV en ligne',
-        summary: 'Presentation professionnelle responsive orientee lisibilite.',
-        details: 'CV web clair et structure, avec une mise en page adaptee mobile.',
-        image: 'images/Logo_moderne_avec_un__Y__stylisé-removebg-preview.png',
-        preview: 'cv-yohanStm.html',
-        github: '',
-        tech: ['HTML', 'CSS', 'UI']
-    },
-    {
         title: 'AppAction',
         summary: 'Application de gestion (en cours). Demo statique avec donnees JSON.',
         details: 'Simulation complete basee sur le schema SQL, avec donnees mock et tableaux de bord. Cliquez sur "Voir la fiche" pour acceder a la presentation et demo.',
@@ -79,6 +70,8 @@ const skillsData = [
 let isProjectsDragging = false;
 let projectModalState = null;
 
+const FOCUSABLE_SELECTOR = 'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
+
 function escapeHtml(value) {
     return String(value)
         .replace(/&/g, '&amp;')
@@ -122,14 +115,42 @@ function initProjectModal() {
         image: document.getElementById('projectModalImage'),
         preview: document.getElementById('projectModalPreview'),
         github: document.getElementById('projectModalGithub'),
+        availability: document.getElementById('projectAvailability'),
         closeBtn: modal.querySelector('[data-modal-close]'),
-        backdrop: modal.querySelector('[data-modal-backdrop]')
+        backdrop: modal.querySelector('[data-modal-backdrop]'),
+        lastFocusedElement: null
     };
 
     const closeModal = () => {
         state.modal.classList.remove('active');
         state.modal.setAttribute('aria-hidden', 'true');
         document.body.classList.remove('modal-open');
+
+        if (state.lastFocusedElement && typeof state.lastFocusedElement.focus === 'function') {
+            state.lastFocusedElement.focus();
+        }
+    };
+
+    const trapFocus = (event) => {
+        if (event.key !== 'Tab' || !state.modal.classList.contains('active')) {
+            return;
+        }
+
+        const focusables = Array.from(state.modal.querySelectorAll(FOCUSABLE_SELECTOR));
+        if (focusables.length === 0) {
+            return;
+        }
+
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+
+        if (event.shiftKey && document.activeElement === first) {
+            event.preventDefault();
+            last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+            event.preventDefault();
+            first.focus();
+        }
     };
 
     if (state.closeBtn) {
@@ -144,6 +165,8 @@ function initProjectModal() {
         if (event.key === 'Escape' && state.modal.classList.contains('active')) {
             closeModal();
         }
+
+        trapFocus(event);
     });
 
     state.close = closeModal;
@@ -159,6 +182,9 @@ function openProjectModal(project) {
     }
 
     const summary = project.details || project.description || project.summary || '';
+    const hasPreview = Boolean(project.preview);
+    const hasGithub = Boolean(project.github);
+    const isAvailable = hasPreview || hasGithub;
     const techBadges = (project.tech || [])
         .map((tech) => `<span>${escapeHtml(tech)}</span>`)
         .join('');
@@ -190,9 +216,24 @@ function openProjectModal(project) {
         projectModalState.github.removeAttribute('href');
     }
 
+    if (projectModalState.availability) {
+        if (isAvailable) {
+            projectModalState.availability.textContent = '';
+            projectModalState.availability.classList.add('is-hidden');
+        } else {
+            projectModalState.availability.textContent = 'Ce projet est en preparation. Une version publique sera disponible bientot.';
+            projectModalState.availability.classList.remove('is-hidden');
+        }
+    }
+
+    projectModalState.lastFocusedElement = document.activeElement;
     projectModalState.modal.classList.add('active');
     projectModalState.modal.setAttribute('aria-hidden', 'false');
     document.body.classList.add('modal-open');
+
+    if (projectModalState.closeBtn) {
+        projectModalState.closeBtn.focus();
+    }
 }
 
 function createProjectCard(project) {
@@ -242,6 +283,8 @@ function renderProjects() {
     if (!track) {
         return;
     }
+
+    track.innerHTML = '';
 
     projectsData.forEach((project) => {
         track.appendChild(createProjectCard(project));
@@ -457,6 +500,18 @@ function setupNavigation() {
         menuToggle.setAttribute('aria-expanded', 'false');
     };
 
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            closeMenu();
+        }
+    });
+
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 780) {
+            closeMenu();
+        }
+    });
+
     const scrollToTarget = (id) => {
         const target = document.getElementById(id);
         if (!target) {
@@ -532,12 +587,23 @@ function setupContactForm() {
     form.addEventListener('submit', async (event) => {
         event.preventDefault();
 
+        const websiteField = form.querySelector('#company');
+        if (websiteField && websiteField.value.trim() !== '') {
+            return;
+        }
+
+        if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+        }
+
         const submitButton = form.querySelector('.submit-btn');
         const defaultText = submitButton ? submitButton.textContent : 'Envoyer';
 
         if (submitButton) {
             submitButton.disabled = true;
             submitButton.textContent = 'Envoi...';
+            submitButton.setAttribute('aria-busy', 'true');
         }
 
         message.textContent = '';
@@ -566,6 +632,7 @@ function setupContactForm() {
             if (submitButton) {
                 submitButton.disabled = false;
                 submitButton.textContent = defaultText || 'Envoyer';
+                submitButton.removeAttribute('aria-busy');
             }
         }
     });

@@ -3,479 +3,481 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yohan Saint Marc | CV Développeur Full-Stack</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../projects-theme.css">
+    <title>CV - Yohan Saint-Marc - Alternance Développeur</title>
     <style>
-        /* Section Headings Enhancement */
-        .project-section h2 {
-            background: linear-gradient(135deg, #e61c3c, #a855f7);
+        :root {
+            --text-main: #1a1a1a;
+            --text-secondary: #4a4a4a;
+            --bg-body: #f4f7f6;
+            --bg-cv: #ffffff;
+            --gradient-brand: linear-gradient(90deg, #fba1b7 0%, #ff0f7b 50%, #8a2be2 100%);
+            --accent-color: #d81159;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            line-height: 1.4;
+        }
+
+        .cv-container {
+            max-width: 900px;
+            width: 100%;
+            background: var(--bg-cv);
+            padding: 40px 50px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        /* En-tête */
+        header {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 4px;
+            background: var(--gradient-brand);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            font-size: 2rem;
-            font-weight: 800;
-            margin: 40px 0 30px;
-            letter-spacing: -0.02em;
         }
 
-        /* Timeline */
-        .timeline {
-            position: relative;
-            padding: 20px 0;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 20px;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            background: linear-gradient(180deg, #e61c3c, #a855f7, #e61c3c);
-            box-shadow: 0 0 20px rgba(230, 28, 60, 0.3);
-        }
-
-        .timeline-item {
-            margin-bottom: 32px;
-            padding-left: 80px;
-            position: relative;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: 8px;
-            top: 6px;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #e61c3c, #a855f7);
-            border: 3px solid var(--bg-900);
-            box-shadow: 0 0 16px rgba(230, 28, 60, 0.5);
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .timeline-item:hover::before {
-            width: 32px;
-            height: 32px;
-            left: 4px;
-            box-shadow: 0 0 24px rgba(230, 28, 60, 0.7), 0 0 12px rgba(168, 85, 247, 0.5);
-            transform: scale(1.1);
-        }
-
-        .timeline-content {
-            border: 2px solid rgba(230, 28, 60, 0.25);
-            border-radius: 12px;
-            background: linear-gradient(135deg, rgba(34, 52, 74, 0.4), rgba(18, 28, 44, 0.6));
-            padding: 24px;
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .timeline-content::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #e61c3c, #a855f7);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.3s ease;
-        }
-
-        .timeline-item:hover .timeline-content {
-            border-color: rgba(230, 28, 60, 0.5);
-            background: linear-gradient(135deg, rgba(34, 52, 74, 0.7), rgba(18, 28, 44, 0.85));
-            box-shadow: 0 12px 36px rgba(230, 28, 60, 0.25), inset 0 0 1px rgba(168, 85, 247, 0.1);
-            transform: translateY(-4px);
-        }
-
-        .timeline-item:hover .timeline-content::before {
-            transform: scaleX(1);
-        }
-
-        .timeline-title {
+        .cv-title {
             font-size: 1.2rem;
             font-weight: 700;
-            background: linear-gradient(135deg, #e61c3c, #a855f7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 8px;
+            color: var(--text-main);
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: none;
+            padding: 0;
         }
 
-        .timeline-subtitle {
-            font-size: 0.9rem;
-            color: var(--text-200);
+        .cv-subtitle {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--accent-color);
             margin-bottom: 12px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            flex-wrap: wrap;
+        }
+
+        .contact-info a {
+            color: var(--text-secondary);
+            text-decoration: none;
             font-weight: 500;
         }
 
-        .timeline-description {
-            font-size: 0.9rem;
-            color: var(--text-300);
-            margin-bottom: 12px;
-            line-height: 1.6;
+        /* Sections */
+        section {
+            margin-bottom: 20px;
         }
 
-        .timeline-period {
-            font-size: 0.75rem;
-            color: var(--text-400);
-            letter-spacing: 0.1em;
+        h2 {
+            font-size: 1.15rem;
             text-transform: uppercase;
-            font-weight: 600;
-            padding: 8px 12px;
-            background: linear-gradient(135deg, rgba(230, 28, 60, 0.1), rgba(168, 85, 247, 0.1));
-            display: inline-block;
-            border-radius: 6px;
-            border: 1px solid rgba(230, 28, 60, 0.2);
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            padding-bottom: 4px;
+            border-bottom: 2px solid;
+            border-image: var(--gradient-brand) 1;
+            color: var(--text-main);
         }
 
-        /* Skills Grid */
-        .skills-2col {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin: 20px 0;
+        p.profile-text {
+            font-size: 0.95rem;
+            text-align: justify;
+            color: var(--text-secondary);
         }
 
-        .skill-group {
-            border: 2px solid rgba(230, 28, 60, 0.2);
-            border-radius: 12px;
-            background: linear-gradient(135deg, rgba(34, 52, 74, 0.3), rgba(18, 28, 44, 0.5));
-            padding: 20px;
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        /* Éléments */
+        .item {
+            margin-bottom: 12px;
         }
 
-        .skill-group:hover {
-            border-color: rgba(230, 28, 60, 0.5);
-            background: linear-gradient(135deg, rgba(34, 52, 74, 0.6), rgba(18, 28, 44, 0.7));
-            box-shadow: 0 8px 24px rgba(230, 28, 60, 0.2), inset 0 0 1px rgba(168, 85, 247, 0.1);
-            transform: translateY(-6px);
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
         }
 
-        .skill-group h3 {
-            margin: 0 0 12px;
-            background: linear-gradient(135deg, #e61c3c, #a855f7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        h3 {
             font-size: 1.05rem;
             font-weight: 700;
         }
 
-        .skill-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .skill-badge {
-            display: inline-flex;
-            align-items: center;
-            padding: 6px 12px;
-            border-radius: 999px;
-            border: 1px solid rgba(230, 28, 60, 0.3);
-            background: linear-gradient(135deg, rgba(230, 28, 60, 0.08), rgba(168, 85, 247, 0.08));
-            color: var(--text-100);
-            font-size: 0.75rem;
+        .company {
             font-weight: 600;
-            letter-spacing: 0.02em;
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            color: var(--text-secondary);
+            font-style: italic;
+            font-size: 0.95rem;
         }
 
-        .skill-badge:hover {
-            border-color: rgba(230, 28, 60, 0.6);
-            background: linear-gradient(135deg, rgba(230, 28, 60, 0.15), rgba(168, 85, 247, 0.15));
-            box-shadow: 0 4px 12px rgba(230, 28, 60, 0.2);
-            transform: translateY(-2px);
+        .date {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            white-space: nowrap;
         }
 
-        /* Contact Section */
-        .contact-grid {
+        .tech-env {
+            font-size: 0.85rem;
+            font-style: italic;
+            color: #666;
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 15px;
+        }
+
+        ul li {
+            font-size: 0.9rem;
+            position: relative;
+            margin-bottom: 3px;
+            color: var(--text-secondary);
+        }
+
+        ul li::before {
+            content: "■";
+            color: var(--accent-color);
+            position: absolute;
+            left: -15px;
+            top: 1px;
+            font-size: 0.6rem;
+        }
+
+        .grid-2 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 16px;
-            margin: 20px 0;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
         }
 
-        .contact-item {
-            border: 2px solid rgba(230, 28, 60, 0.2);
-            border-radius: 12px;
-            background: linear-gradient(135deg, rgba(34, 52, 74, 0.3), rgba(18, 28, 44, 0.5));
-            padding: 24px 20px;
-            text-align: center;
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        .skills-list {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
         }
 
-        .contact-item:hover {
-            border-color: rgba(230, 28, 60, 0.5);
-            background: linear-gradient(135deg, rgba(34, 52, 74, 0.6), rgba(18, 28, 44, 0.7));
-            box-shadow: 0 12px 32px rgba(230, 28, 60, 0.25);
-            transform: translateY(-6px);
+        .skills-list strong {
+            color: var(--text-main);
         }
 
-        .contact-icon {
-            font-size: 32px;
-            margin-bottom: 12px;
-            transition: all 0.3s ease;
-        }
+        /* --- MODE IMPRESSION PDF (Ultra compressé pour 1 page) --- */
+        @media print {
+            @page {
+                size: A4;
+                margin: 0.8cm; /* Marges réduites au maximum */
+            }
 
-        .contact-item:hover .contact-icon {
-            transform: scale(1.15) rotate(8deg);
-        }
+            body {
+                background: white;
+                padding: 0;
+                font-size: 11px; /* Réduction globale de la taille de police */
+                line-height: 1.25; /* Réduction de l'interligne */
+            }
 
-        .contact-label {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--text-400);
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
+            .cv-container {
+                box-shadow: none;
+                padding: 0;
+                max-width: 100%;
+            }
 
-        .contact-value {
-            color: var(--text-100);
-            font-weight: 700;
-            text-decoration: none;
-            background: linear-gradient(135deg, #e61c3c, #a855f7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            transition: all 0.3s ease;
-        }
-
-        .contact-item:hover .contact-value {
-            opacity: 0.8;
+            h1 { font-size: 24px; margin-bottom: 2px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .cv-title { font-size: 14px; margin-bottom: 2px; }
+            .cv-subtitle { font-size: 11px; margin-bottom: 8px; }
+            .contact-info { font-size: 10px; gap: 10px; }
+            
+            header { margin-bottom: 12px; padding-bottom: 8px; }
+            section { margin-bottom: 12px; }
+            
+            h2 {
+                font-size: 13px;
+                margin-bottom: 6px;
+                padding-bottom: 2px;
+                border-bottom-width: 1px;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            p.profile-text { font-size: 11px; }
+            .item { margin-bottom: 8px; }
+            .item-header { margin-bottom: 2px; }
+            h3 { font-size: 12px; }
+            .company, .date, .tech-env { font-size: 10px; margin-bottom: 2px; }
+            
+            ul li { font-size: 10.5px; margin-bottom: 2px; line-height: 1.2; }
+            ul li::before { top: 0; }
+            
+            .grid-2 { gap: 15px; }
+            .skills-list { font-size: 10.5px; line-height: 1.4; }
         }
     </style>
 </head>
 <body>
-    <header class="site-header" id="header">
-        <nav class="nav-container">
-            <a href="../index.html" class="brand">
-                <span class="brand-mark">YSM</span>
-                <span class="brand-text">YSM.</span>
-            </a>
-            
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="../index.html#home" class="nav-link">Accueil</a></li>
-                <li><a href="../index.html#about" class="nav-link">À propos</a></li>
-                <li><a href="../index.html#projets" class="nav-link">Projets</a></li>
-                <li><a href="../index.html#skills" class="nav-link">Compétences</a></li>
-                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
-            </ul>
-            
-            <div class="menu-toggle" id="menuToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
+
+<div class="cv-container">
+    <header>
+        <h1>Yohan Saint-Marc</h1>
+        <h2 class="cv-title">Recherche d'alternance : Développeur Web / Full-Stack</h2>
+        <p class="cv-subtitle">Bachelor Epitech • À partir de septembre 2026</p>
+        <div class="contact-info">
+            <span>📞 07.49.61.66.00</span>
+            <span>✉️ yohan.saint-marc@hotmail.com</span>
+            <span>🔗 <a href="https://linkedin.com/in/yohan-saint-marc" target="_blank">LinkedIn</a></span>
+            <span>💻 <a href="https://yohanstm-dev.github.io/" target="_blank">yohanstm-dev.github.io</a></span>
+            <span>📍 Chartres, France</span>
+        </div>
     </header>
 
-    <main class="project-page">
-        <a href="../index.html#projets" class="btn btn-ghost project-back">← Retour aux projets</a>
+    <section>
+        <h2>Profil</h2>
+        <p class="profile-text">
+            Passionné par le développement web et fort d'expériences pratiques en entreprise (Symfony, WordPress), je rejoins le programme Bachelor d'Epitech en septembre 2026. Je recherche un contrat d'apprentissage pour consolider mon expertise technique en Full-Stack. Autonome, rigoureux et habitué au travail en équipe, je suis prêt à m'investir concrètement dans le cycle de vie de vos projets web.
+        </p>
+    </section>
 
-        <section class="project-hero">
-            <div class="project-hero__media">
-                <img src="../images/cyber-defense.jpg" alt="Portrait professionnel Yohan Saint Marc">
+    <section>
+        <h2>Expérience professionnelle</h2>
+
+        <div class="item">
+            <div class="item-header">
+                <h3>Développeur (CDD) <span class="company">| A2K-Informatique</span></h3>
+                <span class="date">2026</span>
             </div>
-            <div class="project-hero__content">
-                <p class="project-hero__eyebrow">Profil Professionnel</p>
-                <h1 class="project-hero__title">Yohan Saint Marc</h1>
-                <p class="project-hero__subtitle">Développeur Full-Stack | Étudiant BTS SIO | Créateur de Solutions Web</p>
-                <div class="project-meta">
-                    <span>Full-Stack</span>
-                    <span>Web & Mobile</span>
-                    <span>BTS SIO</span>
-                </div>
-                <div class="project-actions">
-                    <a class="btn btn-primary" href="../documents/cv-yohan-saint-marc.pdf" target="_blank" rel="noopener">Télécharger PDF</a>
-                </div>
+            <ul>
+                <li>Maintenance corrective, refactoring de code et déploiement de nouvelles fonctionnalités.</li>
+            </ul>
+        </div>
+
+        <div class="item">
+            <div class="item-header">
+                <h3>Stagiaire Développeur <span class="company">| A2K-Informatique</span></h3>
+                <span class="date">2026</span>
+            </div>
+            <span class="tech-env">Environnement : PHP, Symfony, Docker</span>
+            <ul>
+                <li>Conception et développement back-end d'une application web sous Symfony.</li>
+                <li>Conteneurisation de l'environnement de développement via Docker.</li>
+                <li>Refonte structurelle et optimisation d'un système de gestion de tickets interne.</li>
+            </ul>
+        </div>
+
+        <div class="item">
+            <div class="item-header">
+                <h3>Stagiaire Développeur Web <span class="company">| Clinika Web</span></h3>
+                <span class="date">2025 - 2026</span>
+            </div>
+            <span class="tech-env">Environnement : WordPress, HTML/CSS</span>
+            <ul>
+                <li>Analyse du cahier des charges et gestion directe de la relation client.</li>
+                <li>Intégration et personnalisation de plateformes web via le CMS WordPress.</li>
+            </ul>
+        </div>
+
+        <div class="item">
+            <div class="item-header">
+                <h3>Employé Étudiant <span class="company">| Action</span></h3>
+                <span class="date">2024 - Présent</span>
+            </div>
+            <ul>
+                <li>Maintien des normes de sécurité et gestion des flux logistiques en rayon.</li>
+                <li>Adaptation réactive aux besoins de la clientèle et de la surface de vente.</li>
+            </ul>
+        </div>
+
+        <div class="item">
+            <div class="item-header">
+                <h3>Serveur / Plongeur <span class="company">| Galmotte</span></h3>
+                <span class="date">2021 - 2023</span>
+            </div>
+            <ul>
+                <li>Gestion opérationnelle du stress et priorisation des tâches en période de rush.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Formation</h2>
+        <div class="item">
+            <div class="item-header">
+                <h3>Bachelor Informatique</h3>
+                <span class="date">À partir de Sept. 2026</span>
+            </div>
+            <div class="company">Epitech</div>
+        </div>
+        <div class="item">
+            <div class="item-header">
+                <h3>BTS SIO (Services Informatiques)</h3>
+                <span class="date">2024 - 2026</span>
+            </div>
+            <div class="company">Lycée Fulbert, Chartres</div>
+        </div>
+        <div class="item">
+            <div class="item-header">
+                <h3>Baccalauréat STI2D</h3>
+                <span class="date">2022 - 2023</span>
+            </div>
+            <div class="company">Lycée Émile Zola</div>
+        </div>
+    </section>
+
+    <div class="grid-2">
+        <section>
+            <h2>Compétences Techniques</h2>
+            <div class="skills-list">
+                <p><strong>Back-end :</strong> PHP, Symfony, .NET</p>
+                <p><strong>Front-end :</strong> React.js, HTML/CSS</p>
+                <p><strong>Ops & CMS :</strong> Docker, Git, WordPress</p>
+                <p><strong>Transversales :</strong> Méthode Agile, Analyse, Débogage.</p>
             </div>
         </section>
 
-        <div class="project-sections">
-            <!-- À Propos -->
-            <section class="project-section">
-                <h2>À Propos</h2>
-                <p>
-                    Je suis étudiant en deuxième année de BTS SIO (Services Informatiques aux Organisations) au lycée Fulbert à Chartres. 
-                    Passionné par le développement web et la création de solutions digitales, je combine expertise technique et sensibilité 
-                    pour l'expérience utilisateur.
-                </p>
-                <p>
-                    Mon approche privilégie l'écoute des besoins, la clarté du code et l'impact produit. J'aime transformer des problèmes 
-                    complexes en interfaces intuitives et maintenables.
-                </p>
-            </section>
+        <section>
+            <h2>Langues & Intérêts</h2>
+            <div class="skills-list">
+                <p><strong>Langues :</strong> Anglais (A2 - Compréhension IT).</p>
+                <p><strong>Centres d'intérêt :</strong> Code, Veille tech, Musculation.</p>
+            </div>
+        </section>
+    </div>
+</div>
 
-            <!-- Expérience -->
-            <section class="project-section">
-                <h2>Expérience Professionnelle</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <div class="timeline-title">Stage en Développement Web</div>
-                            <div class="timeline-subtitle">Lycée Fulbert, Chartres</div>
-                            <div class="timeline-description">
-                                Développement d'applications web responsives en HTML5, CSS3 et JavaScript. Participation à l'intégration de designs Figma et optimisation des performances front-end.
-                            </div>
-                            <div class="timeline-period">2024 - Présent</div>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <div class="timeline-title">Projets Académiques Variés</div>
-                            <div class="timeline-subtitle">BTS SIO</div>
-                            <div class="timeline-description">
-                                Conception et développement de projets full-stack incluant des applications web (React, Node.js), des bases de données (SQL, Firebase) et du déploiement. Travail en équipe Agile.
-                            </div>
-                            <div class="timeline-period">2023 - Présent</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script>
+    async function downloadCurrentCvAsPdf() {
+        const exportRoot = document.body;
 
-            <!-- Formation -->
-            <section class="project-section">
-                <h2>Formation</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <div class="timeline-title">BTS Services Informatiques aux Organisations</div>
-                            <div class="timeline-subtitle">Lycée Fulbert, Chartres</div>
-                            <div class="timeline-description">
-                                Formation bac+2 en informatique couvrant le développement full-stack, la gestion de bases de données, l'architecture logicielle et les principes de cybersécurité. Projets pratiques en environnement réaliste.
-                            </div>
-                            <div class="timeline-period">2023 - 2025</div>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <div class="timeline-title">Baccalauréat STI2D</div>
-                            <div class="timeline-subtitle">Spécialité Systèmes d'Information et Numérique</div>
-                            <div class="timeline-description">
-                                Formation générale avec spécialisation en systèmes numériques, incluant les bases de l'électronique, de l'informatique et des télécommunications. Préparation solide pour études supérieures en informatique.
-                            </div>
-                            <div class="timeline-period">2021 - 2023</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+        if (!exportRoot || !window.html2canvas || !window.jspdf) {
+            window.print();
+            return;
+        }
 
-            <!-- Compétences Techniques -->
-            <section class="project-section">
-                <h2>Compétences Techniques</h2>
-                <div class="skills-2col">
-                    <div class="skill-group">
-                        <h3>Frontend</h3>
-                        <div class="skill-list">
-                            <span class="skill-badge">React.js</span>
-                            <span class="skill-badge">HTML5</span>
-                            <span class="skill-badge">CSS3</span>
-                            <span class="skill-badge">JavaScript</span>
-                            <span class="skill-badge">TypeScript</span>
-                            <span class="skill-badge">TailwindCSS</span>
-                        </div>
-                    </div>
-                    <div class="skill-group">
-                        <h3>Backend</h3>
-                        <div class="skill-list">
-                            <span class="skill-badge">Node.js</span>
-                            <span class="skill-badge">PHP</span>
-                            <span class="skill-badge">Symfony</span>
-                            <span class="skill-badge">Python</span>
-                            <span class="skill-badge">C#/.NET</span>
-                            <span class="skill-badge">Bash</span>
-                        </div>
-                    </div>
-                    <div class="skill-group">
-                        <h3>Bases de Données</h3>
-                        <div class="skill-list">
-                            <span class="skill-badge">SQLite</span>
-                            <span class="skill-badge">Firebase</span>
-                            <span class="skill-badge">Supabase</span>
-                            <span class="skill-badge">SQL</span>
-                        </div>
-                    </div>
-                    <div class="skill-group">
-                        <h3>Outils & Services</h3>
-                        <div class="skill-list">
-                            <span class="skill-badge">Git</span>
-                            <span class="skill-badge">Docker</span>
-                            <span class="skill-badge">Vite</span>
-                            <span class="skill-badge">VS Code</span>
-                            <span class="skill-badge">Figma</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
+        try {
+            if (document.fonts && document.fonts.ready) {
+                await document.fonts.ready;
+            }
 
-            <!-- Points Forts -->
-            <section class="project-section">
-                <h2>Qualités Professionnelles</h2>
-                <div class="skills-2col">
-                    <div class="skill-group">
-                        <h3>Communication</h3>
-                        <p style="margin: 0; color: var(--text-300); font-size: 0.95rem;">
-                            Capacité à exprimer des idées complexes de manière claire et à collaborer efficacement en équipe.
-                        </p>
-                    </div>
-                    <div class="skill-group">
-                        <h3>Résolution de Problèmes</h3>
-                        <p style="margin: 0; color: var(--text-300); font-size: 0.95rem;">
-                            Approche logique et méthodique pour décomposer et résoudre des défis techniques.
-                        </p>
-                    </div>
-                    <div class="skill-group">
-                        <h3>Apprentissage Continu</h3>
-                        <p style="margin: 0; color: var(--text-300); font-size: 0.95rem;">
-                            Curiosité naturelle et engagement dans l'amélioration continue des compétences.
-                        </p>
-                    </div>
-                    <div class="skill-group">
-                        <h3>Attention aux Détails</h3>
-                        <p style="margin: 0; color: var(--text-300); font-size: 0.95rem;">
-                            Rigueur dans la qualité du code, l'UX et la documentation technique.
-                        </p>
-                    </div>
-                </div>
-            </section>
+            await new Promise(function(resolve) {
+                window.requestAnimationFrame(resolve);
+            });
 
-            <!-- Contact -->
-            <section class="project-section">
-                <h2>Me Contacter</h2>
-                <div class="contact-grid">
-                    <a href="mailto:yohan.saint-marc@hotmail.com" class="contact-item" style="text-decoration: none;">
-                        <div class="contact-icon">✉️</div>
-                        <div class="contact-label">Email</div>
-                        <div class="contact-value">yohan.saint-marc@hotmail.com</div>
-                    </a>
-                    <a href="https://github.com/yohanstm-dev" target="_blank" rel="noopener" class="contact-item" style="text-decoration: none;">
-                        <div class="contact-icon">💻</div>
-                        <div class="contact-label">GitHub</div>
-                        <div class="contact-value">yohanstm-dev</div>
-                    </a>
-                    <a href="https://maps.app.goo.gl/y98WZfU7uY9Ld7hn9" target="_blank" rel="noopener" class="contact-item" style="text-decoration: none;">
-                        <div class="contact-icon">📍</div>
-                        <div class="contact-label">Localisation</div>
-                        <div class="contact-value">Chartres, France</div>
-                    </a>
-                </div>
-            </section>
-        </div>
-    </main>
+            const canvas = await window.html2canvas(exportRoot, {
+                scale: 2,
+                useCORS: true,
+                backgroundColor: '#f4f7f6',
+                scrollX: 0,
+                scrollY: 0,
+                windowWidth: document.documentElement.scrollWidth,
+                windowHeight: document.documentElement.scrollHeight
+            });
 
-    <footer class="site-footer">
-        <p>© 2026 Yohan Saint Marc. Portfolio développeur web.</p>
-    </footer>
+            const jsPDF = window.jspdf.jsPDF;
+            const pdf = new jsPDF({
+                orientation: 'portrait',
+                unit: 'mm',
+                format: 'a4'
+            });
+            const pageWidth = pdf.internal.pageSize.getWidth();
+            const pageHeight = pdf.internal.pageSize.getHeight();
+            const margin = 8;
+            const printableWidth = pageWidth - (margin * 2);
+            const printableHeight = pageHeight - (margin * 2);
+            const sourcePageHeight = Math.max(
+                1,
+                Math.floor(canvas.width * (printableHeight / printableWidth))
+            );
+
+            let offsetY = 0;
+            let isFirstPage = true;
+
+            while (offsetY < canvas.height) {
+                const sliceHeight = Math.min(sourcePageHeight, canvas.height - offsetY);
+                const pageCanvas = document.createElement('canvas');
+                const pageContext = pageCanvas.getContext('2d');
+
+                if (!pageContext) {
+                    window.print();
+                    return;
+                }
+
+                pageCanvas.width = canvas.width;
+                pageCanvas.height = sliceHeight;
+                pageContext.fillStyle = '#f4f7f6';
+                pageContext.fillRect(0, 0, pageCanvas.width, pageCanvas.height);
+                pageContext.drawImage(
+                    canvas,
+                    0,
+                    offsetY,
+                    canvas.width,
+                    sliceHeight,
+                    0,
+                    0,
+                    pageCanvas.width,
+                    pageCanvas.height
+                );
+
+                if (!isFirstPage) {
+                    pdf.addPage();
+                }
+
+                pdf.addImage(
+                    pageCanvas.toDataURL('image/jpeg', 0.98),
+                    'JPEG',
+                    margin,
+                    margin,
+                    printableWidth,
+                    sliceHeight * (printableWidth / canvas.width),
+                    undefined,
+                    'FAST'
+                );
+
+                offsetY += sourcePageHeight;
+                isFirstPage = false;
+            }
+
+            pdf.save('CV-Yohan-Saint-Marc.pdf');
+        } catch (error) {
+            console.error('Erreur lors du telechargement du CV :', error);
+            window.print();
+        }
+    }
+
+    const params = new URLSearchParams(window.location.search);
+
+    if (params.get('download') === 'pdf') {
+        window.addEventListener('load', function() {
+            window.setTimeout(function() {
+                downloadCurrentCvAsPdf().finally(function() {
+                    window.history.replaceState({}, document.title, window.location.pathname);
+                });
+            }, 250);
+        });
+    }
+</script>
 </body>
 </html>

@@ -3,44 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resolution Mate - Presentation du projet</title>
+    <title>Resolution Mate | Case Study</title>
+    <meta name="description" content="Case study Resolution Mate : outil de suivi d objectifs et de resolutions personnelles ou collectives.">
+    <meta name="theme-color" content="#08070d">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../projects-theme.css">
 </head>
 <body>
-    <main class="project-page">
-        <a class="btn btn-ghost project-back" href="../index.html#projets">Retour aux projets</a>
-
-        <section class="project-hero">
-            <div class="project-hero__media">
-                <img src="../images/neural-network.jpg" alt="Visuel Resolution Mate">
+    <header class="project-site-header">
+        <div class="project-nav">
+            <a href="../index.html" class="project-brand" aria-label="Retour au portfolio">
+                <span class="project-brand__mark">YSM</span>
+                <span class="project-brand__text">Yohan Saint-Marc</span>
+            </a>
+            <div class="project-nav__actions">
+                <a class="btn btn-ghost" href="../index.html#projets">Retour aux projets</a>
+                <a class="btn btn-primary" href="../index.html#contact">Me contacter</a>
             </div>
-            <div class="project-hero__content">
-                <p class="project-hero__eyebrow">Projet</p>
-                <h1 class="project-hero__title">Resolution Mate</h1>
-                <p class="project-hero__subtitle">Outil d aide a la resolution de problemes.</p>
+        </div>
+    </header>
+
+    <main class="project-page">
+        <section class="project-hero">
+            <div class="project-hero__copy">
+                <p class="project-kicker">Case study</p>
+                <h1 class="project-title">Resolution Mate</h1>
+                <p class="project-subtitle">
+                    Un outil de suivi d objectifs et de resolutions pour clarifier les actions,
+                    organiser la progression et rendre les efforts plus visibles dans le temps.
+                </p>
+
                 <div class="project-meta">
+                    <span>Organisation</span>
                     <span>HTML</span>
                     <span>CSS</span>
                     <span>JavaScript</span>
                 </div>
+
                 <div class="project-actions">
-                    <a class="btn btn-primary" href="resolution_mate/index.html" target="_blank" rel="noopener">Lancer l'application</a>
+                    <a class="btn btn-primary" href="resolution_mate/index.html" target="_blank" rel="noopener">Voir la demo</a>
+                    <a class="btn btn-ghost" href="../index.html#projets">Retour au portfolio</a>
+                </div>
+            </div>
+
+            <div class="project-hero__visual">
+                <div class="project-hero__image">
+                    <img src="../images/data-nexus.jpg" alt="Visuel Resolution Mate">
+                </div>
+                <div class="project-floating-card">
+                    <span class="project-floating-card__label">Etat</span>
+                    <strong>Produit en demo</strong>
+                    <p>Un premier niveau de produit pour rendre les resolutions plus concretes et plus suivies.</p>
                 </div>
             </div>
         </section>
 
+        <section class="project-metrics" aria-label="Resume du projet">
+            <article class="metric-card">
+                <span class="metric-label">Univers</span>
+                <strong class="metric-value">Productivite</strong>
+                <p class="metric-copy">Organisation personnelle ou collective autour d objectifs clairs.</p>
+            </article>
+            <article class="metric-card">
+                <span class="metric-label">Focus</span>
+                <strong class="metric-value">Progression</strong>
+                <p class="metric-copy">Passer d une intention vague a des actions suivies et visibles.</p>
+            </article>
+            <article class="metric-card">
+                <span class="metric-label">Format</span>
+                <strong class="metric-value">Suivi d objectifs</strong>
+                <p class="metric-copy">Listes, filtres et detail des resolutions pour garder le cap.</p>
+            </article>
+            <article class="metric-card">
+                <span class="metric-label">Etat</span>
+                <strong class="metric-value">Demo web</strong>
+                <p class="metric-copy">Un socle visible pour presenter le concept et l interface.</p>
+            </article>
+        </section>
+
         <div class="project-sections">
             <section class="project-section">
-                <h2>Description</h2>
-                <p>
-                    Gestion d objectifs personnels et de groupe, filtrage des resolutions et detail
-                    des actions pour suivre la progression.
+                <p class="project-section__tag">Vision</p>
+                <h2 class="project-section__title">Transformer une bonne intention en parcours d action plus concret.</h2>
+                <p class="project-copy">
+                    Resolution Mate part d un probleme simple : beaucoup d objectifs restent abstraits. L outil cherche donc a
+                    clarifier les etapes, rendre les resolutions consultables et offrir un suivi lisible pour ne pas perdre l utilisateur
+                    dans une liste sans priorites ni perspective.
                 </p>
+            </section>
+
+            <section class="project-section">
+                <p class="project-section__tag">Ce que j ai travaille</p>
+                <div class="project-grid">
+                    <article class="project-card">
+                        <h3>Fiches d objectifs</h3>
+                        <p>Des cartes structurees pour comprendre rapidement l etat, la priorite et l action suivante.</p>
+                    </article>
+                    <article class="project-card">
+                        <h3>Filtres et tri</h3>
+                        <p>Un parcours plus pratique pour trouver les resolutions a traiter selon le contexte ou l urgence.</p>
+                    </article>
+                    <article class="project-card">
+                        <h3>Lecture de progression</h3>
+                        <p>Une interface qui aide a voir le chemin deja parcouru et ce qu il reste a faire.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="project-section">
+                <p class="project-section__tag">Stack</p>
+                <h2 class="project-section__title">Une base front-end orientee produit et clarte.</h2>
+                <div class="project-stack">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>Product thinking</span>
+                    <span>UI flow</span>
+                </div>
+                <ul class="project-list">
+                    <li>Architecture de pages simple pour presenter vite les objectifs et leurs details.</li>
+                    <li>Importance donnee au tri, a la lisibilite et a la consultation rapide.</li>
+                    <li>Prototype pense comme une base de produit evolutive plutot qu un simple exercice visuel.</li>
+                </ul>
+            </section>
+
+            <section class="project-callout">
+                <p class="project-section__tag">Suite</p>
+                <h2 class="project-callout__title">Voir la demo et la facon dont les objectifs sont rendus actionnables.</h2>
+                <p class="project-copy">
+                    La demo permet deja de comprendre la logique du produit, le systeme de consultation
+                    et la direction prise pour transformer le suivi d objectifs en interface plus utile.
+                </p>
+                <div class="project-actions">
+                    <a class="btn btn-primary" href="resolution_mate/index.html" target="_blank" rel="noopener">Ouvrir la demo</a>
+                    <a class="btn btn-ghost" href="../index.html#contact">Parler du projet</a>
+                </div>
             </section>
         </div>
     </main>
+
+    <footer class="project-footer">
+        <div class="project-footer__shell">
+            <p>Projet presente dans le portfolio de Yohan Saint-Marc.</p>
+            <div class="project-footer__links">
+                <a href="../index.html#projets">Autres projets</a>
+                <a href="../index.html#contact">Contact</a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

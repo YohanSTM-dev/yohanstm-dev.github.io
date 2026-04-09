@@ -34,54 +34,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/styles/main.css">
-    <style>
-    :root {
-        --primary-color: #e61c3c;
-        --secondary-color: #a855f7;
-        --text-100: #f5f7fa;
-    }
-
-    h1, h2, .brand-text {
-        background: linear-gradient(135deg, #e61c3c 0%, #a855f7 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-    }
-
-    .btn-primary {
-        background: linear-gradient(135deg, #e61c3c, #a855f7);
-        border: none;
-        box-shadow: 0 6px 16px rgba(230, 28, 60, 0.3), 0 0 12px rgba(168, 85, 247, 0.2);
-    }
-
-    .btn-primary:hover {
-        box-shadow: 0 8px 24px rgba(230, 28, 60, 0.4), 0 0 16px rgba(168, 85, 247, 0.3);
-        transform: translateY(-2px);
-    }
-
-    .btn-ghost {
-        border-color: rgba(230, 28, 60, 0.5);
-        color: var(--text-100);
-        background: rgba(230, 28, 60, 0.08);
-    }
-
-    .btn-ghost:hover {
-        border-color: #e61c3c;
-        background: linear-gradient(135deg, rgba(230, 28, 60, 0.15), rgba(168, 85, 247, 0.1));
-        color: #fff;
-        box-shadow: 0 4px 12px rgba(230, 28, 60, 0.2);
-    }
-
-    .nav-link.active, .nav-link:hover {
-        color: #e61c3c;
-    }
-
-    .nav-link::after {
-        background-color: #e61c3c;
-    }
-
-    .brand-mark { color: #e61c3c; }
-</style>
     <script>
         tailwind.config = {
             corePlugins: {
@@ -115,9 +67,26 @@
                     <li><a href="#projets" class="nav-link transition hover:text-white">Projets</a></li>
                     <li><a href="#skills" class="nav-link transition hover:text-white">Competences</a></li>
                     <li>
-                        <a href="pages/cv.html" class="rounded-full border border-white/15 bg-white/5 px-4 py-2 text-white transition hover:border-[#ff0055]/60 hover:text-[#ff0055] hover:bg-[#ff0055]/10">
-                            Mon CV
+                        <a href="pages/projects/cv-yohanStm.html" class="rounded-full border border-white/15 bg-white/5 px-4 py-2 text-white transition hover:border-[#ff0055]/60 hover:text-[#ff0055] hover:bg-[#ff0055]/10">
+                            Visualiser CV
                         </a>
+                    </li>
+                    <li>
+                        <details class="download-dropdown">
+                            <summary class="btn btn-primary download-dropdown__trigger" aria-label="Choisir le format de telechargement du CV">
+                                Telecharger CV
+                            </summary>
+                            <div class="download-dropdown__panel">
+                                <a href="pages/projects/cv-yohanStm.html?download=pdf" target="_blank" rel="noopener" class="download-dropdown__option">
+                                    <span class="download-dropdown__option-label">Telecharger en PDF</span>
+                                    <span class="download-dropdown__option-format">PDF</span>
+                                </a>
+                                <a href="pages/projects/cv-yohanStm.html" download="CV-Yohan-Saint-Marc.html" class="download-dropdown__option">
+                                    <span class="download-dropdown__option-label">Telecharger en HTML</span>
+                                    <span class="download-dropdown__option-format">HTML</span>
+                                </a>
+                            </div>
+                        </details>
                     </li>
                 </ul>
             </nav>
@@ -280,5 +249,62 @@
     </footer>
 
     <script src="assets/scripts/main.js"></script>
+    <script>
+        function downloadCVasPDF() {
+            fetch('pages/projects/cv-yohanStm.html')
+                .then(response => response.text())
+                .then(html => {
+                    // Crée un conteneur temporaire
+                    const tempDiv = document.createElement('div');
+                    tempDiv.innerHTML = html;
+                    
+                    // Extrait le container du CV
+                    const cvContent = tempDiv.querySelector('.cv-container');
+                    if (!cvContent) {
+                        alert('Erreur: impossible de trouver le CV');
+                        return;
+                    }
+                    
+                    // Extrait les styles du CV
+                    const styleTag = tempDiv.querySelector('style');
+                    const styles = styleTag ? styleTag.textContent : '';
+                    
+                    // Crée un document PDF avec les styles appliqués
+                    const element = document.createElement('div');
+                    element.innerHTML = `
+                        <style>
+                            ${styles}
+                            body { margin: 0; padding: 0; }
+                        </style>
+                        ${cvContent.outerHTML}
+                    `;
+                    
+                    const opt = {
+                        margin: [0.5, 0.5, 0.5, 0.5],
+                        filename: 'CV-Yohan-Saint-Marc.pdf',
+                        image: { type: 'jpeg', quality: 0.98 },
+                        html2canvas: { 
+                            scale: 2,
+                            useCORS: true,
+                            allowTaint: true
+                        },
+                        jsPDF: { 
+                            unit: 'cm', 
+                            format: 'a4', 
+                            orientation: 'portrait'
+                        }
+                    };
+                    
+                    html2pdf().set(opt).from(element).save().catch(err => {
+                        console.error('Erreur PDF:', err);
+                        alert('Erreur lors de la génération du PDF');
+                    });
+                })
+                .catch(error => {
+                    console.error('Erreur:', error);
+                    alert('Erreur: impossible de charger le CV');
+                });
+        }
+    </script>
 </body>
 </html>
