@@ -1,156 +1,154 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IronPulse | Case Study</title>
-    <meta name="description" content="Case study IronPulse : dashboard sport et nutrition avec suivi des performances et routines hebdomadaires.">
-    <meta name="theme-color" content="#08070d">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../projects-theme.css">
+    <title>IronPulse — Yohan Saint-Marc</title>
+    <meta name="description" content="IronPulse — Application mobile fitness & nutrition. Suivi des entrainements, journaux et API Python FastAPI.">
+    <meta name="theme-color" content="#0a0a0a">
+    <link rel="stylesheet" href="appstore.css">
+    <style>
+        :root {
+            --project-accent:   #16A34A;
+            --project-accent-r: 22;
+            --project-accent-g: 163;
+            --project-accent-b: 74;
+        }
+        .as-hero--gradient .as-hero__bg {
+            background: radial-gradient(ellipse at 30% 40%, #1a4731 0%, #0d2818 45%, #0a0a0a 100%);
+            filter: none;
+        }
+        .sc1 { background: linear-gradient(135deg, #0d2818 0%, #16A34A20 100%); }
+        .sc2 { background: linear-gradient(135deg, #111827 0%, #1e3a2f 100%); }
+        .sc3 { background: linear-gradient(135deg, #0a2010 0%, #14532d 100%); }
+        .sc4 { background: linear-gradient(135deg, #0f1f14 0%, #22543d 100%); }
+        .sc5 { background: linear-gradient(135deg, #071810 0%, #16A34A30 100%); }
+    </style>
 </head>
 <body>
-    <header class="project-site-header">
-        <div class="project-nav">
-            <a href="../index.html" class="project-brand" aria-label="Retour au portfolio">
-                <span class="project-brand__mark">YSM</span>
-                <span class="project-brand__text">Yohan Saint-Marc</span>
-            </a>
-            <div class="project-nav__actions">
-                <a class="btn btn-ghost" href="../index.html#projets">Retour aux projets</a>
-                <a class="btn btn-primary" href="../index.html#contact">Me contacter</a>
+    <nav class="as-nav" id="asNav">
+        <a class="as-nav__back" href="../index.html">
+            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M13 4l-6 6 6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Projets
+        </a>
+        <span class="as-nav__title" aria-hidden="true">IronPulse</span>
+        <a class="as-nav__github" href="https://github.com/yohanstm-dev" target="_blank" rel="noopener">
+            <svg viewBox="0 0 20 20" fill="currentColor" width="16" height="16" aria-hidden="true"><path d="M10 1.667A8.333 8.333 0 0 0 1.667 10c0 3.682 2.387 6.81 5.7 7.917.417.08.567-.183.567-.4v-1.408c-2.317.5-2.8-1.117-2.8-1.117-.383-.967-.933-1.225-.933-1.225-.762-.517.059-.508.059-.508.841.059 1.283.858 1.283.858.75 1.284 1.967.917 2.442.7.075-.541.291-.917.53-1.125-1.855-.208-3.804-.925-3.804-4.121 0-.908.325-1.65.858-2.233-.084-.208-.375-1.058.083-2.208 0 0 .7-.225 2.292.858a8.283 8.283 0 0 1 4.166 0c1.592-1.083 2.292-.858 2.292-.858.458 1.15.167 2 .083 2.208.533.583.858 1.325.858 2.233 0 3.2-1.95 3.908-3.808 4.117.3.258.567.766.567 1.541v2.292c0 .217.15.483.575.4A8.337 8.337 0 0 0 18.333 10 8.333 8.333 0 0 0 10 1.667Z"/></svg>
+            GitHub
+        </a>
+    </nav>
+
+    <section class="as-hero as-hero--gradient" aria-label="IronPulse presentation">
+        <div class="as-hero__bg"></div>
+        <div class="as-hero__overlay"></div>
+        <div class="as-hero__content">
+            <div class="as-hero__icon" aria-hidden="true">
+                <svg viewBox="0 0 54 54" fill="none">
+                    <path d="M8 27h6M40 27h6M14 27l5-10 6 20 6-28 5 18h5" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="27" cy="27" r="11" stroke="rgba(255,255,255,0.18)" stroke-width="1.2"/>
+                </svg>
+            </div>
+            <div class="as-hero__info">
+                <p class="as-hero__kicker">Application Mobile</p>
+                <h1 class="as-hero__title">IronPulse</h1>
+                <p class="as-hero__subtitle">Fitness &amp; nutrition — suivi des entrainements, journaux et API Python</p>
+                <div class="as-hero__tags">
+                    <span class="as-hero__tag">React Native</span>
+                    <span class="as-hero__tag">Expo</span>
+                    <span class="as-hero__tag">Python</span>
+                    <span class="as-hero__tag">FastAPI</span>
+                </div>
             </div>
         </div>
-    </header>
+    </section>
 
-    <main class="project-page">
-        <section class="project-hero">
-            <div class="project-hero__copy">
-                <p class="project-kicker">Case study</p>
-                <h1 class="project-title">IronPulse</h1>
-                <p class="project-subtitle">
-                    Un dashboard sport et nutrition pour suivre des routines, lire ses performances rapidement
-                    et garder une vision claire de sa progression.
-                </p>
-
-                <div class="project-meta">
-                    <span>Sport tech</span>
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>JavaScript</span>
-                </div>
-
-                <div class="project-actions">
-                    <a class="btn btn-primary" href="IronPulse/index.html" target="_blank" rel="noopener">Voir la demo</a>
-                    <a class="btn btn-ghost" href="../index.html#projets">Retour au portfolio</a>
-                </div>
+    <div class="as-action-bar">
+        <div class="as-action-bar__inner">
+            <div class="as-action-bar__meta">
+                <span class="as-badge as-badge--wip">En cours</span>
+                <span class="as-sep" aria-hidden="true"></span>
+                <span class="as-meta-item">2025 – 2026</span>
+                <span class="as-sep" aria-hidden="true"></span>
+                <span class="as-meta-item">Sport tech</span>
             </div>
+            <div style="display:flex;gap:10px">
+                <a class="as-btn as-btn--ghost" href="../index.html">Retour</a>
+                <a class="as-btn as-btn--accent" href="IronPulse/index.html" target="_blank" rel="noopener">Voir la demo</a>
+            </div>
+        </div>
+    </div>
 
-            <div class="project-hero__visual">
-                <div class="project-hero__image">
-                    <img src="../images/blockchain-vault.jpg" alt="Visuel IronPulse">
-                </div>
-                <div class="project-floating-card">
-                    <span class="project-floating-card__label">Etat</span>
-                    <strong>Dashboard en demo</strong>
-                    <p>Une version web qui met en avant le suivi des records, des sessions et du rythme hebdomadaire.</p>
+    <main class="as-content">
+        <section class="as-section">
+            <h2 class="as-section-title">Apercu</h2>
+            <div class="as-screenshots-outer" id="screenshotsStrip">
+                <div class="as-screenshots-row">
+                    <div class="as-screenshot as-screenshot--placeholder sc1"><div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:20px"><svg viewBox="0 0 40 40" fill="none" width="28" height="28"><path d="M4 20h6M30 20h6M10 20l4-8 5 16 5-22 4 14h4" stroke="rgba(22,163,74,.7)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="as-screenshot__label">Dashboard</span></div></div>
+                    <div class="as-screenshot as-screenshot--placeholder sc2"><div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:20px"><svg viewBox="0 0 40 40" fill="none" width="28" height="28"><rect x="6" y="8" width="28" height="24" rx="4" stroke="rgba(22,163,74,.7)" stroke-width="2"/><path d="M12 16h16M12 20h12M12 24h8" stroke="rgba(22,163,74,.5)" stroke-width="1.6" stroke-linecap="round"/></svg><span class="as-screenshot__label">Journal</span></div></div>
+                    <div class="as-screenshot as-screenshot--placeholder sc3"><div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:20px"><svg viewBox="0 0 40 40" fill="none" width="28" height="28"><circle cx="20" cy="20" r="12" stroke="rgba(22,163,74,.7)" stroke-width="2"/><path d="M20 14v6l4 4" stroke="rgba(22,163,74,.7)" stroke-width="2" stroke-linecap="round"/></svg><span class="as-screenshot__label">Progression</span></div></div>
+                    <div class="as-screenshot as-screenshot--placeholder sc4"><div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:20px"><svg viewBox="0 0 40 40" fill="none" width="28" height="28"><path d="M8 30V16l12-8 12 8v14" stroke="rgba(22,163,74,.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="15" y="22" width="10" height="8" rx="2" stroke="rgba(22,163,74,.5)" stroke-width="1.6"/></svg><span class="as-screenshot__label">Nutrition</span></div></div>
+                    <div class="as-screenshot as-screenshot--placeholder sc5"><div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:20px"><svg viewBox="0 0 40 40" fill="none" width="28" height="28"><path d="M8 28l8-8 6 6 10-12" stroke="rgba(22,163,74,.7)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="as-screenshot__label">Stats</span></div></div>
                 </div>
             </div>
         </section>
 
-        <section class="project-metrics" aria-label="Resume du projet">
-            <article class="metric-card">
-                <span class="metric-label">Univers</span>
-                <strong class="metric-value">Sport + data</strong>
-                <p class="metric-copy">Une interface motivee par le suivi personnel et les habitudes.</p>
-            </article>
-            <article class="metric-card">
-                <span class="metric-label">Focus</span>
-                <strong class="metric-value">Progression</strong>
-                <p class="metric-copy">Records, sessions et suivi rapide de l evolution.</p>
-            </article>
-            <article class="metric-card">
-                <span class="metric-label">Format</span>
-                <strong class="metric-value">Dashboard</strong>
-                <p class="metric-copy">Lecture synthetique et navigation simple entre les informations.</p>
-            </article>
-            <article class="metric-card">
-                <span class="metric-label">Etat</span>
-                <strong class="metric-value">Demo web</strong>
-                <p class="metric-copy">Une base visible pour presenter le concept et l experience.</p>
-            </article>
-        </section>
-
-        <div class="project-sections">
-            <section class="project-section">
-                <p class="project-section__tag">Vision</p>
-                <h2 class="project-section__title">Rendre les performances plus simples a lire et plus engageantes a suivre.</h2>
-                <p class="project-copy">
-                    IronPulse cherche a condenser l experience d une application sportive dans une interface plus directe :
-                    un espace qui montre les indicateurs utiles, pousse a garder une routine et donne envie de revenir consulter ses progres.
-                </p>
-            </section>
-
-            <section class="project-section">
-                <p class="project-section__tag">Ce que j ai travaille</p>
-                <div class="project-grid">
-                    <article class="project-card">
-                        <h3>Records personnels</h3>
-                        <p>Mettre en avant les performances importantes pour que l utilisateur repere vite son niveau actuel.</p>
-                    </article>
-                    <article class="project-card">
-                        <h3>Planning hebdomadaire</h3>
-                        <p>Une lecture cadencee des sessions pour suivre l activite sur plusieurs jours sans friction.</p>
-                    </article>
-                    <article class="project-card">
-                        <h3>Univers visuel energie</h3>
-                        <p>Un rendu sombre et impactant pour soutenir l aspect motivation, effort et progression.</p>
-                    </article>
+        <div class="as-two-col">
+            <section class="as-section">
+                <h2 class="as-section-title">A propos</h2>
+                <div class="as-desc">
+                    <p><strong>IronPulse</strong> est une application mobile de suivi fitness et nutrition concue pour progresser avec methode. L interface privilegie la lisibilite des donnees et la rapidite de saisie.</p>
+                    <p>Le frontend est en <strong>React Native & Expo</strong> pour un deploiement iOS et Android depuis une seule base de code. Le backend repose sur <strong>FastAPI (Python)</strong> pour la gestion des entrainements, journaux nutritionnels et statistiques.</p>
+                    <p>Architecture evolutive : programmes predefinisAI de recommandation et synchronisation cloud sont dans la feuille de route.</p>
+                </div>
+                <div style="margin-top:28px">
+                    <h3 class="as-section-title" style="font-size:17px">Points cles</h3>
+                    <div class="as-features">
+                        <div class="as-feature-card"><div class="as-feature-card__icon"><svg viewBox="0 0 20 20" fill="none"><path d="M3 10h4l2-6 4 12 2-6h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p class="as-feature-card__title">Suivi temps reel</p><p class="as-feature-card__desc">Dashboard live des performances par session.</p></div>
+                        <div class="as-feature-card"><div class="as-feature-card__icon"><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.8"/><path d="M10 6v4l3 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div><p class="as-feature-card__title">Historique complet</p><p class="as-feature-card__desc">Journal detaille des seances et de la nutrition.</p></div>
+                        <div class="as-feature-card"><div class="as-feature-card__icon"><svg viewBox="0 0 20 20" fill="none"><path d="M4 14l4-4 4 4 4-8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p class="as-feature-card__title">Graphiques</p><p class="as-feature-card__desc">Visualisation de la progression sur plusieurs semaines.</p></div>
+                        <div class="as-feature-card"><div class="as-feature-card__icon"><svg viewBox="0 0 20 20" fill="none"><rect x="3" y="3" width="14" height="14" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="M7 10h6M10 7v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div><p class="as-feature-card__title">API REST</p><p class="as-feature-card__desc">Backend FastAPI modulaire et documente.</p></div>
+                    </div>
                 </div>
             </section>
 
-            <section class="project-section">
-                <p class="project-section__tag">Stack</p>
-                <h2 class="project-section__title">Une demo front-end construite pour presenter l usage.</h2>
-                <div class="project-stack">
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>JavaScript</span>
-                    <span>Dashboard UI</span>
-                    <span>Mobile-inspired</span>
+            <aside>
+                <div class="as-info-sheet">
+                    <p class="as-info-sheet-title">Informations</p>
+                    <dl>
+                        <div class="as-info-row"><dt>Categorie</dt><dd>Application mobile</dd></div>
+                        <div class="as-info-row"><dt>Etat</dt><dd>En cours</dd></div>
+                        <div class="as-info-row"><dt>Annee</dt><dd>2025 – 2026</dd></div>
+                        <div class="as-info-row"><dt>Frontend</dt><dd>React Native, Expo</dd></div>
+                        <div class="as-info-row"><dt>Backend</dt><dd>Python, FastAPI</dd></div>
+                        <div class="as-info-row"><dt>Base de donnees</dt><dd>PostgreSQL</dd></div>
+                        <div class="as-info-row"><dt>Plateforme</dt><dd>iOS et Android</dd></div>
+                        <div class="as-info-row"><dt>Source</dt><dd><a href="https://github.com/yohanstm-dev" target="_blank" rel="noopener" style="color:var(--as-blue)">GitHub</a></dd></div>
+                    </dl>
                 </div>
-                <ul class="project-list">
-                    <li>Hierarchie visuelle orientee tableaux de bord et indicateurs sportifs.</li>
-                    <li>Interface simple a ouvrir, lire et presenter dans un contexte portfolio.</li>
-                    <li>Demo front-end concue pour valoriser le concept avant une suite applicative plus complete.</li>
-                </ul>
-            </section>
-
-            <section class="project-callout">
-                <p class="project-section__tag">Suite</p>
-                <h2 class="project-callout__title">Explorer la demo et voir le concept prendre forme.</h2>
-                <p class="project-copy">
-                    La demo actuelle montre deja la direction produit, le type de dashboard imagine
-                    et la facon dont les donnees peuvent etre rendues plus motivantes visuellement.
-                </p>
-                <div class="project-actions">
-                    <a class="btn btn-primary" href="IronPulse/index.html" target="_blank" rel="noopener">Ouvrir la demo</a>
-                    <a class="btn btn-ghost" href="../index.html#contact">Parler du projet</a>
-                </div>
-            </section>
+            </aside>
         </div>
     </main>
 
-    <footer class="project-footer">
-        <div class="project-footer__shell">
-            <p>Projet presente dans le portfolio de Yohan Saint-Marc.</p>
-            <div class="project-footer__links">
-                <a href="../index.html#projets">Autres projets</a>
-                <a href="../index.html#contact">Contact</a>
-            </div>
-        </div>
+    <footer class="as-footer">
+        <p class="as-footer__text">2026 Yohan Saint-Marc</p>
+        <nav class="as-footer__links">
+            <a class="as-footer__link" href="../index.html">Portfolio</a>
+            <a class="as-footer__link" href="mailto:yohan.saint-marc@hotmail.com">Contact</a>
+            <a class="as-footer__link" href="https://github.com/yohanstm-dev" target="_blank" rel="noopener">GitHub</a>
+        </nav>
     </footer>
+
+    <script>
+        const nav = document.getElementById('asNav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('is-scrolled', window.scrollY > 340);
+        }, { passive: true });
+
+        const strip = document.getElementById('screenshotsStrip');
+        let isDragging = false, startX = 0, scrollLeft = 0;
+        strip.addEventListener('mousedown', e => { isDragging = true; strip.classList.add('is-dragging'); startX = e.pageX - strip.offsetLeft; scrollLeft = strip.scrollLeft; });
+        window.addEventListener('mouseup', () => { isDragging = false; strip.classList.remove('is-dragging'); });
+        strip.addEventListener('mousemove', e => { if (!isDragging) return; e.preventDefault(); const x = e.pageX - strip.offsetLeft; strip.scrollLeft = scrollLeft - (x - startX) * 1.4; });
+    </script>
 </body>
 </html>

@@ -53,7 +53,7 @@
 
 @layer components {
   .glass-panel {
-    @apply border border-white/18 bg-black/72 backdrop-blur-2xl;
+    @apply border border-white/20 bg-black/75 backdrop-blur-2xl;
   }
 
   .traffic-light {
@@ -64,7 +64,7 @@
   }
 
   .dock-icon-shell {
-    @apply grid h-16 w-16 place-items-center rounded-[1.35rem] bg-white/8 shadow-[0_20px_36px_rgba(0,0,0,0.38)] transition duration-150 will-change-transform;
+    @apply grid h-16 w-16 place-items-center rounded-[1.35rem] bg-white/10 shadow-[0_20px_36px_rgba(0,0,0,0.38)] transition duration-150 will-change-transform;
   }
 
   .macropad-key {
@@ -153,6 +153,87 @@
   background: rgba(255, 255, 255, 0.36);
 }
 
+/* === Animated Finder Dock Icon === */
+.finder-icon-wrap {
+  --size: 56px;
+  --scale-folder: 1;
+  --scale-pages: 0.7;
+  position: relative;
+  width: var(--size);
+  height: var(--size);
+  flex-shrink: 0;
+}
+
+.finder-icon-wrap .fi-folder-back,
+.finder-icon-wrap .fi-page-1,
+.finder-icon-wrap .fi-page-2,
+.finder-icon-wrap .fi-folder-front {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.finder-icon-wrap .fi-folder-back {
+  width: var(--size);
+  height: var(--size);
+  transform-origin: 50% 100%;
+  transform: translate(-50%, -50%) scaleY(var(--scale-folder));
+}
+
+.finder-icon-wrap .fi-page-1 {
+  width: calc(var(--size) * 0.5225);
+  height: calc(var(--size) * 0.5789);
+  border-radius: 8px;
+  background-color: #F2EEF7;
+  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.1));
+  transform-origin: 50% 90%;
+  transform:
+    translate(-50%, -50%)
+    translateY(calc((1 - var(--scale-pages)) * -65%))
+    scale(var(--scale-pages));
+}
+
+.finder-icon-wrap .fi-page-2 {
+  --ratio-page-2: 1.05;
+  --ratio-page-2-height: 0.5;
+  --ratio-page-2-offset: 0;
+  --opacity-page-2: 1;
+  width: calc(var(--size) * 0.65 * var(--ratio-page-2));
+  height: calc(var(--size) * 0.65 * var(--ratio-page-2-height) / var(--ratio-page-2));
+  border-radius: 10px;
+  background-color: #FFFEFF;
+  opacity: var(--opacity-page-2);
+  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.1));
+  transform:
+    translate(-50%, -50%)
+    translateY(17%)
+    translateY(calc((1 - var(--scale-pages)) * -85%))
+    translateY(calc(var(--size) * -1.2 * var(--ratio-page-2-offset)))
+    translateY(calc((1 - var(--ratio-page-2-height)) * -65%))
+    scale(var(--scale-pages));
+}
+
+.finder-icon-wrap .fi-folder-front {
+  width: var(--size);
+  height: var(--size);
+  transform-origin: 50% 100%;
+  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.1));
+  transform:
+    translate(-50%, -50%)
+    scaleY(calc(var(--scale-folder) * var(--scale-folder)));
+}
+
 ::-webkit-scrollbar-track {
   background: transparent;
+}
+
+/* === Corbeille dock === */
+#dock-trash-drop .dock-icon-shell {
+  transition: background-color 0.2s, box-shadow 0.2s, transform 0.15s;
+}
+
+#dock-trash-drop[data-drag-over="true"] .dock-icon-shell {
+  background-color: rgba(255, 59, 48, 0.35) !important;
+  box-shadow: 0 0 22px rgba(255, 59, 48, 0.55), 0 20px 36px rgba(0, 0, 0, 0.38) !important;
+  transform: scale(1.12);
 }

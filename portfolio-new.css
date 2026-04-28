@@ -1,4 +1,4 @@
-@property --ratio-x {
+﻿@property --ratio-x {
     syntax: "<number>";
     inherits: true;
     initial-value: 0;
@@ -24,7 +24,7 @@
     --radius-window: 20px;
     --radius-card: 22px;
     --radius-control: 999px;
-    --glass-blur: blur(28px) saturate(180%);
+    --glass-blur: blur(16px) saturate(160%);
     --window-transition: opacity 0.36s cubic-bezier(0.175, 0.885, 0.32, 1.275), transform 0.36s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     --shadow-window: 0 28px 80px rgba(36, 16, 36, 0.18), 0 10px 22px rgba(25, 10, 26, 0.14);
     --shadow-soft: 0 20px 38px rgba(32, 10, 30, 0.12);
@@ -203,8 +203,9 @@ ul {
 .bg-3d__halo {
     position: absolute;
     border-radius: 50%;
-    filter: blur(120px);
+    filter: blur(72px);
     opacity: 0.48;
+    contain: paint;
 }
 
 .bg-3d__halo--left {
@@ -536,8 +537,8 @@ html[data-theme="light"] .desktop-folder:hover {
     background: var(--window-bg);
     border: 1px solid var(--window-border);
     border-radius: var(--radius-window);
-    backdrop-filter: blur(24px) saturate(150%);
-    -webkit-backdrop-filter: blur(24px) saturate(150%);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
     box-shadow: var(--shadow-window);
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
@@ -622,10 +623,10 @@ html[data-theme="light"] .mac-window__toolbar {
     outline-offset: 2px;
 }
 
-/* ═══════════════════════════════════════════════
-   GUIDE SPEC — window-home redesign v2
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   GUIDE SPEC â€” window-home redesign v2
    Style : minimal settings-row / Linear
-   ═══════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
 .guide-spec {
     display: flex;
@@ -635,7 +636,7 @@ html[data-theme="light"] .mac-window__toolbar {
     padding: 0 !important;
 }
 
-/* ── Header deux colonnes ─────────────────────── */
+/* â”€â”€ Header deux colonnes â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .guide-spec__header {
     display: grid;
     grid-template-columns: 1fr 1.2fr;
@@ -671,7 +672,7 @@ html[data-theme="light"] .mac-window__toolbar {
     align-self: end;
 }
 
-/* ── Liste fenêtres ───────────────────────────── */
+/* â”€â”€ Liste fenÃªtres â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .guide-spec__list {
     list-style: none;
     margin: 0;
@@ -688,7 +689,7 @@ html[data-theme="light"] .mac-window__toolbar {
     border-bottom: none;
 }
 
-/* ── Row bouton ───────────────────────────────── */
+/* â”€â”€ Row bouton â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .gs-row {
     width: 100%;
     display: flex;
@@ -762,7 +763,7 @@ html[data-theme="light"] .mac-window__toolbar {
     transform: translateX(2px);
 }
 
-/* ── Footer raccourcis ────────────────────────── */
+/* â”€â”€ Footer raccourcis â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .guide-spec__footer {
     display: flex;
     align-items: center;
@@ -798,7 +799,7 @@ html[data-theme="light"] .mac-window__toolbar {
     opacity: 0.3;
 }
 
-/* ── Light theme ──────────────────────────────── */
+/* â”€â”€ Light theme â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 [data-theme="light"] .gs-row:hover {
     background: rgba(0,0,0,.04);
 }
@@ -812,10 +813,10 @@ html[data-theme="light"] .mac-window__toolbar {
     border-color: rgba(0,0,0,.12);
 }
 
-/* ═══════════════════════════════════════════════
-   SKILLS SPEC — window-skills redesign
-   Style : minimal / même langage que guide-spec
-   ═══════════════════════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   SKILLS SPEC â€” window-skills redesign
+   Style : minimal / mÃªme langage que guide-spec
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
 .ss-body {
     display: flex;
@@ -824,7 +825,7 @@ html[data-theme="light"] .mac-window__toolbar {
     overflow: hidden;
 }
 
-/* Header partagé (skills + contact) */
+/* Header partagÃ© (skills + contact) */
 .ss-header {
     display: grid;
     grid-template-columns: 1fr 1.2fr;
@@ -835,7 +836,7 @@ html[data-theme="light"] .mac-window__toolbar {
     flex-shrink: 0;
 }
 
-/* ── Tabs horizonaux ──────────────────────────── */
+/* â”€â”€ Tabs horizonaux â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .ss-tabs {
     display: flex;
     gap: 6px;
@@ -875,7 +876,7 @@ html[data-theme="light"] .mac-window__toolbar {
     color: #a5b4fc;
 }
 
-/* ── Meta bar ─────────────────────────────────── */
+/* â”€â”€ Meta bar â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .ss-meta-bar {
     display: flex;
     justify-content: space-between;
@@ -885,7 +886,7 @@ html[data-theme="light"] .mac-window__toolbar {
     flex-shrink: 0;
 }
 
-/* ── Holo Skill Cards — window-skills grid ────── */
+/* â”€â”€ Holo Skill Cards â€” window-skills grid â”€â”€â”€â”€â”€â”€ */
 .window-skills .finder__grid--skills,
 #window-skills .finder__grid--skills {
     display: grid;
@@ -897,7 +898,7 @@ html[data-theme="light"] .mac-window__toolbar {
     perspective: 800px;
 }
 
-/* Note déco skills */
+/* Note dÃ©co skills */
 .skills-notice {
     grid-column: 1 / -1;
     display: flex;
@@ -919,7 +920,7 @@ html[data-theme="light"] .mac-window__toolbar {
     line-height: 1;
 }
 
-/* ── Light ────────────────────────────────────── */
+/* â”€â”€ Light â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 [data-theme="light"] .ss-tab {
     background: rgba(0,0,0,.05);
     border-color: rgba(0,0,0,.1);
@@ -947,10 +948,10 @@ html[data-theme="light"] .mac-window__toolbar {
     border-color: rgba(0,0,0,.15);
 }
 
-/* ═══════════════════════════════════════════════
-   CONTACT SPEC — window-contact redesign
-   Style : minimal / même langage que guide-spec
-   ═══════════════════════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   CONTACT SPEC â€” window-contact redesign
+   Style : minimal / mÃªme langage que guide-spec
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
 .cs-body {
     display: flex;
@@ -959,7 +960,7 @@ html[data-theme="light"] .mac-window__toolbar {
     overflow: hidden;
 }
 
-/* ── Layout body : form | liens ───────────────── */
+/* â”€â”€ Layout body : form | liens â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .cs-layout {
     display: grid;
     grid-template-columns: 1fr 240px;
@@ -968,7 +969,7 @@ html[data-theme="light"] .mac-window__toolbar {
     min-height: 0;
 }
 
-/* ── Formulaire ───────────────────────────────── */
+/* â”€â”€ Formulaire â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .cs-form {
     display: flex;
     flex-direction: column;
@@ -1037,7 +1038,7 @@ html[data-theme="light"] .mac-window__toolbar {
     border-color: rgba(99,102,241,.5);
 }
 
-/* ── Colonne liens (gs-row adaptés) ───────────── */
+/* â”€â”€ Colonne liens (gs-row adaptÃ©s) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .cs-links {
     overflow-y: auto;
 }
@@ -1047,7 +1048,7 @@ html[data-theme="light"] .mac-window__toolbar {
     padding: 16px 18px;
 }
 
-/* ── Light ────────────────────────────────────── */
+/* â”€â”€ Light â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 [data-theme="light"] .cs-field input,
 [data-theme="light"] .cs-field textarea {
     background: rgba(0,0,0,.04);
@@ -1073,7 +1074,7 @@ html[data-theme="light"] .mac-window__toolbar {
 
 
 
-/* ── legacy home-window (kept for safety) ─────── */
+/* â”€â”€ legacy home-window (kept for safety) â”€â”€â”€â”€â”€â”€â”€ */
 .home-window {
     display: grid;
     gap: 16px;
@@ -1208,7 +1209,7 @@ html[data-theme="light"] .glass-link {
     color: var(--text-secondary);
 }
 
-/* ─── Dock ─────────────────────────────────────────────── */
+/* â”€â”€â”€ Dock â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .dock {
     --w: 4rem;
     position: fixed;
@@ -1242,7 +1243,7 @@ html[data-theme="light"] .glass-link {
     width: calc(15 * var(--w));
 }
 
-/* ─── Dock item ─── */
+/* â”€â”€â”€ Dock item â”€â”€â”€ */
 .dock__item {
     position: relative;
     min-width: var(--w);
@@ -1283,7 +1284,7 @@ html[data-theme="light"] .glass-link {
     margin-inline: .15rem;
 }
 
-/* ─── Real icon img ─── */
+/* â”€â”€â”€ Real icon img â”€â”€â”€ */
 .dock__img {
     position: absolute;
     top: 10%;
@@ -1297,11 +1298,26 @@ html[data-theme="light"] .glass-link {
     transition: .4ms linear;
 }
 
+.dock__img--svg {
+    background-image: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* â”€â”€â”€ Corbeille : highlight pendant un drag â”€â”€â”€ */
+#dock-trash.trash--drag-over .dock__img {
+    filter: drop-shadow(0 0 10px rgba(255,59,48,0.8));
+    transform: scale(1.15) translateY(-4px);
+    transition: transform .15s, filter .15s;
+}
+
 .dock__img:active {
     transform: translateY(.1rem);
 }
 
-/* ─── Tooltip label ─── */
+/* â”€â”€â”€ Tooltip label â”€â”€â”€ */
 .dock__item::after {
     --bg: #aaad;
     content: attr(data-dock-label);
@@ -1352,7 +1368,7 @@ html[data-theme="light"] .glass-link {
     z-index: 2;
 }
 
-/* ─── Active indicator dot ─── */
+/* â”€â”€â”€ Active indicator dot â”€â”€â”€ */
 .dock__indicator {
     position: absolute;
     left: 50%;
@@ -1378,7 +1394,7 @@ html[data-theme="light"] .glass-link {
     opacity: 1;
 }
 
-/* ─── Separator ─── */
+/* â”€â”€â”€ Separator â”€â”€â”€ */
 .dock__separator {
     width: 1px;
     height: 44px;
@@ -1570,9 +1586,9 @@ html[data-theme="light"] .glass-link {
     color: var(--text-muted);
 }
 
-/* ─────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    Holo Skill Cards
-   ───────────────────────────────────────────── */
+   â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 .finder__grid--skills {
     grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
@@ -1751,7 +1767,7 @@ html[data-theme="light"] .glass-link {
     box-shadow: 0 0 6px var(--dc, #22c55e);
 }
 
-/* ── Skill Carousel (legacy) ─────────────────────────────────────── */
+/* â”€â”€ Skill Carousel (legacy) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .skill-carousel-window {
     padding: 0;
     overflow: hidden;
@@ -2170,8 +2186,13 @@ html[data-theme="light"] .glass-link {
     overflow: auto;
 }
 
-/* ─── Finder Cards — premium redesign ─────────────────────── */
-/* ── Finder cards — redesign 2026 ──────────────────────────────── */
+/* â”€â”€â”€ Finder Cards â€” premium redesign â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* â”€â”€ Finder cards â€” redesign 2026 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+a.finder-card {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+}
 .finder-card {
     --card-a: #4F46E5;
     --card-b: #312e81;
@@ -2344,7 +2365,7 @@ html[data-theme="light"] .glass-link {
     overflow: hidden;
 }
 
-/* Stack tags — colorés selon l'accent de la carte */
+/* Stack tags â€” colorÃ©s selon l'accent de la carte */
 .finder-card__stack {
     display: flex;
     flex-wrap: wrap;
@@ -2369,7 +2390,7 @@ html[data-theme="light"] .finder-card__tag {
     color: color-mix(in srgb, var(--card-a) 75%, black);
 }
 
-/* Grid layout — 2 columns min */
+/* Grid layout â€” 2 columns min */
 .finder__grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -2561,9 +2582,9 @@ html[data-theme="light"] .finder-card__tag {
     transform: translateX(-50%) translateY(0);
 }
 
-/* ═══════════════════════════════════════════════
-   PERF — optimisations GPU / rendu
-   ═══════════════════════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   PERF â€” optimisations GPU / rendu
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
 /* Dock items : GPU layer pour hover scale */
 .dock__item {
@@ -2581,7 +2602,7 @@ html[data-theme="light"] .finder-card__tag {
     will-change: transform, opacity;
 }
 
-/* Fenêtres ouvertes : retirer will-change une fois stables */
+/* FenÃªtres ouvertes : retirer will-change une fois stables */
 .mac-window.is-open {
     will-change: auto;
 }
@@ -2779,9 +2800,9 @@ html[data-theme="light"] .finder-card__tag {
     }
 }
 
-/* ═══════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    BROWSER WINDOW (Safari-style)
-   ═══════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .mac-window__shell--browser {
     width: min(1200px, calc(100vw - 72px));
     height: var(--window-shell-height);
@@ -2892,9 +2913,9 @@ html[data-theme="light"] .browser-toolbar__url {
     display: block;
 }
 
-/* ═══════════════════════════════════════════════
-   RÉGLAGES SYSTÈME (System Settings)
-   ═══════════════════════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   RÃ‰GLAGES SYSTÃˆME (System Settings)
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .mac-window__shell--settings {
     width: min(900px, calc(100vw - 72px));
     height: min(74vh, calc(100vh - 140px));
@@ -2994,7 +3015,7 @@ html[data-theme="light"] .browser-toolbar__url {
     color: var(--text-secondary);
 }
 
-/* ── Theme picker (Apparence panel) ─────────────────── */
+/* â”€â”€ Theme picker (Apparence panel) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .theme-picker {
     display: flex;
     gap: 16px;
@@ -3128,9 +3149,9 @@ html[data-theme="light"] .browser-toolbar__url {
     color: white;
 }
 
-/* ═══════════════════════════════════════════════
-   CV — BENTO GRID REDESIGN
-   ═══════════════════════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   CV â€” BENTO GRID REDESIGN
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .cv-hero {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -3175,7 +3196,7 @@ html[data-theme="light"] .browser-toolbar__url {
     align-items: start;
 }
 
-/* ── Timeline ─────────────────────────────── */
+/* â”€â”€ Timeline â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .cv-timeline {
     position: relative;
     padding-left: 60px;
@@ -3293,7 +3314,7 @@ html[data-theme="light"] .timeline-card__body:hover {
     border: 1px solid rgba(122, 167, 255, 0.18);
 }
 
-/* ── Side Bento ──────────────────────────── */
+/* â”€â”€ Side Bento â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .cv-side {
     display: flex;
     flex-direction: column;
@@ -3423,9 +3444,9 @@ html[data-theme="light"] .timeline-card__body:hover {
     color: var(--text-muted);
 }
 
-/* ═══════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    MINIMIZE TO DOCK ANIMATION
-   ═══════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 @keyframes minimizeToDock {
     0% {
         transform: scale(1) translate(0px, 0px);
@@ -3493,4 +3514,331 @@ html[data-theme="light"] .timeline-card__body:hover {
     .wallpaper-grid {
         grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     }
+}
+
+/* ─── Project Modal — App Store Style ──────────────────────── */
+.project-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: flex-end;
+    pointer-events: none;
+}
+.project-modal__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    transition: background 0.4s ease, backdrop-filter 0.4s ease, -webkit-backdrop-filter 0.4s ease;
+}
+.project-modal.is-open {
+    pointer-events: all;
+}
+.project-modal.is-open .project-modal__backdrop {
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+.project-modal__sheet {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-height: 88vh;
+    background: #111;
+    border-radius: 22px 22px 0 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transform: translateY(100%);
+    transition: transform 0.52s cubic-bezier(0.32, 0.72, 0, 1);
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,0.08) transparent;
+}
+.project-modal.is-open .project-modal__sheet {
+    transform: translateY(0);
+}
+.project-modal__handle-bar {
+    width: 36px;
+    height: 4px;
+    border-radius: 2px;
+    background: rgba(255,255,255,0.18);
+    margin: 12px auto 0;
+}
+/* Hero */
+.pm-hero {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+.pm-hero__bg {
+    position: absolute;
+    inset: 0;
+}
+.pm-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 20%, #111 100%);
+}
+.pm-hero__content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 24px;
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+}
+.pm-hero__icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 800;
+    color: #fff;
+    flex-shrink: 0;
+    border: 1px solid rgba(255,255,255,0.15);
+    letter-spacing: -0.5px;
+}
+.pm-hero__icon--img {
+    background: #fff;
+    padding: 6px;
+    overflow: hidden;
+}
+.pm-hero__icon--img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+}
+.pm-hero__title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #f5f5f7;
+    margin: 0 0 4px;
+    line-height: 1.2;
+}
+.pm-hero__year {
+    font-size: 13px;
+    color: rgba(245,245,247,0.5);
+    margin: 0;
+}
+/* Action bar */
+.pm-action-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 24px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    gap: 12px;
+    flex-wrap: wrap;
+}
+.pm-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+.pm-badge--live     { background: rgba(52,199,89,0.15);  color: #34c759; }
+.pm-badge--wip      { background: rgba(255,159,10,0.15); color: #ff9f0a; }
+.pm-badge--upcoming { background: rgba(94,92,230,0.15);  color: #5e5ce6; }
+.pm-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity 0.15s, transform 0.1s;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+}
+.pm-btn--accent { color: #fff; }
+.pm-btn--ghost {
+    background: rgba(255,255,255,0.09);
+    color: rgba(245,245,247,0.75);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+.pm-btn:hover  { opacity: 0.82; }
+.pm-btn:active { transform: scale(0.97); }
+/* Screenshots strip */
+.pm-screenshots-outer {
+    overflow-x: auto;
+    padding: 20px 24px;
+    scrollbar-width: none;
+    cursor: grab;
+}
+.pm-screenshots-outer::-webkit-scrollbar { display: none; }
+.pm-screenshots-outer.is-dragging { cursor: grabbing; user-select: none; }
+.pm-screenshots-row {
+    display: flex;
+    gap: 12px;
+    width: max-content;
+}
+.pm-screenshot {
+    width: 180px;
+    height: 120px;
+    border-radius: 14px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255,255,255,0.08);
+    font-size: 12px;
+    color: rgba(255,255,255,0.38);
+    letter-spacing: 0.04em;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.pm-screenshot--img {
+    position: relative;
+    overflow: hidden;
+    flex-direction: column;
+    gap: 0;
+}
+.pm-screenshot--img img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 13px;
+}
+.pm-screenshot--img span {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 6px 8px;
+    font-size: 11px;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
+    color: rgba(255,255,255,0.85);
+    text-transform: none;
+    letter-spacing: 0.02em;
+    border-radius: 0 0 13px 13px;
+    z-index: 1;
+}
+/* Content */
+.pm-content {
+    padding: 0 24px 48px;
+}
+.pm-section {
+    margin-bottom: 26px;
+}
+.pm-section-title {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(245,245,247,0.38);
+    margin-bottom: 10px;
+}
+.pm-desc {
+    font-size: 15px;
+    line-height: 1.68;
+    color: rgba(245,245,247,0.8);
+    margin: 0;
+}
+.pm-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.pm-tag {
+    padding: 5px 13px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.1);
+    font-size: 13px;
+    color: rgba(245,245,247,0.72);
+    font-weight: 500;
+}
+/* Info sheet */
+.pm-info-sheet {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+.pm-info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 11px 16px;
+    font-size: 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.pm-info-row:last-child { border-bottom: none; }
+.pm-info-row dt { color: rgba(245,245,247,0.42); font-weight: 500; }
+.pm-info-row dd { color: rgba(245,245,247,0.85); font-weight: 500; text-align: right; margin: 0; }
+
+/* ==================== SCREENSHOT LIGHTBOX ==================== */
+.scr-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.22s ease;
+    backdrop-filter: blur(8px);
+}
+.scr-lightbox.is-open {
+    opacity: 1;
+    pointer-events: all;
+}
+.scr-lightbox__img {
+    max-width: 92vw;
+    max-height: 86vh;
+    border-radius: 16px;
+    box-shadow: 0 32px 80px rgba(0,0,0,0.7);
+    object-fit: contain;
+    transform: scale(0.88);
+    transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.scr-lightbox.is-open .scr-lightbox__img {
+    transform: scale(1);
+}
+.scr-lightbox__close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.18);
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    transition: background 0.18s ease;
+}
+.scr-lightbox__close:hover {
+    background: rgba(230,28,60,0.45);
+}
+.pm-screenshot--img img {
+    cursor: zoom-in;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+.pm-screenshot--img:hover img {
+    transform: scale(1.06);
+    filter: brightness(1.1);
 }

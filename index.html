@@ -209,7 +209,7 @@
                             </span>
                             <span class="gs-row__text">
                                 <span class="gs-row__name">Projets</span>
-                                <span class="gs-row__desc">Finder avec 8 projets réels — Sites web, Apps mobiles, À venir.</span>
+                                <span class="gs-row__desc">Finder avec 13 projets réels — Sites web, Apps mobiles, À venir.</span>
                             </span>
                             <span class="gs-row__arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
                         </button>
@@ -903,7 +903,25 @@ n>
     <nav class="dock" id="macDock" aria-label="Dock MacOS">
 
         <button class="dock__item" type="button" data-window-trigger="window-projects" aria-label="Finder" data-dock-label="Finder">
-            <span class="dock__img" style="background-image:url('https://parsefiles.back4app.com/JPaQcFfEEQ1ePBxbf6wvzkPMEqKYHhPYv8boI1Rc/affa0e0afa873832cc6fe6550f3917c4_sjoWvWxlwy.png')" aria-hidden="true"></span>
+            <span class="dock__img dock__img--svg" aria-hidden="true">
+                <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;">
+                    <rect width="64" height="64" rx="14" fill="url(#dock-fi-bg)"/>
+                    <path d="M6 16a4 4 0 0 1 4-4h12.5l4 4.5H58a4 4 0 0 1 4 4v3H6V16Z" fill="#28A060"/>
+                    <path d="M6 24h52l-3.5 24a4 4 0 0 1-3.96 3.5H11.46A4 4 0 0 1 7.5 48L6 24Z" fill="url(#dock-fi-front)"/>
+                    <rect x="22" y="20" width="13" height="17" rx="3" fill="#F2EEF7" opacity="0.92"/>
+                    <rect x="29" y="18" width="15" height="10" rx="3" fill="#FFFEFF" opacity="0.85"/>
+                    <defs>
+                        <linearGradient id="dock-fi-bg" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#3ECF82"/>
+                            <stop offset="1" stop-color="#1E8A52"/>
+                        </linearGradient>
+                        <linearGradient id="dock-fi-front" x1="6" y1="24" x2="58" y2="64" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#47DB99"/>
+                            <stop offset="1" stop-color="#2EA16D"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </span>
             <span class="dock__indicator" aria-hidden="true"></span>
         </button>
 
@@ -941,12 +959,27 @@ n>
 
         <span class="dock__separator" aria-hidden="true"></span>
 
-        <button class="dock__item" type="button"  aria-label="Corbeille" data-dock-label="Corbeille" style="cursor:default">
+        <button class="dock__item" id="dock-trash" type="button" aria-label="Corbeille" data-dock-label="Corbeille" style="cursor:default">
             <span class="dock__img" style="background-image:url('https://parsefiles.back4app.com/JPaQcFfEEQ1ePBxbf6wvzkPMEqKYHhPYv8boI1Rc/28498413ab4a2cc710cc6750b7ac24d0_n13LwuIChY.png')" aria-hidden="true"></span>
             <span class="dock__indicator" aria-hidden="true"></span>
         </button>
 
     </nav>
+
+    <!-- Lightbox screenshots -->
+    <div id="screenshotLightbox" class="scr-lightbox" role="dialog" aria-modal="true" aria-label="Image agrandie">
+        <button class="scr-lightbox__close" id="scrLightboxClose" type="button" aria-label="Fermer">✕</button>
+        <img class="scr-lightbox__img" id="scrLightboxImg" src="" alt="">
+    </div>
+
+    <!-- Project Modal (App Store style) -->
+    <div id="projectModal" class="project-modal" role="dialog" aria-modal="true" aria-label="Détail du projet">
+        <div class="project-modal__backdrop" id="projectModalBackdrop"></div>
+        <div class="project-modal__sheet" id="projectModalSheet">
+            <div class="project-modal__handle-bar"></div>
+            <div id="projectModalContent"></div>
+        </div>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>

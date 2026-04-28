@@ -18,8 +18,12 @@ const finderProjects = {
             year: '2025',
             stack: ['HTML', 'CSS', 'SEO'],
             summary: 'Refonte du site officiel d’un club de foot. SEO optimisé, mobile-first.',
-            href: 'projets/fc-fulbert.html',
-            accent: ['#1D4ED8', '#1e3a8a']
+            href: 'https://fcfulbertchartres.github.io/',
+            accent: ['#1D4ED8', '#1e3a8a'],
+            logo: 'images/logoFCFulbert.png',
+            screenshots: [
+                { src: 'images/fcfulbert1.png', label: 'Page d’accueil' },
+            ],
 
         },
         {
@@ -29,9 +33,49 @@ const finderProjects = {
             year: '2025',
             stack: ['HTML', 'CSS', 'JavaScript'],
             summary: 'Site vitrine pour un zoo fictif. Galerie interactive et fiches animaux.',
-            href: 'projets/fc-fulbert.html',
-            accent: ['#15803D', '#14532d']
+            href: 'https://zoofulbert.com/',
+            accent: ['#15803D', '#14532d'],
+            screenshots: [
+                { src: 'images/zoofulbert1.png', label: 'Page d’accueil' },
+            ],
 
+        },
+        {
+            title: 'Site BND',
+            status: 'En cours',
+            statusLabel: 'En cours',
+            year: '2025',
+            stack: ['HTML', 'CSS', 'JavaScript'],
+            summary: 'Site vitrine pour une entreprise événementielle. Design soigné, responsive.',
+            description: `J'ai réalisé un site web fictif pour BND, une entreprise spécialisée dans l'accompagnement de prestataires dans la création d'événements d'entreprise.<br><br>L'objectif du projet était de concevoir une plateforme mettant en avant les services proposés et facilitant la compréhension de l'activité de l'entreprise.<br><br>Ce travail m'a permis de :<br><br>• Structurer un site vitrine professionnel<br>• Mettre en valeur une activité de services événementiels<br>• Améliorer mes compétences en design et développement web`,
+            href: '#',
+            accent: ['#0E7490', '#164e63']
+        },
+        {
+            title: 'Site Photizo Agency',
+            status: 'En cours',
+            statusLabel: 'En cours',
+            year: '2025',
+            stack: ['HTML', 'CSS', 'JavaScript'],
+            summary: `Site vitrine pour une agence de photographie fictive. Galerie immersive.`,
+            description: `J'ai conçu un site web pour Phorizo Agency, une entreprise fictive de photographie.<br><br>L'objectif était de créer une vitrine en ligne présentant les services photographiques et les réalisations de l'entreprise.<br><br>Ce projet m'a permis de :<br><br>• Travailler sur l'identité visuelle d'une agence créative<br>• Mettre en avant un portfolio d'images et de services<br>• Développer mes compétences en conception de site vitrine`,
+            href: '#',
+            accent: ['#92400E', '#451a03']
+        },
+        {
+            title: 'Présentation BTS',
+            status: 'live',
+            statusLabel: 'Terminé',
+            year: '2025',
+            stack: ['Reveal.js', 'HTML', 'CSS'],
+            summary: 'Présentation interactive du BTS SIO avec Reveal.js. Slides dynamiques.',
+            description: `J'ai réalisé une présentation interactive du BTS SIO en utilisant Reveal.js. L'objectif était de présenter le domaine de l'informatique ainsi que les compétences que j'ai acquises et que je suis capable de mettre en œuvre.<br><br>Ce projet m'a permis de :<br><br>• Découvrir et utiliser Reveal.js pour créer une présentation web dynamique<br>• Structurer un contenu clair et professionnel autour du BTS SIO<br>• Mettre en avant mes compétences en développement et en informatique`,
+            logo: 'images/logoSansTitre.jpg',
+            href: 'https://yohanstm-dev.github.io/PresentationBTS/#/home',
+            accent: ['#1D4ED8', '#1e3a8a'],
+            screenshots: [
+                { src: 'images/capPresentationBts.png', label: 'Page d’accueil' },
+            ],
         },
         {
             title: 'Portfolio macOS',
@@ -41,8 +85,11 @@ const finderProjects = {
             stack: ['HTML', 'CSS', 'GSAP', 'Vanilla JS'],
             summary: 'Portfolio macOS — dock magnétique, glassmorphism, thèmes et GSAP.',
             href: 'index.html',
-            accent: ['#4F46E5', '#312e81']
-
+            accent: ['#4F46E5', '#312e81'],
+            logo: 'images/logoSansTitre.jpg',
+            screenshots: [
+                { src: 'images/capPresentationBts.png', label: 'Page d’accueil' },
+            ]
         }
     ],
     apps: [
@@ -52,9 +99,14 @@ const finderProjects = {
             statusLabel: 'En cours',
             year: '2025',
             stack: ['React Native', 'Expo', 'Python', 'FastAPI'],
-            summary: 'App mobile fitness & nutrition. Entraînements, journaux et API Python.',
+            summary: 'App mobile fitness. Entraînements, journaux et API Python.',
             href: 'projets/ironpulse.html',
             accent: ['#16A34A', '#14532d'],
+            screenshots: [
+            { src: 'images/ironpulse1.png',   label: 'Accueil' },
+            { src: 'images/ironPulse2.png',  label: 'Services' },
+            { src: 'images/ironPulse3.png',   label: 'Contact' },
+        ],
 
         },
         {
@@ -68,14 +120,20 @@ const finderProjects = {
             accent: ['#2563EB', '#1e3a8a']
         },
         {
-            title: 'Resolution Mate',
-            status: 'live',
-            statusLabel: 'Déployé',
+            title: 'Resolution Mate - App de gestion',
+            status: 'En cours',
+            statusLabel: 'En cours',
             year: '2025',
             stack: ['Flutter', 'Dart', 'Firebase'],
             summary: 'App mobile d’objectifs. Suivi quotidien, progression et rappels.',
             href: 'projets/resolution-mate.html',
-            accent: ['#7C3AED', '#4c1d95']
+            accent: ['#7C3AED', '#4c1d95'],
+            screenshots: [
+                { src: 'images/resolutionMate1.png',   label: 'Accueil' },
+                { src: 'images/resolutionMate2.png',  label: 'Services' },
+                { src: 'images/resolutionMate3.png',   label: 'Contact' },
+
+            ]
         },
         {
             title: 'Mini Wiki PHP',
@@ -83,9 +141,34 @@ const finderProjects = {
             statusLabel: 'Terminé',
             year: '2025',
             stack: ['PHP', 'MySQL', 'HTML', 'CSS'],
-            summary: 'Wiki auto-hébergé. Articles, catégories et recherche en PHP/MySQL.',
+            summary: `Wiki auto-hébergé. Articles, catégories et recherche en PHP/MySQL.`,
             href: '#',
-            accent: ['#B45309', '#78350f']
+            accent: ['#B45309', '#78350f'],
+            screenshots: [
+            { src: 'images/MiniWiki.jpeg',   label: 'Accueil' },
+            { src: 'images/miniwiki2.png',  label: 'Services' },
+            { src: 'images/miniwiki3.png',   label: 'Contact' },
+        ],
+        },
+        {
+            title: 'AppGestionWiki',
+            status: 'wip',
+            statusLabel: 'En cours',
+            year: '2026',
+            stack: ['.NET', 'C#', 'SQL Server'],
+            summary: 'Application de gestion interne. CRUD complet, authentification et reporting.',
+            href: '#',
+            accent: ['#6D28D9', '#3b0764']
+        },
+        {
+            title: 'App Grand Monarque',
+            status: 'wip',
+            statusLabel: 'En cours',
+            year: '2026',
+            stack: ['React', 'Vite', 'Node.js', 'CSS'],
+            summary: `Application web pour l'hôtel Grand Monarque. Réservations et gestion.`,
+            href: '#',
+            accent: ['#B45309', '#431407']
         }
     ],
     future: [
@@ -143,6 +226,8 @@ const state = {
     timelineInitialized: false,
     currentFinderCategory: 'web'
 };
+
+const _projectMap = {};
 
 // ── Wallpaper definitions ─────────────────────────────────────────
 const WALLPAPER_KEY = 'yohan-wallpaper-id';
@@ -332,12 +417,19 @@ function renderSkillsCategory(catIdx) {
                 '<div class="holo-card__dots">' + dotsHtml + '</div>' +
             '</div>';
 
+        var _holoRafId = null;
         card.addEventListener('pointermove', function(e) {
-            var rect = card.getBoundingClientRect();
-            card.style.setProperty('--ratio-x', ((e.clientX - rect.left - rect.width  / 2) / (rect.width  / 2)).toFixed(3));
-            card.style.setProperty('--ratio-y', ((e.clientY - rect.top  - rect.height / 2) / (rect.height / 2)).toFixed(3));
+            if (_holoRafId) { return; }
+            var cx = e.clientX; var cy = e.clientY;
+            _holoRafId = window.requestAnimationFrame(function() {
+                _holoRafId = null;
+                var rect = card.getBoundingClientRect();
+                card.style.setProperty('--ratio-x', ((cx - rect.left - rect.width  / 2) / (rect.width  / 2)).toFixed(3));
+                card.style.setProperty('--ratio-y', ((cy - rect.top  - rect.height / 2) / (rect.height / 2)).toFixed(3));
+            });
         });
         card.addEventListener('pointerleave', function() {
+            if (_holoRafId) { window.cancelAnimationFrame(_holoRafId); _holoRafId = null; }
             card.style.setProperty('--ratio-x', '0');
             card.style.setProperty('--ratio-y', '0');
         });
@@ -366,7 +458,10 @@ function renderSkills() {
 }
 
 
-function makeFinderCard(project) {
+function makeFinderCard(project, category, idx) {
+    const key = `${category}:${idx}`;
+    _projectMap[key] = project;
+
     const statusClass = {
         live: 'finder-card__status--live',
         wip: 'finder-card__status--wip',
@@ -378,7 +473,7 @@ function makeFinderCard(project) {
         .join('');
 
     return `
-        <div class="finder-card finder-card--locked" style="--card-a:${project.accent[0]};--card-b:${project.accent[1]}" aria-label="${project.title}">
+        <div class="finder-card" data-project-key="${key}" role="button" tabindex="0" style="--card-a:${project.accent[0]};--card-b:${project.accent[1]}" aria-label="${project.title}">
             <div class="finder-card__stripe"></div>
             <div class="finder-card__hero">
                 <span class="finder-card__status ${statusClass}">${project.statusLabel}</span>
@@ -415,7 +510,7 @@ function renderFinder(category) {
             </div>
         </div>
     `;
-    grid.innerHTML = noticeHtml + projects.map(makeFinderCard).join('');
+    grid.innerHTML = noticeHtml + projects.map((p, i) => makeFinderCard(p, category, i)).join('');
     path.textContent = `Portfolio / ${finderCategoryLabels[category] || 'Projets'}`;
     count.textContent = `${projects.length} élément${projects.length > 1 ? 's' : ''}`;
 }
@@ -435,6 +530,157 @@ function initFinder() {
     });
 
     renderFinder(state.currentFinderCategory);
+
+    const finderGrid = document.getElementById('finderGrid');
+    if (finderGrid) {
+        finderGrid.addEventListener('click', (e) => {
+            const card = e.target.closest('[data-project-key]');
+            if (!card) return;
+            const project = _projectMap[card.dataset.projectKey];
+            if (project) openProjectModal(project);
+        });
+        finderGrid.addEventListener('keydown', (e) => {
+            if (e.key !== 'Enter' && e.key !== ' ') return;
+            const card = e.target.closest('[data-project-key]');
+            if (!card) return;
+            const project = _projectMap[card.dataset.projectKey];
+            if (project) { e.preventDefault(); openProjectModal(project); }
+        });
+    }
+}
+
+function openProjectModal(project) {
+    const modal = document.getElementById('projectModal');
+    const content = document.getElementById('projectModalContent');
+    if (!modal || !content) return;
+
+    const badgeClass = {
+        live: 'pm-badge--live',
+        wip: 'pm-badge--wip',
+        upcoming: 'pm-badge--upcoming'
+    }[project.status] || 'pm-badge--live';
+
+    const a1 = project.accent[0];
+    const a2 = project.accent[1];
+    const letter = project.title.charAt(0).toUpperCase();
+    const hasHref = project.href && project.href !== '#' && project.href !== 'index.html';
+
+    const iconHtml = project.logo
+        ? `<div class="pm-hero__icon pm-hero__icon--img" style="box-shadow:0 8px 24px ${a1}66"><img src="${project.logo}" alt="${project.title}"></div>`
+        : `<div class="pm-hero__icon" style="background:linear-gradient(135deg,${a1},${a2});box-shadow:0 8px 24px ${a1}66">${letter}</div>`;
+
+    const scOpacity = ['55', '30', '40', '20', '35'];
+    const screenshots = (project.screenshots && project.screenshots.length)
+        ? project.screenshots.map(s => {
+            const src   = typeof s === 'string' ? s : s.src;
+            const label = typeof s === 'string' ? '' : (s.label || '');
+            return `<div class="pm-screenshot pm-screenshot--img"><img src="${src}" alt="${label}" loading="lazy"><span>${label}</span></div>`;
+        }).join('')
+        : ['Apercu', 'Interface', 'Details', 'Fonctions', 'Extras'].map((label, i) =>
+            `<div class="pm-screenshot" style="background:linear-gradient(135deg,${a2} 0%,${a1}${scOpacity[i]} 100%)"><span>${label}</span></div>`
+        ).join('');
+
+    const stackHtml = project.stack.map(t => `<span class="pm-tag">${t}</span>`).join('');
+    const ctaHtml = hasHref
+        ? `<a class="pm-btn pm-btn--accent" href="${project.href}" target="_blank" rel="noopener" style="background:${a1}">Voir le projet ↗</a>`
+        : '';
+    const desc = project.description || project.summary;
+
+    content.innerHTML = `
+        <div class="pm-hero">
+            <div class="pm-hero__bg" style="background:radial-gradient(ellipse at 30% 60%,${a1}66 0%,${a2} 55%,#0a0a0a 100%)"></div>
+            <div class="pm-hero__overlay"></div>
+            <div class="pm-hero__content">
+                ${iconHtml}
+                <div class="pm-hero__info">
+                    <h2 class="pm-hero__title">${project.title}</h2>
+                    <p class="pm-hero__year">${project.year}</p>
+                </div>
+            </div>
+        </div>
+        <div class="pm-action-bar">
+            <span class="pm-badge ${badgeClass}">${project.statusLabel}</span>
+            <div style="display:flex;gap:8px">
+                ${ctaHtml}
+                <button class="pm-btn pm-btn--ghost" id="pmCloseBtn" type="button">Fermer ✕</button>
+            </div>
+        </div>
+        <div class="pm-screenshots-outer" id="pmScreenshots">
+            <div class="pm-screenshots-row">${screenshots}</div>
+        </div>
+        <div class="pm-content">
+            <div class="pm-section">
+                <p class="pm-section-title">A propos</p>
+                <p class="pm-desc">${desc}</p>
+            </div>
+            <div class="pm-section">
+                <p class="pm-section-title">Technologies</p>
+                <div class="pm-stack">${stackHtml}</div>
+            </div>
+            <dl class="pm-info-sheet">
+                <div class="pm-info-row"><dt>Annee</dt><dd>${project.year}</dd></div>
+                <div class="pm-info-row"><dt>Statut</dt><dd>${project.statusLabel}</dd></div>
+                <div class="pm-info-row"><dt>Stack</dt><dd>${project.stack.slice(0, 3).join(', ')}</dd></div>
+            </dl>
+        </div>
+    `;
+
+    modal.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+
+    document.getElementById('pmCloseBtn').addEventListener('click', closeProjectModal);
+
+    // Lightbox sur les screenshots
+    document.querySelectorAll('#pmScreenshots .pm-screenshot--img img').forEach(img => {
+        img.addEventListener('click', () => openScrLightbox(img.src, img.alt));
+    });
+
+    const strip = document.getElementById('pmScreenshots');
+    let isDrag = false, sx = 0, sl = 0;
+    strip.addEventListener('mousedown', e => { isDrag = true; strip.classList.add('is-dragging'); sx = e.pageX - strip.offsetLeft; sl = strip.scrollLeft; });
+    window.addEventListener('mouseup', () => { isDrag = false; strip.classList.remove('is-dragging'); }, { once: false });
+    strip.addEventListener('mousemove', e => { if (!isDrag) return; e.preventDefault(); strip.scrollLeft = sl - (e.pageX - strip.offsetLeft - sx) * 1.4; });
+}
+
+function closeProjectModal() {
+    const modal = document.getElementById('projectModal');
+    if (!modal) return;
+    modal.classList.remove('is-open');
+    document.body.style.overflow = '';
+    const sheet = document.getElementById('projectModalSheet');
+    if (sheet) sheet.scrollTop = 0;
+}
+
+function initProjectModal() {
+    const backdrop = document.getElementById('projectModalBackdrop');
+    if (backdrop) backdrop.addEventListener('click', closeProjectModal);
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') {
+            const lb = document.getElementById('screenshotLightbox');
+            if (lb && lb.classList.contains('is-open')) { closeScrLightbox(); return; }
+            closeProjectModal();
+        }
+    });
+}
+
+/* ---- Screenshot lightbox ---- */
+function openScrLightbox(src, alt) {
+    const lb  = document.getElementById('screenshotLightbox');
+    const img = document.getElementById('scrLightboxImg');
+    if (!lb || !img) return;
+    img.src = src;
+    img.alt = alt || '';
+    lb.classList.add('is-open');
+}
+function closeScrLightbox() {
+    const lb = document.getElementById('screenshotLightbox');
+    if (lb) lb.classList.remove('is-open');
+}
+function initScrLightbox() {
+    const close = document.getElementById('scrLightboxClose');
+    const lb    = document.getElementById('screenshotLightbox');
+    if (close) close.addEventListener('click', closeScrLightbox);
+    if (lb)    lb.addEventListener('click', e => { if (e.target === lb) closeScrLightbox(); });
 }
 
 function centerWindow(windowNode) {
@@ -1043,6 +1289,8 @@ initTheme();
 initClock();
 renderSkills();
 initFinder();
+initProjectModal();
+initScrLightbox();
 initProjectBrowser();
 initWindowControls();
 initDockMagnify();
@@ -1080,8 +1328,25 @@ document.addEventListener('keydown', (e) => {
 });
 
 mobileLayoutQuery.addEventListener('change', syncResponsiveLayout);
+
+// Debounce resize avec rAF
+var _resizeRafId = null;
 window.addEventListener('resize', () => {
-    if (typeof window.ScrollTrigger !== 'undefined') {
-        window.ScrollTrigger.refresh();
-    }
+    if (_resizeRafId) { window.cancelAnimationFrame(_resizeRafId); }
+    _resizeRafId = window.requestAnimationFrame(() => {
+        _resizeRafId = null;
+        if (typeof window.ScrollTrigger !== 'undefined') {
+            window.ScrollTrigger.refresh();
+        }
+    });
+});
+
+// Pause les animations de fond quand l'onglet est caché (économise CPU/GPU)
+document.addEventListener('visibilitychange', function() {
+    const playState = document.hidden ? 'paused' : 'running';
+    const bg = document.getElementById('bg-3d');
+    if (bg) { bg.style.animationPlayState = playState; }
+    document.querySelectorAll('.bg-3d__halo').forEach(function(el) {
+        el.style.animationPlayState = playState;
+    });
 });

@@ -50,17 +50,22 @@ export function BatteryIcon(props: IconProps) {
 export function FinderIcon(props: IconProps) {
   return (
     <svg viewBox="0 0 64 64" fill="none" {...props}>
-      <rect width="64" height="64" rx="18" fill="url(#finder-icon-gradient)" />
-      <path d="M17 18h13.9l3.7 4H46a4 4 0 0 1 4 4v18a4 4 0 0 1-4 4H18a4 4 0 0 1-4-4V22a4 4 0 0 1 4-4Z" fill="#E8F6FF" />
-      <path d="M32 18v30" stroke="#1C63EA" strokeWidth="2.2" />
-      <path d="M20.5 32.3c1.89 1.57 4.02 2.35 6.4 2.35 2.33 0 4.38-.78 6.15-2.35" stroke="#1C63EA" strokeWidth="2.2" />
-      <path d="M34.7 32.3c1.75 1.57 3.82 2.35 6.22 2.35s4.54-.78 6.58-2.35" stroke="#1847B5" strokeWidth="2.2" />
-      <circle cx="25.6" cy="25.7" r="1.45" fill="#1C63EA" />
-      <circle cx="39.1" cy="25.7" r="1.45" fill="#1847B5" />
+      <rect width="64" height="64" rx="14" fill="url(#fi-bg)" />
+      {/* Dos du dossier */}
+      <path d="M6 16a4 4 0 0 1 4-4h12.5l4 4.5H54a4 4 0 0 1 4 4v3H6V16Z" fill="#28A060" />
+      {/* Corps du dossier */}
+      <path d="M6 24h52l-3.5 24a4 4 0 0 1-3.96 3.5H11.46A4 4 0 0 1 7.5 48L6 24Z" fill="url(#fi-front)" />
+      {/* Feuilles */}
+      <rect x="22" y="20" width="13" height="17" rx="3" fill="#F2EEF7" opacity="0.92" />
+      <rect x="29" y="18" width="15" height="10" rx="3" fill="#FFFEFF" opacity="0.85" />
       <defs>
-        <linearGradient id="finder-icon-gradient" x1="4" y1="4" x2="58" y2="58">
-          <stop stopColor="#8EDFFF" />
-          <stop offset="1" stopColor="#2A73FF" />
+        <linearGradient id="fi-bg" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#3ECF82" />
+          <stop offset="1" stopColor="#1E8A52" />
+        </linearGradient>
+        <linearGradient id="fi-front" x1="6" y1="24" x2="58" y2="64" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#47DB99" />
+          <stop offset="1" stopColor="#2EA16D" />
         </linearGradient>
       </defs>
     </svg>
@@ -151,6 +156,28 @@ export function FolderIcon({
         fill={to}
       />
       <path d="M18 26h60" stroke="rgba(255,255,255,.44)" strokeLinecap="round" strokeWidth="1.2" />
+    </svg>
+  );
+}
+
+export function TrashIcon(props: IconProps) {
+  return (
+    <svg viewBox="0 0 64 64" fill="none" {...props}>
+      <rect width="64" height="64" rx="14" fill="url(#trash-bg)" />
+      {/* Poignée du couvercle */}
+      <rect x="26" y="16" width="12" height="5" rx="2.5" stroke="white" strokeWidth="2.2" />
+      {/* Couvercle */}
+      <path d="M18 21h28" stroke="white" strokeWidth="2.5" strokeLinecap="round" />
+      {/* Corps */}
+      <path d="M21.5 21l1.8 24h17.4l1.8-24Z" fill="white" fillOpacity="0.88" />
+      {/* Lignes intérieures */}
+      <path d="M27.5 27v12M32 27v12M36.5 27v12" stroke="rgba(80,80,120,0.3)" strokeWidth="2" strokeLinecap="round" />
+      <defs>
+        <linearGradient id="trash-bg" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#6e6e73" />
+          <stop offset="1" stopColor="#3a3a3c" />
+        </linearGradient>
+      </defs>
     </svg>
   );
 }
