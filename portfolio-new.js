@@ -129,9 +129,9 @@ const finderProjects = {
             href: 'projets/resolution-mate.html',
             accent: ['#7C3AED', '#4c1d95'],
             screenshots: [
-                { src: 'images/resolutionMate1.png',   label: 'Accueil' },
-                { src: 'images/resolutionMate2.png',  label: 'Services' },
-                { src: 'images/resolutionMate3.png',   label: 'Contact' },
+                { src: 'images/resolutionmate1.png',   label: 'Accueil' },
+                { src: 'images/resolutionmate2.png',  label: 'Services' },
+                { src: 'images/resolutionmate3.png',   label: 'Contact' },
 
             ]
         },
