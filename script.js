@@ -20,13 +20,13 @@ const projectsData = [
         title: "AppAction",
         badge: "Product demo",
         year: "2026",
-        summary: "Simulation de gestion avec dashboards, données mock et parcours d'administration.",
-        details: "Projet de pilotage d'activité construit comme une démo produit avec tableaux de bord, visualisation de données et parcours internes.",
-        image: "images/neural-network.jpg",
+        summary: "Application de gestion de magasin pour centraliser planning, conges, paie et taches.",
+        details: "Cahier des charges : gestion des employes, conges, plannings et fiches de paie avec roles, contraintes metier et securisation des donnees.",
+        image: "images/appAction/GestionMagasinAppAction.jpeg",
         preview: "projets/app-action.html",
         secondaryLink: "projets/appAction/index.html",
         secondaryLabel: "Voir la démo",
-        tech: ["JavaScript", "JSON", "UI"]
+        tech: ["React", "API REST", "Sequelize", "Docker"]
     },
     {
         title: "IronPulse",

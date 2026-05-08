@@ -74,6 +74,14 @@ body {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+a.primary-btn,
+a.ghost-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
 .primary-btn {
   background: var(--primary);
   color: #ffffff;

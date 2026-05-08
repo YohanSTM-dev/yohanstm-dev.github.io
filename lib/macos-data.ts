@@ -162,7 +162,7 @@ export const finderProjects: Record<
     {
       name: "App Action",
       year: "2025",
-      summary: "Démo produit avec dashboards et parcours d'administration.",
+      summary: "Application de gestion de magasin : plannings, conges, paie et taches avec gestion des roles.",
       href: "/pages/projects/app-action.html",
       accentFrom: "#A3D7FF",
       accentTo: "#566BFF"

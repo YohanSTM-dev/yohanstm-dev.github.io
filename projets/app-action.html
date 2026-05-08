@@ -31,15 +31,15 @@
                 <p class="project-kicker">Case study</p>
                 <h1 class="project-title">AppAction</h1>
                 <p class="project-subtitle">
-                    Une demo de gestion pensee comme un vrai produit : tableaux de bord, donnees mock,
-                    parcours d administration et lecture rapide des informations utiles.
+                    Cahier des charges d une application web de gestion de magasin, concue pour centraliser
+                    planning, conges, paie et taches dans un outil unique.
                 </p>
 
                 <div class="project-meta">
-                    <span>Product demo</span>
-                    <span>JavaScript</span>
-                    <span>Mock data</span>
-                    <span>UI</span>
+                    <span>React</span>
+                    <span>API REST</span>
+                    <span>Sequelize</span>
+                    <span>Docker</span>
                 </div>
 
                 <div class="project-actions">
@@ -50,12 +50,12 @@
 
             <div class="project-hero__visual">
                 <div class="project-hero__image">
-                    <img src="../images/neural-network.jpg" alt="Visuel AppAction">
+                    <img src="../images/appAction/GestionMagasinAppAction.jpeg" alt="Capture AppAction - gestion de magasin">
                 </div>
                 <div class="project-floating-card">
-                    <span class="project-floating-card__label">Etat</span>
-                    <strong>Demo interactive</strong>
-                    <p>Des parcours testes avec des donnees fictives pour valider l usage avant une vraie mise en production.</p>
+                    <span class="project-floating-card__label">Contexte</span>
+                    <strong>Projet de stage / alternance</strong>
+                    <p>Application developpee pour centraliser les outils utilises par les managers et le service RH.</p>
                 </div>
             </div>
         </section>
@@ -85,56 +85,99 @@
 
         <div class="project-sections">
             <section class="project-section">
-                <p class="project-section__tag">Vision</p>
-                <h2 class="project-section__title">Montrer une application de gestion comme un produit deja lisible.</h2>
+                <p class="project-section__tag">Contexte</p>
+                <h2 class="project-section__title">Application de gestion de magasin.</h2>
                 <p class="project-copy">
-                    AppAction sert a transformer un besoin fonctionnel en experience claire. L idee etait de sortir du simple
-                    prototype statique et de proposer une vraie sensation de produit, avec des vues principales, des zones de suivi
-                    et des parcours qui donnent deja envie de projeter la version finale.
+                    Dans le cadre d un stage ou d une alternance, ce projet repond au besoin de centralisation des operations internes
+                    d un magasin : planning, conges, paie et taches.
                 </p>
             </section>
 
             <section class="project-section">
-                <p class="project-section__tag">Ce que j ai travaille</p>
+                <p class="project-section__tag">Objectifs</p>
                 <div class="project-grid">
                     <article class="project-card">
-                        <h3>Tableaux de bord</h3>
-                        <p>Des ecrans de synthese penses pour faire ressortir l essentiel sans surcharger la lecture.</p>
+                        <h3>Centralisation</h3>
+                        <p>Centraliser la gestion des employes et des plannings.</p>
                     </article>
                     <article class="project-card">
-                        <h3>Parcours internes</h3>
-                        <p>Une navigation simple entre les vues pour garder une logique metier lisible et naturelle.</p>
+                        <h3>Suivi RH</h3>
+                        <p>Faciliter le suivi des conges et des absences.</p>
                     </article>
                     <article class="project-card">
-                        <h3>Donnees de test</h3>
-                        <p>Des jeux de donnees mock pour simuler des usages concrets et tester la pertinence du rendu.</p>
+                        <h3>Automatisation</h3>
+                        <p>Automatiser les regles metier liees au planning et aux contraintes de contrat.</p>
                     </article>
                 </div>
             </section>
 
             <section class="project-section">
+                <p class="project-section__tag">Utilisateurs</p>
+                <ul class="project-list">
+                    <li>Employe : consulte son planning, ses conges et ses fiches de paie.</li>
+                    <li>Manager : organise les plannings et attribue les taches.</li>
+                    <li>RH : valide les conges et gere les donnees administratives.</li>
+                    <li>Administrateur : gere les acces et la configuration globale.</li>
+                </ul>
+            </section>
+
+            <section class="project-section">
+                <p class="project-section__tag">Fonctionnalites principales</p>
+                <ul class="project-list">
+                    <li>Authentification securisee avec gestion des roles.</li>
+                    <li>Gestion des plannings : creation, modification, consultation.</li>
+                    <li>Gestion des conges : demande et validation.</li>
+                    <li>Consultation des fiches de paie.</li>
+                    <li>Gestion des taches avec code couleur.</li>
+                    <li>Interface adaptee selon le role utilisateur.</li>
+                </ul>
+            </section>
+
+            <section class="project-section">
                 <p class="project-section__tag">Stack</p>
-                <h2 class="project-section__title">Une base simple pour avancer vite.</h2>
+                <h2 class="project-section__title">Technologies utilisees.</h2>
                 <div class="project-stack">
-                    <span>JavaScript</span>
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>JSON</span>
-                    <span>Product UI</span>
+                    <span>React</span>
+                    <span>API REST</span>
+                    <span>Sequelize</span>
+                    <span>Docker</span>
                 </div>
                 <ul class="project-list">
-                    <li>Structuration d une demo sans dependance lourde pour iterer rapidement.</li>
-                    <li>Organisation des ecrans autour d usages de pilotage et de consultation.</li>
-                    <li>Travail sur la lisibilite visuelle pour rendre le produit credibe meme en phase de test.</li>
+                    <li>Front-end : React.</li>
+                    <li>Back-end : API REST.</li>
+                    <li>Base de donnees : via Sequelize.</li>
+                    <li>Environnement : Docker.</li>
                 </ul>
+            </section>
+
+            <section class="project-section">
+                <p class="project-section__tag">Contraintes</p>
+                <ul class="project-list">
+                    <li>Maximum 5 jours travailles par semaine.</li>
+                    <li>Respect des contraintes liees aux contrats.</li>
+                    <li>Gestion des acces selon les roles (RBAC).</li>
+                    <li>Securisation des donnees sensibles.</li>
+                </ul>
+            </section>
+
+            <section class="project-section">
+                <p class="project-section__tag">Supports visuels</p>
+                <h2 class="project-section__title">Ressources AppAction utilisees pour la presentation.</h2>
+                <ul class="project-list">
+                    <li>Image principale : GestionMagasinAppAction.jpeg.</li>
+                    <li>Fichier de modelisation Looping : ActionBdd (1).loo.</li>
+                </ul>
+                <div class="project-actions">
+                    <a class="btn btn-primary" href="../images/appAction/ActionBdd%20(1).loo" download>Télécharger le fichier .loo</a>
+                    <a class="btn btn-ghost" href="../images/appAction/ActionBdd%20(1).loo" target="_blank" rel="noopener">Ouvrir le fichier .loo</a>
+                </div>
             </section>
 
             <section class="project-callout">
                 <p class="project-section__tag">Suite</p>
-                <h2 class="project-callout__title">Voir la demo et la logique de l interface.</h2>
+                <h2 class="project-callout__title">Voir la demo de l application.</h2>
                 <p class="project-copy">
-                    La version actuelle permet deja de comprendre la direction produit, les composants principaux
-                    et la facon dont les informations sont agencees dans l experience.
+                    Cette version presente le cadrage fonctionnel et les parcours principaux attendus pour une mise en production.
                 </p>
                 <div class="project-actions">
                     <a class="btn btn-primary" href="appAction/index.html" target="_blank" rel="noopener">Ouvrir la demo</a>
