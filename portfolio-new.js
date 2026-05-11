@@ -17,7 +17,7 @@ const finderProjects = {
             statusLabel: 'En ligne',
             year: '2025',
             stack: ['HTML', 'CSS', 'SEO'],
-            summary: 'Refonte du site officiel d’un club de foot. SEO optimisé, mobile-first.',
+            summary: "Projet de référencement SEO autour du mot-clé « FC Fulbert », réalisé durant le BTS SIO avec <a href='https://mesangeantoine.fr/' target='_blank' rel='noopener'>Antoine Mesange</a>.",
             href: 'https://fcfulbertchartres.github.io/',
             accent: ['#1D4ED8', '#1e3a8a'],
             logo: 'images/logoFCFulbert.png',
