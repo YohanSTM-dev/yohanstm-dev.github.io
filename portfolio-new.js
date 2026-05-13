@@ -116,7 +116,7 @@ const finderProjects = {
             year: '2026',
             stack: ['React', 'API REST', 'Sequelize', 'Docker'],
             summary: 'Application de gestion de magasin : plannings, conges, paie et taches par role.',
-            description: `Cahier des charges de l'application AppAction pour centraliser la gestion d'un magasin : planning, conges, paie et taches.<br><br>Utilisateurs cibles : Employe, Manager, RH et Administrateur.<br><br>Fonctionnalites : authentification securisee, gestion des roles, planning, conges, fiches de paie et taches.<br><br>Ressource base de donnees (Looping) : <a href="images/appAction/ActionBdd%20(1).loo" target="_blank" rel="noopener">ouvrir le fichier .loo</a>.`,
+            description: `Cahier des charges de l'application AppAction pour centraliser la gestion d'un magasin : planning, conges, paie et taches.<br><br>Utilisateurs cibles : Employe, Manager, RH et Administrateur.<br><br>Fonctionnalites : authentification securisee, gestion des roles, planning, conges, fiches de paie et taches.<br><br>Ressource base de donnees (Looping) : <a href="images/appAction/ActionBdd (1).jpeg" target="_blank" rel="noopener">ouvrir le fichier .loo</a>.`,
             href: 'https://github.com/YohanSTM-dev/appAction',
             accent: ['#2563EB', '#1e3a8a'],
             logo: 'images/appAction/GestionMagasinAppAction.jpeg',

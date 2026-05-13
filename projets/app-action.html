@@ -161,17 +161,27 @@
             </section>
 
             <section class="project-section">
-                <p class="project-section__tag">Supports visuels</p>
-                <h2 class="project-section__title">Ressources AppAction utilisees pour la presentation.</h2>
-                <ul class="project-list">
-                    <li>Image principale : GestionMagasinAppAction.jpeg.</li>
-                    <li>Fichier de modelisation Looping : ActionBdd (1).loo.</li>
-                </ul>
-                <div class="project-actions">
+                <p class="project-section__tag">Schéma BDD</p>
+                <h2 class="project-section__title">Modèle de base de données — conçu avec Looping.</h2>
+                <p class="project-copy" style="margin-bottom:1.25rem">Cliquez sur le schéma pour l'agrandir, zoomer avec la molette et déplacer l'image.</p>
+                <div class="bdd-schema-wrapper" onclick="openLightbox()" title="Cliquer pour agrandir">
+                    <img id="bdd-thumb" src="../images/appAction/ActionBdd%20(1).jpeg" alt="Schéma BDD AppAction" loading="lazy">
+                    <span class="bdd-schema-hint">🔍 Cliquer pour zoomer</span>
+                </div>
+                <div class="project-actions" style="margin-top:1.25rem">
                     <a class="btn btn-primary" href="../images/appAction/ActionBdd%20(1).loo" download>Télécharger le fichier .loo</a>
                     <a class="btn btn-ghost" href="../images/appAction/ActionBdd%20(1).loo" target="_blank" rel="noopener">Ouvrir le fichier .loo</a>
                 </div>
             </section>
+
+            <!-- Lightbox BDD -->
+            <div id="bdd-lightbox" class="bdd-lightbox" onclick="handleLightboxClick(event)" style="display:none" role="dialog" aria-modal="true" aria-label="Schéma BDD agrandi">
+                <button class="bdd-lightbox__close" onclick="closeLightbox()" aria-label="Fermer">✕</button>
+                <div class="bdd-lightbox__hint">Molette pour zoomer · Clic+glisser pour déplacer · Échap pour fermer</div>
+                <div class="bdd-lightbox__canvas" id="bdd-canvas">
+                    <img id="bdd-zoom-img" src="../images/appAction/ActionBdd%20(1).jpeg" alt="Schéma BDD AppAction agrandi" draggable="false">
+                </div>
+            </div>
 
             <section class="project-callout">
                 <p class="project-section__tag">Suite</p>
@@ -186,6 +196,207 @@
             </section>
         </div>
     </main>
+
+    <style>
+        .bdd-schema-wrapper {
+            position: relative;
+            cursor: zoom-in;
+            border-radius: 12px;
+            overflow: hidden;
+            max-width: 100%;
+            border: 1px solid rgba(255,255,255,0.08);
+            background: #0d0c14;
+            transition: box-shadow .2s;
+        }
+        .bdd-schema-wrapper:hover {
+            box-shadow: 0 0 0 2px rgba(139,92,246,.5);
+        }
+        .bdd-schema-wrapper img {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            transition: opacity .2s;
+        }
+        .bdd-schema-wrapper:hover img { opacity: .85; }
+        .bdd-schema-hint {
+            position: absolute;
+            bottom: 10px;
+            right: 12px;
+            background: rgba(13,12,20,.8);
+            color: #a78bfa;
+            font-size: .75rem;
+            padding: 4px 10px;
+            border-radius: 99px;
+            pointer-events: none;
+            backdrop-filter: blur(6px);
+        }
+
+        .bdd-lightbox {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(6,5,12,.92);
+            backdrop-filter: blur(8px);
+            display: flex !important;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .bdd-lightbox__close {
+            position: fixed;
+            top: 18px;
+            right: 22px;
+            background: rgba(139,92,246,.15);
+            border: 1px solid rgba(139,92,246,.4);
+            color: #e9d5ff;
+            font-size: 1.25rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10001;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background .15s;
+        }
+        .bdd-lightbox__close:hover { background: rgba(139,92,246,.35); }
+        .bdd-lightbox__hint {
+            position: fixed;
+            bottom: 18px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(167,139,250,.6);
+            font-size: .75rem;
+            white-space: nowrap;
+            pointer-events: none;
+        }
+        .bdd-lightbox__canvas {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: grab;
+        }
+        .bdd-lightbox__canvas.dragging { cursor: grabbing; }
+        .bdd-lightbox__canvas img {
+            max-width: none;
+            transform-origin: center center;
+            user-select: none;
+            -webkit-user-drag: none;
+            pointer-events: none;
+        }
+    </style>
+
+    <script>
+        (function() {
+            var scale = 1, tx = 0, ty = 0;
+            var dragging = false, startX, startY, startTx, startTy;
+            var MIN_SCALE = 0.5, MAX_SCALE = 8;
+
+            function getImg()  { return document.getElementById('bdd-zoom-img'); }
+            function getCanvas(){ return document.getElementById('bdd-canvas'); }
+            function getLb()   { return document.getElementById('bdd-lightbox'); }
+
+            function applyTransform() {
+                getImg().style.transform = 'translate(' + tx + 'px,' + ty + 'px) scale(' + scale + ')';
+            }
+
+            window.openLightbox = function() {
+                scale = 1; tx = 0; ty = 0;
+                var lb = getLb();
+                lb.style.display = '';
+                applyTransform();
+                document.body.style.overflow = 'hidden';
+            };
+
+            window.closeLightbox = function() {
+                getLb().style.display = 'none';
+                document.body.style.overflow = '';
+            };
+
+            window.handleLightboxClick = function(e) {
+                if (e.target === getLb() || e.target === getCanvas()) closeLightbox();
+            };
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') closeLightbox();
+            });
+
+            /* Zoom molette */
+            document.addEventListener('wheel', function(e) {
+                if (getLb().style.display === 'none') return;
+                e.preventDefault();
+                var rect = getCanvas().getBoundingClientRect();
+                var cx = e.clientX - rect.left - rect.width / 2;
+                var cy = e.clientY - rect.top  - rect.height / 2;
+                var delta = e.deltaY < 0 ? 1.15 : 1 / 1.15;
+                var ns = Math.min(MAX_SCALE, Math.max(MIN_SCALE, scale * delta));
+                var ratio = ns / scale;
+                tx = cx + (tx - cx) * ratio;
+                ty = cy + (ty - cy) * ratio;
+                scale = ns;
+                applyTransform();
+            }, { passive: false });
+
+            /* Drag */
+            document.addEventListener('mousedown', function(e) {
+                if (getLb().style.display === 'none') return;
+                if (e.button !== 0) return;
+                dragging = true;
+                startX = e.clientX; startY = e.clientY;
+                startTx = tx; startTy = ty;
+                getCanvas().classList.add('dragging');
+            });
+            document.addEventListener('mousemove', function(e) {
+                if (!dragging) return;
+                tx = startTx + (e.clientX - startX);
+                ty = startTy + (e.clientY - startY);
+                applyTransform();
+            });
+            document.addEventListener('mouseup', function() {
+                dragging = false;
+                var c = document.getElementById('bdd-canvas');
+                if (c) c.classList.remove('dragging');
+            });
+
+            /* Pinch touch */
+            var lastDist = 0;
+            document.addEventListener('touchstart', function(e) {
+                if (getLb().style.display === 'none') return;
+                if (e.touches.length === 1) {
+                    dragging = true;
+                    startX = e.touches[0].clientX; startY = e.touches[0].clientY;
+                    startTx = tx; startTy = ty;
+                } else if (e.touches.length === 2) {
+                    dragging = false;
+                    lastDist = Math.hypot(
+                        e.touches[0].clientX - e.touches[1].clientX,
+                        e.touches[0].clientY - e.touches[1].clientY);
+                }
+            }, { passive: true });
+            document.addEventListener('touchmove', function(e) {
+                if (getLb().style.display === 'none') return;
+                if (e.touches.length === 1 && dragging) {
+                    tx = startTx + (e.touches[0].clientX - startX);
+                    ty = startTy + (e.touches[0].clientY - startY);
+                    applyTransform();
+                } else if (e.touches.length === 2) {
+                    var d = Math.hypot(
+                        e.touches[0].clientX - e.touches[1].clientX,
+                        e.touches[0].clientY - e.touches[1].clientY);
+                    var ns = Math.min(MAX_SCALE, Math.max(MIN_SCALE, scale * (d / lastDist)));
+                    scale = ns; lastDist = d;
+                    applyTransform();
+                }
+            }, { passive: true });
+            document.addEventListener('touchend', function() { dragging = false; });
+        })();
+    </script>
 
     <footer class="project-footer">
         <div class="project-footer__shell">
