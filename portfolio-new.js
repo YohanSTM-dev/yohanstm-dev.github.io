@@ -411,16 +411,7 @@ function renderFinder(category) {
     }
 
     const projects = finderProjects[category] || [];
-    const noticeHtml = `
-        <div class="finder-notice">
-            <span class="finder-notice__icon" aria-hidden="true"></span>
-            <div class="finder-notice__text">
-                <strong>Portfolio en cours de mise à jour</strong>
-                <span>Je n'ai pas encore eu le temps de mettre à jour les fiches projets — elles arrivent bientôt !</span>
-            </div>
-        </div>
-    `;
-    grid.innerHTML = noticeHtml + projects.map((p, i) => makeFinderCard(p, category, i)).join('');
+    grid.innerHTML = projects.map((p, i) => makeFinderCard(p, category, i)).join('');
     path.textContent = `Portfolio / ${finderCategoryLabels[category] || 'Projets'}`;
     count.textContent = `${projects.length} élément${projects.length > 1 ? 's' : ''}`;
 }

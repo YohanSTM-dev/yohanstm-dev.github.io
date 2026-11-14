@@ -2079,42 +2079,6 @@ a.finder-card {
     opacity: 0.72;
 }
 
-/* Bandeau WIP projets */
-.finder-notice {
-    grid-column: 1 / -1;
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 13px 18px;
-    border-radius: 12px;
-    background: rgba(251, 191, 36, 0.07);
-    border: 1px solid rgba(251, 191, 36, 0.28);
-    font-size: 0.83rem;
-    line-height: 1.45;
-}
-
-.finder-notice__icon {
-    font-size: 1.5rem;
-    flex-shrink: 0;
-    line-height: 1;
-}
-
-.finder-notice__text {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-}
-
-.finder-notice__text strong {
-    color: #fbbf24;
-    font-weight: 700;
-    font-size: 0.85rem;
-}
-
-.finder-notice__text span {
-    color: var(--text-secondary);
-}
-
 /* Thin gradient top stripe */
 .finder-card__stripe {
     height: 4px;
