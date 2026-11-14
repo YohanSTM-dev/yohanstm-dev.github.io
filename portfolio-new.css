@@ -527,7 +527,7 @@ html[data-theme="light"] .desktop-folder:hover {
 
 .mac-window__shell--welcome {
     width: min(720px, calc(100vw - 32px));
-    height: min(580px, calc(100vh - 140px));
+    height: min(690px, calc(100vh - 140px));
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -4184,6 +4184,222 @@ html[data-theme="light"] .mac-window__toolbar--safari {
 
     .mac-window__toolbar--safari {
         grid-template-columns: auto minmax(0, 1fr);
+    }
+}
+
+/* ===== App Store-style window (Aide) ===== */
+.mac-window__toolbar--appstore {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 14px;
+    min-height: 52px;
+}
+
+.appstore-search {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-self: center;
+    width: min(100%, 300px);
+    height: 28px;
+    padding: 0 12px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+html[data-theme="light"] .appstore-search {
+    background: rgba(0, 0, 0, 0.07);
+}
+
+.appstore-search svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+}
+
+.appstore-account {
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(135deg, #5ac8fa, #0a84ff);
+}
+
+.appstore {
+    padding: 26px 32px 28px;
+    overflow: auto;
+}
+
+.appstore__date {
+    margin: 0;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+}
+
+.appstore__title {
+    margin: 2px 0 18px;
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.appstore-feature {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 170px;
+    padding: 24px 28px;
+    border-radius: 20px;
+    color: #fff;
+    background: linear-gradient(135deg, #2f7cf6 0%, #7a4bff 55%, #d946ef 100%);
+    box-shadow: 0 14px 30px rgba(80, 60, 200, 0.28);
+}
+
+.appstore-feature__eyebrow {
+    margin: 0 0 4px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+.appstore-feature__title {
+    margin: 0 0 6px;
+    font-size: 1.7rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+}
+
+.appstore-feature__text {
+    margin: 0;
+    max-width: 460px;
+    font-size: 0.9rem;
+    line-height: 1.45;
+    opacity: 0.92;
+}
+
+.appstore__section {
+    margin: 26px 0 4px;
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.appstore-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.as-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    padding: 12px 6px;
+    border: 0;
+    border-bottom: 1px solid var(--line-soft);
+    background: none;
+    color: inherit;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.appstore-list li:last-child .as-row {
+    border-bottom: 0;
+}
+
+.as-row:hover {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+html[data-theme="light"] .as-row:hover {
+    background: rgba(0, 0, 0, 0.03);
+}
+
+.as-row__icon {
+    flex-shrink: 0;
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+}
+
+.as-row__text {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.as-row__name {
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.as-row__desc {
+    font-size: 0.8rem;
+    line-height: 1.35;
+    color: var(--text-muted);
+}
+
+.as-row__get {
+    flex-shrink: 0;
+    padding: 5px 18px;
+    border-radius: 999px;
+    background: rgba(10, 132, 255, 0.18);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    color: #4da3ff;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+html[data-theme="light"] .as-row__get {
+    background: rgba(10, 108, 255, 0.12);
+    color: #0a6cff;
+}
+
+.as-row:hover .as-row__get {
+    background: #0a84ff;
+    color: #fff;
+}
+
+.as-row:focus-visible {
+    outline: 2px solid #0a84ff;
+    outline-offset: -2px;
+    border-radius: 10px;
+}
+
+.appstore__tips {
+    margin: 18px 0 0;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+}
+
+@media (max-width: 640px) {
+    .appstore {
+        padding: 20px 18px 24px;
+    }
+
+    .appstore-search {
+        display: none;
+    }
+
+    .mac-window__toolbar--appstore {
+        grid-template-columns: auto minmax(0, 1fr);
+    }
+
+    .as-row__get {
+        display: none;
     }
 }
 

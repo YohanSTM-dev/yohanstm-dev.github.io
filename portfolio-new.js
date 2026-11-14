@@ -1218,6 +1218,10 @@ function initProjectBrowser() {
 
 initTheme();
 initClock();
+const appstoreDate = document.getElementById('appstoreDate');
+if (appstoreDate) {
+    appstoreDate.textContent = new Intl.DateTimeFormat('fr-FR', { weekday: 'long', day: 'numeric', month: 'long' }).format(new Date()).toUpperCase();
+}
 renderSkills();
 initFinder();
 initProjectModal();

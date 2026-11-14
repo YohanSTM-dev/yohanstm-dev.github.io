@@ -152,119 +152,101 @@
         hidden
     >
         <div class="mac-window__shell mac-window__shell--welcome">
-            <header class="mac-window__toolbar">
-                <div class="traffic-lights" aria-hidden="true">
-                    <button class="traffic-lights__button traffic-lights__button--close" type="button" data-close-window></button>
-                    <button class="traffic-lights__button traffic-lights__button--minimize" type="button"></button>
-                    <button class="traffic-lights__button traffic-lights__button--maximize" type="button" data-center-window></button>
+            <header class="mac-window__toolbar mac-window__toolbar--appstore">
+                <div class="traffic-lights">
+                    <button class="traffic-lights__button traffic-lights__button--close" type="button" data-close-window aria-label="Fermer la fenêtre"></button>
+                    <button class="traffic-lights__button traffic-lights__button--minimize" type="button" aria-label="Réduire la fenêtre"></button>
+                    <button class="traffic-lights__button traffic-lights__button--maximize" type="button" data-center-window aria-label="Centrer la fenêtre"></button>
                 </div>
-                <p class="mac-window__title" id="windowHomeTitle">Guide du Portfolio</p>
-                <span class="mac-window__meta">Comment utiliser ce bureau</span>
+                <div class="appstore-search" aria-hidden="true">
+                    <svg viewBox="0 0 16 16" fill="none"><circle cx="7" cy="7" r="4.5" stroke="currentColor" stroke-width="1.4"/><path d="m10.5 10.5 3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+                    <span>Rechercher</span>
+                </div>
+                <span class="appstore-account" aria-hidden="true">YS</span>
+                <span class="sr-only" id="windowHomeTitle">Aide — guide du portfolio</span>
             </header>
 
-            <div class="mac-window__body guide-spec">
+            <div class="mac-window__body appstore">
+                <p class="appstore__date" id="appstoreDate"></p>
+                <h1 class="appstore__title">Aujourd’hui</h1>
 
-                <!-- ── Header 2 colonnes ── -->
-                <div class="guide-spec__header">
-                    <div>
-                        <p class="guide-spec__tag">Mode d'emploi</p>
-                        <h1 class="guide-spec__title">Tout ce qu'il<br>faut savoir.</h1>
-                    </div>
-                    <p class="guide-spec__intro">Ce bureau fonctionne comme un vrai Mac. Chaque icône du dock ouvre une fenêtre. Glissez, fermez, explorez.</p>
-                </div>
+                <article class="appstore-feature">
+                    <p class="appstore-feature__eyebrow">Mode d’emploi</p>
+                    <h2 class="appstore-feature__title">Tout ce qu’il faut savoir.</h2>
+                    <p class="appstore-feature__text">Ce bureau fonctionne comme un vrai Mac. Chaque icône du dock ouvre une fenêtre. Glissez, fermez, explorez.</p>
+                </article>
 
-                <!-- ── Liste des fenêtres ── -->
-                <ul class="guide-spec__list" role="list">
+                <h2 class="appstore__section">Applications</h2>
+                <ul class="appstore-list" role="list">
 
                     <li>
-                        <button class="gs-row" type="button" data-launch-open="window-cv">
-                            <span class="gs-row__icon" style="background:rgba(99,99,102,.15);color:#9ca3af" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.8"/><path d="M4 20c0-4.418 3.582-8 8-8s8 3.582 8 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                        <button class="as-row" type="button" data-launch-open="window-cv">
+                            <img class="as-row__icon" src="images/dock/safari.png" alt="" width="52" height="52" decoding="async">
+                            <span class="as-row__text">
+                                <span class="as-row__name">CV</span>
+                                <span class="as-row__desc">Parcours, formations, expériences — timeline interactive.</span>
                             </span>
-                            <span class="gs-row__text">
-                                <span class="gs-row__name">CV</span>
-                                <span class="gs-row__desc">Parcours, formations, expériences — timeline interactive avec animations.</span>
-                            </span>
-                            <span class="gs-row__arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                            <span class="as-row__get">Ouvrir</span>
                         </button>
                     </li>
 
                     <li>
-                        <button class="gs-row" type="button" data-launch-open="window-skills">
-                            <span class="gs-row__icon" style="background:rgba(99,102,241,.15);color:#818cf8" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.8"/><rect x="14" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.8"/><rect x="3" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.8"/><rect x="14" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.8"/></svg>
+                        <button class="as-row" type="button" data-launch-open="window-skills">
+                            <img class="as-row__icon" src="images/dock/chrome.png" alt="" width="52" height="52" decoding="async">
+                            <span class="as-row__text">
+                                <span class="as-row__name">Compétences</span>
+                                <span class="as-row__desc">Technos classées par catégorie — Front, Back, Bases de données, Outils.</span>
                             </span>
-                            <span class="gs-row__text">
-                                <span class="gs-row__name">Compétences</span>
-                                <span class="gs-row__desc">Technos classées par catégorie — Front, Back, Mobile, Outils.</span>
-                            </span>
-                            <span class="gs-row__arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                            <span class="as-row__get">Ouvrir</span>
                         </button>
                     </li>
 
                     <li>
-                        <button class="gs-row" type="button" data-launch-open="window-projects">
-                            <span class="gs-row__icon" style="background:rgba(14,165,233,.15);color:#38bdf8" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" fill="none"><path d="M3 7a2 2 0 0 1 2-2h3l2 2h9a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z" stroke="currentColor" stroke-width="1.8"/></svg>
+                        <button class="as-row" type="button" data-launch-open="window-projects">
+                            <img class="as-row__icon" src="images/dock/finder.svg" alt="" width="52" height="52" decoding="async">
+                            <span class="as-row__text">
+                                <span class="as-row__name">Projets</span>
+                                <span class="as-row__desc">Finder avec 13 projets réels — Sites web, Apps mobiles, À venir.</span>
                             </span>
-                            <span class="gs-row__text">
-                                <span class="gs-row__name">Projets</span>
-                                <span class="gs-row__desc">Finder avec 13 projets réels — Sites web, Apps mobiles, À venir.</span>
-                            </span>
-                            <span class="gs-row__arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                            <span class="as-row__get">Ouvrir</span>
                         </button>
                     </li>
 
                     <li>
-                        <button class="gs-row" type="button" data-launch-open="window-contact">
-                            <span class="gs-row__icon" style="background:rgba(22,163,74,.15);color:#4ade80" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="6" width="20" height="13" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M2 10l10 6 10-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                        <button class="as-row" type="button" data-launch-open="window-contact">
+                            <img class="as-row__icon" src="images/dock/pages.png" alt="" width="52" height="52" decoding="async">
+                            <span class="as-row__text">
+                                <span class="as-row__name">Contact</span>
+                                <span class="as-row__desc">Écrivez-moi par e-mail, ou retrouvez-moi sur LinkedIn et GitHub.</span>
                             </span>
-                            <span class="gs-row__text">
-                                <span class="gs-row__name">Contact</span>
-                                <span class="gs-row__desc">Écrivez-moi par e-mail, ou retrouvez-moi sur LinkedIn et GitHub.</span>
-                            </span>
-                            <span class="gs-row__arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                            <span class="as-row__get">Ouvrir</span>
                         </button>
                     </li>
 
                     <li>
-                        <button class="gs-row" type="button" data-launch-open="window-settings">
-                            <span class="gs-row__icon" style="background:rgba(245,158,11,.15);color:#fbbf24" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                        <button class="as-row" type="button" data-launch-open="window-settings">
+                            <img class="as-row__icon" src="images/dock/settings.png" alt="" width="52" height="52" decoding="async">
+                            <span class="as-row__text">
+                                <span class="as-row__name">Réglages</span>
+                                <span class="as-row__desc">Fond d’écran, thème Clair / Sombre et informations sur le portfolio.</span>
                             </span>
-                            <span class="gs-row__text">
-                                <span class="gs-row__name">Réglages</span>
-                                <span class="gs-row__desc">Fond d'écran, thème Clair / Sombre et personnalisation du bureau.</span>
-                            </span>
-                            <span class="gs-row__arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                            <span class="as-row__get">Ouvrir</span>
                         </button>
                     </li>
 
                     <li>
-                        <button class="gs-row" type="button" data-launch-open="window-launchpad">
-                            <span class="gs-row__icon" style="background:rgba(251,146,60,.15);color:#fb923c" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="7" rx="2" stroke="currentColor" stroke-width="1.8"/><rect x="14" y="3" width="7" height="7" rx="2" stroke="currentColor" stroke-width="1.8"/><rect x="3" y="14" width="7" height="7" rx="2" stroke="currentColor" stroke-width="1.8"/><rect x="14" y="14" width="7" height="7" rx="2" stroke="currentColor" stroke-width="1.8"/></svg>
+                        <button class="as-row" type="button" data-launch-open="window-launchpad">
+                            <img class="as-row__icon" src="images/dock/launchpad.png" alt="" width="52" height="52" decoding="async">
+                            <span class="as-row__text">
+                                <span class="as-row__name">Launchpad</span>
+                                <span class="as-row__desc">Raccourcis rapides pour ouvrir toutes les fenêtres en un clic.</span>
                             </span>
-                            <span class="gs-row__text">
-                                <span class="gs-row__name">Launchpad</span>
-                                <span class="gs-row__desc">Raccourcis rapides pour ouvrir toutes les fenêtres en un clic.</span>
-                            </span>
-                            <span class="gs-row__arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                            <span class="as-row__get">Ouvrir</span>
                         </button>
                     </li>
-
                 </ul>
 
-                <!-- ── Footer raccourcis ── -->
-                <div class="guide-spec__footer">
-                    <span class="guide-spec__shortcut"><kbd>Échap</kbd> Fermer</span>
-                    <span class="guide-spec__dot" aria-hidden="true">·</span>
-                    <span class="guide-spec__shortcut">Glisser la barre — Déplacer</span>
-                    <span class="guide-spec__dot" aria-hidden="true">·</span>
-                    <span class="guide-spec__shortcut">🔴 Fermer &nbsp;🟡 Réduire &nbsp;🟢 Centrer</span>
-                </div>
-
+                <p class="appstore__tips"><kbd>Échap</kbd> ferme la fenêtre &middot; glissez la barre de titre pour la déplacer &middot; rouge : fermer, jaune : réduire, vert : centrer.</p>
             </div>
         </div>
     </section>
