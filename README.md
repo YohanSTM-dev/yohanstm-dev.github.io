@@ -85,6 +85,9 @@ Fichiers qui font fonctionner le site en ligne :
 ├── index.html            # Page unique (bureau macOS)
 ├── portfolio-new.css     # Styles principaux
 ├── portfolio-new.js      # Logique : fenêtres, Finder, thèmes, données des projets
+├── favicon.ico           # Favicon (autres tailles dans images/)
+├── robots.txt            # Règles d'indexation + lien vers le sitemap
+├── sitemap.xml           # Pages à indexer (accueil + 2 pages projet)
 ├── images/               # Captures, logos et fonds d'écran (WebP)
 │   ├── dock/             # Icônes du dock et du Launchpad (copies locales)
 │   └── skills/           # Logos des technologies (SVG)
