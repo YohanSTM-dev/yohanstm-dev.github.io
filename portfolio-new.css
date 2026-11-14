@@ -1,22 +1,4 @@
-﻿@property --ratio-x {
-    syntax: "<number>";
-    inherits: true;
-    initial-value: 0;
-}
-
-@property --ratio-y {
-    syntax: "<number>";
-    inherits: true;
-    initial-value: 0;
-}
-
-@property --correction {
-    syntax: "<percent>";
-    inherits: true;
-    initial-value: 0%;
-}
-
-:root {
+﻿:root {
     --font-ui: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     --menu-height: 30px;
     --dock-height: 110px;
@@ -885,38 +867,17 @@ html[data-theme="light"] .mac-window__toolbar {
     flex-shrink: 0;
 }
 
-/* â”€â”€ Holo Skill Cards â€” window-skills grid â”€â”€â”€â”€â”€â”€ */
+/* Skills grid */
 .window-skills .finder__grid--skills,
 #window-skills .finder__grid--skills {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-    gap: 14px;
+    grid-template-columns: repeat(auto-fill, 112px);
+    justify-content: start;
+    gap: 14px 10px;
     padding: 16px 18px 20px;
     overflow-y: auto;
     align-content: start;
     perspective: 800px;
-}
-
-/* Note dÃ©co skills */
-.skills-notice {
-    grid-column: 1 / -1;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 9px 14px;
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    font-size: 0.76rem;
-    color: var(--text-muted);
-    font-style: italic;
-    user-select: none;
-}
-
-.skills-notice__emoji {
-    font-size: 1rem;
-    flex-shrink: 0;
-    line-height: 1;
 }
 
 /* â”€â”€ Light â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
@@ -1586,184 +1547,68 @@ html[data-theme="light"] .glass-link {
 }
 
 /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-   Holo Skill Cards
+   Skills grid
    â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 .finder__grid--skills {
-    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-    gap: 14px;
+    grid-template-columns: repeat(auto-fill, 112px);
+    justify-content: start;
+    gap: 14px 10px;
     padding: 20px 22px 22px;
     perspective: 800px;
     align-content: start;
 }
 
-/* holo-card */
-.holo-card {
-    position: relative;
-    border-radius: 14px;
-    aspect-ratio: 1 / 1.35;
-    overflow: hidden;
-    cursor: default;
-    transform-style: preserve-3d;
-    transition: transform 0.2s linear;
-    transform: rotateY(calc(-18deg * var(--ratio-x))) rotateX(calc(18deg * var(--ratio-y)));
-    --correction: 100%;
-    background: linear-gradient(148deg,
-        color-mix(in srgb, var(--ca, #444) 70%, black),
-        color-mix(in srgb, var(--cb, #222) 80%, black));
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-}
-
-.holo-card:hover {
-    --correction: 0%;
-}
-
-.holo-card:hover .holo-card__bg {
-    opacity: 0.75;
-}
-
-.holo-card:hover .holo-card__circles {
-    opacity: 0.9;
-}
-
-/* Holographic gradient overlay */
-.holo-card__bg {
-    pointer-events: none;
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    background:
-        radial-gradient(
-            ellipse at calc(90% - var(--ratio-x) * 20%) calc(0% - var(--ratio-y) * 20%),
-            rgba(255, 255, 255, 0.7),
-            var(--c1, #ddb4eb) 1%,
-            hsl(306deg 100% 63% / 76%) 20%,
-            transparent
-        ),
-        linear-gradient(
-            110deg,
-            #0093ff calc(10% - var(--ratio-x) * 20%),
-            #51d6fd calc(20% - var(--ratio-x) * 20%),
-            #0093ff calc(30% - var(--ratio-x) * 20%),
-            hsl(306deg 100% 63% / 76%) calc(60% - var(--ratio-x) * 20%),
-            transparent calc(100% - var(--ratio-x) * 20%),
-            transparent
-        );
-    mix-blend-mode: hard-light;
-    opacity: 0.28;
-    transition: opacity 0.3s ease;
-}
-
-/* Holographic rainbow lines */
-.holo-card__lines {
-    pointer-events: none;
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    mask-image: url(https://assets.codepen.io/907471/holo-card-lines.png?v5);
-    mask-size: cover;
-    mask-repeat: no-repeat;
-    background: linear-gradient(
-        110deg,
-        #0093ff   calc(10% - var(--ratio-x) * 20% - var(--correction)),
-        #51d6fd   calc(20% - var(--ratio-x) * 20% - var(--correction)),
-        #0093ff   calc(30% - var(--ratio-x) * 20% - var(--correction)),
-        hsla(192, 83%, 77%, 1) calc(40% - var(--ratio-x) * 20% - var(--correction)),
-        transparent calc(60% - var(--ratio-x) * 20% - var(--correction)),
-        magenta   calc(70% - var(--ratio-x) * 20% - var(--correction)),
-        black     calc(80% - var(--ratio-x) * 20% - var(--correction))
-    );
-    transition: background 0.2s linear;
-}
-
-/* Dot pattern circles */
-.holo-card__circles {
-    pointer-events: none;
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    overflow: hidden;
-    opacity: 0.1;
-    transition: opacity 0.6s ease;
-}
-
-.holo-card__circles::before,
-.holo-card__circles::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(
-            ellipse at 50% 50%,
-            hsl(194deg 98% 65% / 41%) 0.2rem,
-            transparent 0.2rem,
-            transparent
-        ) repeat;
-    background-size: 0.9rem 0.9rem;
-}
-
-.holo-card__circles::before { transform: translate(-50%, -50%) rotate(45deg); }
-.holo-card__circles::after  { transform: translate(50%,  100%) rotate(45deg); }
-
-/* Face content */
-.holo-card__face {
-    position: absolute;
-    inset: 0;
+/* Skill tiles (Finder icon view) */
+.skill-tile {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     gap: 8px;
-    padding: 12px 10px;
-    transform: translateZ(6px);
+    padding: 10px 6px 8px;
+    border-radius: 12px;
+    text-align: center;
+    transition: background-color 0.18s ease;
 }
 
-.holo-card__icon {
-    width: 44px;
-    height: 44px;
+.skill-tile:hover {
+    background: rgba(255, 255, 255, 0.07);
+}
+
+[data-theme="light"] .skill-tile:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.skill-tile__icon {
     display: grid;
     place-items: center;
-    border-radius: 11px;
-    background: rgba(0, 0, 0, 0.3);
-    color: #fff;
-    flex-shrink: 0;
+    width: 72px;
+    height: 72px;
+    border-radius: 18px;
+    background: linear-gradient(180deg, #ffffff 0%, #eceef3 100%);
+    box-shadow:
+        0 6px 14px rgba(0, 0, 0, 0.32),
+        0 1px 0 rgba(255, 255, 255, 0.9) inset;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
 
-.holo-card__icon svg {
-    width: 28px;
-    height: 28px;
-    fill: currentColor;
+.skill-tile:hover .skill-tile__icon {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow:
+        0 12px 22px rgba(0, 0, 0, 0.38),
+        0 1px 0 rgba(255, 255, 255, 0.9) inset;
 }
 
-.holo-card__label {
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    color: #fff;
-    text-align: center;
-    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
+.skill-tile__icon img {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+}
+
+.skill-tile__label {
+    font-size: 0.78rem;
     line-height: 1.2;
-}
-
-/* Level dots */
-.holo-card__dots {
-    display: flex;
-    gap: 5px;
-    margin-top: 4px;
-}
-
-.holo-card__dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.16);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-}
-
-.holo-card__dot--on {
-    background: var(--dc, #22c55e);
-    border-color: var(--dc, #22c55e);
-    box-shadow: 0 0 6px var(--dc, #22c55e);
+    color: var(--text-primary);
 }
 
 /* â”€â”€ Skill Carousel (legacy) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
@@ -2606,8 +2451,7 @@ html[data-theme="light"] .finder-card__tag {
     will-change: auto;
 }
 
-/* Finder cards & holo skill cards */
-.holo-card,
+/* Finder cards */
 .finder-card {
     will-change: transform;
 }
