@@ -22,14 +22,18 @@ Portfolio d'un développeur étudiant en **BTS SIO (option SLAM)**, présenté s
 
 | Fenêtre | Contenu |
 | --- | --- |
-| **Accueil** | Présentation et accès rapide aux sections |
-| **CV** | Parcours, formation, expériences, lien vers le PDF |
-| **Skills** | Compétences par catégorie : Front-end, Back-end, Ops & Outils |
-| **Projets** | Finder avec catégories (web, applications, à venir) et fiches détaillées |
-| **Contact** | E-mail, GitHub, LinkedIn |
-| **Launchpad** | Grille de lancement des applications |
-| **Navigateur** | Navigateur intégré pour ouvrir les projets en ligne |
-| **Réglages** | Thème et fond d'écran |
+Chaque fenêtre reprend le design de l'application dont elle porte l'icône dans le dock.
+
+| Icône du dock | Fenêtre | Contenu |
+| --- | --- | --- |
+| App Store | **Aide** | Page « Aujourd'hui » : mode d'emploi et liste des fenêtres avec bouton Ouvrir |
+| Safari | **CV** | Parcours, formation, expériences, projets techniques, compétences |
+| Chrome | **Compétences** | Logos par catégorie ; les catégories sont les dossiers de la barre de favoris |
+| Finder | **Projets** | Catégories (web, applications, à venir) et fiches détaillées |
+| Pages | **Contact** | Formulaire (ouvre la messagerie), e-mail, GitHub, LinkedIn |
+| Launchpad | **Launchpad** | Raccourcis vers les fenêtres |
+| Réglages Système | **Réglages** | Fond d'écran, apparence clair/sombre, à propos |
+| (aucune) | **Navigateur** | Aperçu intégré d'un projet en ligne |
 
 Fonctionnalités : thème clair/sombre mémorisé, fond d'écran au choix, fenêtres déplaçables, animations GSAP, réduction des animations via `prefers-reduced-motion`.
 
@@ -82,7 +86,7 @@ Fichiers qui font fonctionner le site en ligne :
 ├── portfolio-new.css     # Styles principaux
 ├── portfolio-new.js      # Logique : fenêtres, Finder, thèmes, données des projets
 ├── images/               # Captures, logos et fonds d'écran (WebP)
-│   ├── dock/             # Icônes du dock et du Launchpad (SVG dessinés pour le projet)
+│   ├── dock/             # Icônes du dock et du Launchpad (copies locales)
 │   └── skills/           # Logos des technologies (SVG)
 ├── documents/            # CV au format PDF
 └── projets/              # Pages de détail de chaque projet
@@ -135,7 +139,7 @@ Autres dossiers présents dans le dépôt :
 
 - Logos des technologies : [Devicon](https://devicon.dev/) (licence MIT) et [Simple Icons](https://simpleicons.org/) (licence CC0, logo GSAP). Les logos restent la propriété de leurs marques respectives.
 - Fonds d'écran : certains sont des images de macOS (propriété d'Apple), utilisées ici à titre d'illustration. La provenance des autres images n'est pas documentée.
-- Icônes du dock : dessinées pour ce projet, dans l'esprit de macOS.
+- Icônes du dock : icônes d'applications macOS (Apple) et Chrome (Google), propriétés de leurs auteurs et utilisées ici à titre d'illustration. L'icône Finder est une version personnalisée.
 
 ---
 
