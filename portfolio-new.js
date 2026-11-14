@@ -104,8 +104,8 @@ const finderProjects = {
             accent: ['#16A34A', '#14532d'],
             screenshots: [
             { src: 'images/ironpulse1.png',   label: 'Accueil' },
-            { src: 'images/ironPulse2.png',  label: 'Services' },
-            { src: 'images/ironPulse3.png',   label: 'Contact' },
+            { src: 'images/ironpulse2.png',  label: 'Services' },
+            { src: 'images/ironpulse3.png',   label: 'Contact' },
         ],
 
         },
