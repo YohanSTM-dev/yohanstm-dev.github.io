@@ -4084,3 +4084,106 @@ html[data-theme="light"] .mac-window__toolbar--chrome {
     }
 }
 
+/* ===== Safari-style window (CV) ===== */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.mac-window__toolbar--safari {
+    --s-field: rgba(255, 255, 255, 0.1);
+    --s-icon: rgba(255, 255, 255, 0.62);
+    --s-text: rgba(255, 255, 255, 0.88);
+    grid-template-columns: auto auto minmax(0, 1fr) auto;
+    gap: 14px;
+    min-height: 52px;
+    background: rgba(255, 255, 255, 0.07);
+}
+
+html[data-theme="light"] .mac-window__toolbar--safari {
+    --s-field: rgba(0, 0, 0, 0.07);
+    --s-icon: rgba(0, 0, 0, 0.55);
+    --s-text: rgba(0, 0, 0, 0.8);
+    background: rgba(246, 246, 248, 0.85);
+}
+
+.safari-nav,
+.safari-actions {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.safari-icon {
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 26px;
+    color: var(--s-icon);
+}
+
+.safari-icon svg {
+    width: 17px;
+    height: 17px;
+}
+
+.safari-icon--dim {
+    opacity: 0.4;
+}
+
+.safari-address {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    justify-self: center;
+    width: min(100%, 520px);
+    height: 30px;
+    padding: 0 34px;
+    border-radius: 8px;
+    background: var(--s-field);
+    font-size: 13px;
+    color: var(--s-text);
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.safari-address__lock {
+    width: 11px;
+    height: 11px;
+    opacity: 0.55;
+    flex-shrink: 0;
+}
+
+.safari-address__text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.safari-address__reload {
+    position: absolute;
+    right: 10px;
+    width: 13px;
+    height: 13px;
+    color: var(--s-icon);
+}
+
+@media (max-width: 640px) {
+    .safari-nav,
+    .safari-actions {
+        display: none;
+    }
+
+    .mac-window__toolbar--safari {
+        grid-template-columns: auto minmax(0, 1fr);
+    }
+}
+
