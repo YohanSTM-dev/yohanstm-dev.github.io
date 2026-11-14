@@ -3316,6 +3316,43 @@ html[data-theme="light"] .timeline-card__body:hover {
     margin: 0;
 }
 
+.cv-skills-group + .cv-skills-group {
+    margin-top: 14px;
+}
+
+.cv-skills-group__label {
+    margin: 0 0 8px;
+    font-size: 0.74rem;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.cv-projects {
+    margin: 10px 0 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.cv-projects li {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.cv-projects strong {
+    font-size: 0.88rem;
+    color: var(--text-primary);
+}
+
+.cv-projects span {
+    font-size: 0.8rem;
+    line-height: 1.45;
+    color: var(--text-secondary);
+}
+
 .cv-skills-mini {
     display: flex;
     flex-wrap: wrap;
