@@ -194,32 +194,47 @@ const skillCategories = [
     {
         name: 'Front-end',
         skills: [
-            { label: 'HTML5',      icon: 'html' },
-            { label: 'CSS3',       icon: 'css' },
-            { label: 'JavaScript', icon: 'javascript' },
-            { label: 'React',      icon: 'react' },
-            { label: 'TypeScript', icon: 'typescript' },
-            { label: 'Tailwind',   icon: 'tailwind' },
-            { label: 'GSAP',       icon: 'gsap', bg: '#0e100f' },
+            { label: 'HTML5',        icon: 'html' },
+            { label: 'CSS3',         icon: 'css' },
+            { label: 'JavaScript',   icon: 'javascript' },
+            { label: 'TypeScript',   icon: 'typescript' },
+            { label: 'React',        icon: 'react' },
+            { label: 'React Native', icon: 'react' },
+            { label: 'Next.js',      icon: 'nextjs' },
+            { label: 'Vite',         icon: 'vite' },
         ]
     },
     {
         name: 'Back-end',
         skills: [
-            { label: 'PHP',     icon: 'php' },
-            { label: 'Symfony', icon: 'symfony' },
-            { label: '.NET',    icon: 'dotnet' },
-            { label: 'Node.js', icon: 'node' },
-            { label: 'MySQL',   icon: 'mysql' },
+            { label: 'Node.js',  icon: 'node' },
+            { label: 'Express',  icon: 'express' },
+            { label: 'PHP',      icon: 'php' },
+            { label: 'Symfony',  icon: 'symfony' },
+            { label: 'C#',       icon: 'csharp' },
+            { label: '.NET',     icon: 'dotnet' },
+            { label: 'Blazor',   icon: 'blazor' },
+            { label: 'Prisma',   icon: 'prisma' },
+            { label: 'Python (bases)', icon: 'python' },
         ]
     },
     {
-        name: 'Ops & Outils',
+        name: 'Bases de données',
         skills: [
-            { label: 'Docker',    icon: 'docker' },
-            { label: 'Git',       icon: 'git' },
-            { label: 'WordPress', icon: 'wordpress' },
-            { label: 'Figma',     icon: 'figma' },
+            { label: 'PostgreSQL', icon: 'postgresql' },
+            { label: 'SQL Server', icon: 'sqlserver' },
+            { label: 'MySQL',      icon: 'mysql' },
+            { label: 'Supabase',   icon: 'supabase' },
+        ]
+    },
+    {
+        name: 'Outils',
+        skills: [
+            { label: 'Git',    icon: 'git' },
+            { label: 'GitHub', icon: 'github' },
+            { label: 'Docker', icon: 'docker' },
+            { label: 'Nginx',  icon: 'nginx' },
+            { label: 'Linux',  icon: 'linux' },
         ]
     }
 ];
