@@ -923,7 +923,7 @@ html[data-theme="light"] .mac-window__toolbar {
 /* â”€â”€ Layout body : form | liens â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .cs-layout {
     display: grid;
-    grid-template-columns: 1fr 240px;
+    grid-template-columns: 1fr 330px;
     flex: 1;
     overflow: hidden;
     min-height: 0;
@@ -999,8 +999,18 @@ html[data-theme="light"] .mac-window__toolbar {
 }
 
 /* â”€â”€ Colonne liens (gs-row adaptÃ©s) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.cs-hint {
+    margin: 8px 0 0;
+    font-size: 0.76rem;
+    color: var(--text-muted);
+}
+
 .cs-links {
     overflow-y: auto;
+}
+
+.cs-links .gs-row__desc {
+    white-space: nowrap;
 }
 
 .cs-links .gs-row {
