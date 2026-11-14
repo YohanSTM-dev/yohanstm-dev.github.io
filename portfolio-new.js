@@ -344,7 +344,7 @@ function renderSkillsCategory(catIdx) {
     const grid    = document.getElementById('skillsFinderGrid');
     const pathEl  = document.getElementById('skillsFinderPath');
     const countEl = document.getElementById('skillsFinderCount');
-    if (!grid || !pathEl || !countEl) { return; }
+    if (!grid) { return; }
 
     const cat = skillCategories[catIdx];
     if (!cat) { return; }
@@ -362,15 +362,15 @@ function renderSkillsCategory(catIdx) {
         grid.appendChild(tile);
     });
 
-    pathEl.textContent  = 'Skills / ' + cat.name;
-    countEl.textContent = cat.skills.length + ' élément' + (cat.skills.length > 1 ? 's' : '');
+    if (pathEl) { pathEl.textContent = 'Skills / ' + cat.name; }
+    if (countEl) { countEl.textContent = cat.skills.length + ' élément' + (cat.skills.length > 1 ? 's' : ''); }
 }
 
 function renderSkills() {
     const grid = document.getElementById('skillsFinderGrid');
     if (!grid) { return; }
 
-    const buttons = Array.from(document.querySelectorAll('.finder__category[data-skill-cat]'));
+    const buttons = Array.from(document.querySelectorAll('[data-skill-cat]'));
     buttons.forEach(function(btn) {
         btn.addEventListener('click', function() {
             buttons.forEach(function(b) { b.classList.remove('is-active'); });
