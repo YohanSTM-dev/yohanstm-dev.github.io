@@ -6,14 +6,16 @@
 # Dépendances
 node_modules/
 *.npm
-package-lock.json
-yarn.lock
 
 # Build & Distribution
 dist/
 build/
-*.min.js
-*.min.css
+.next/
+out/
+.metro-cache/
+*.tsbuildinfo
+build_out.txt
+build_err.txt
 
 # Système
 .DS_Store
@@ -45,8 +47,6 @@ tmp/
 # OS spécifique
 .AppleDouble
 .LSOverride
-Windows/
-Thumbs.db
 
 # Fichiers locaux
 local.json
