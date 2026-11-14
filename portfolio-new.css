@@ -2477,6 +2477,16 @@ html[data-theme="light"] .finder-card__tag {
         display: none;
     }
 
+    .menu-bar__item {
+        white-space: nowrap;
+    }
+
+    /* keep a window's title bar visible below the sticky menu bar
+       when it is scrolled into view */
+    .mac-window {
+        scroll-margin-top: calc(var(--menu-height) + 10px);
+    }
+
     .mac-window {
         position: relative;
         top: auto;
