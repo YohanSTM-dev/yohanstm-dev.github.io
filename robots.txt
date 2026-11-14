@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yohanstm-dev.github.io/sitemap.xml
