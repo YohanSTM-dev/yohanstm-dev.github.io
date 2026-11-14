@@ -3,11 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yohan Saint-Marc | Portfolio MacOS Graphite</title>
-    <meta
-        name="description"
-        content="Portfolio one-page immersif style bureau MacOS pour Yohan Saint-Marc, développeur front-end spécialisé Vanilla JS, CSS 3D et GSAP."
-    >
+    <title>Yohan Saint-Marc — Développeur Full-Stack / Back-end | Portfolio</title>
+    <meta name="description" content="Portfolio de Yohan Saint-Marc, développeur Full-Stack / Back-end (Node.js, Symfony, .NET) en recherche d’alternance Bachelor Epitech. CV, compétences, projets.">
+    <meta name="author" content="Yohan Saint-Marc">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://yohanstm-dev.github.io/">
+
+    <!-- Open Graph / aperçu de partage -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Yohan Saint-Marc">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:title" content="Yohan Saint-Marc — Développeur Full-Stack / Back-end | Portfolio">
+    <meta property="og:description" content="Portfolio de Yohan Saint-Marc, développeur Full-Stack / Back-end (Node.js, Symfony, .NET) en recherche d’alternance Bachelor Epitech. CV, compétences, projets.">
+    <meta property="og:url" content="https://yohanstm-dev.github.io/">
+    <meta property="og:image" content="https://yohanstm-dev.github.io/images/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Yohan Saint-Marc, développeur Full-Stack / Back-end">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Yohan Saint-Marc — Développeur Full-Stack / Back-end | Portfolio">
+    <meta name="twitter:description" content="Portfolio de Yohan Saint-Marc, développeur Full-Stack / Back-end (Node.js, Symfony, .NET) en recherche d’alternance Bachelor Epitech. CV, compétences, projets.">
+    <meta name="twitter:image" content="https://yohanstm-dev.github.io/images/og-image.png">
+
+    <!-- Icônes -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <!-- Données structurées -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Yohan Saint-Marc",
+      "jobTitle": "Développeur Full-Stack / Back-end",
+      "url": "https://yohanstm-dev.github.io/",
+      "image": "https://yohanstm-dev.github.io/images/og-image.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Chartres",
+        "addressCountry": "FR"
+      },
+      "sameAs": [
+        "https://github.com/yohanstm-dev",
+        "https://www.linkedin.com/in/yohan-saint-marc"
+      ],
+      "knowsAbout": [
+        "Node.js",
+        "Express",
+        "Symfony",
+        "C#",
+        ".NET",
+        "React",
+        "TypeScript",
+        "PostgreSQL",
+        "Docker"
+      ]
+    }
+    </script>
     <meta name="theme-color" content="#f6f2f7" id="themeColorMeta">
     <!-- préconnexions CDN avant tout chargement réseau -->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
@@ -16,6 +70,7 @@
     <link rel="stylesheet" href="portfolio-new.css">
 </head>
 <body>
+    <h1 class="sr-only">Yohan Saint-Marc — Développeur Full-Stack / Back-end</h1>
     <div id="bg-3d" aria-hidden="true">
         <div class="bg-3d__halo bg-3d__halo--left"></div>
         <div class="bg-3d__halo bg-3d__halo--right"></div>
@@ -168,7 +223,7 @@
 
             <div class="mac-window__body appstore">
                 <p class="appstore__date" id="appstoreDate"></p>
-                <h1 class="appstore__title">Aujourd’hui</h1>
+                <h2 class="appstore__title">Aujourd’hui</h2>
 
                 <article class="appstore-feature">
                     <p class="appstore-feature__eyebrow">Mode d’emploi</p>
