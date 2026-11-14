@@ -1,90 +1,138 @@
-# Yohan Saint Marc - Portfolio Développeur
+# Yohan Saint Marc — Portfolio
 
-> Portfolio web moderne et professionnel d'un développeur full-stack étudiant en BTS SIO
+Portfolio d'un développeur étudiant en **BTS SIO (option SLAM)**, présenté sous la forme d'un **bureau macOS** : barre de menu, fenêtres déplaçables, Finder, dock, thème clair/sombre et fonds d'écran au choix.
 
-## 📋 Vue d'ensemble
-
-Portfolio personnel présentant mes projets, compétences et expériences en développement web et logiciel. Conçu avec HTML5, CSS3 et JavaScript vanilla pour une performance optimale et une accessibilité maximale.
-
-**🌐 Site en ligne :** [yohanstm-dev.github.io](https://yohanstm-dev.github.io)
+🌐 **Site en ligne :** [yohanstm-dev.github.io](https://yohanstm-dev.github.io)
 
 ---
 
-## 🏗️ Architecture du projet
+## Sommaire
 
-```
-📦 portfolio/
-├── 📁 public/                          # Fichiers servables (root)
-│   ├── 📄 index.html                  # Page d'accueil
-│   ├── 📁 pages/                      # Pages individuelles
-│   │   ├── 📄 cv.html                # CV Professionnel
-│   │   └── 📁 projects/              # Pages détail des projets
-│   │       ├── app-action.html
-│   │       ├── ironpulse.html
-│   │       └── ...
-│   └── 📁 assets/                     # Ressources statiques
-│       ├── 📁 images/                # Images optimisées
-│       ├── 📁 styles/                # Feuilles de style
-│       │   ├── main.css              # CSS principal (Tailwind + custom)
-│       │   ├── theme.css             # Variables et thème
-│       │   └── projects.css          # Styles des pages détail
-│       └── 📁 scripts/               # JavaScript
-│           ├── main.js               # Logique principale
-│           └── projects.js           # Interactions des projets
-│
-├── 📁 projects/                       # Contenu et démos
-├── 📁 docs/                          # Documentation
-├── 📄 .gitignore
-└── 📄 README.md
-```
+- [Aperçu](#aperçu)
+- [Stack technique](#stack-technique)
+- [Lancer le projet](#lancer-le-projet)
+- [Structure du dépôt](#structure-du-dépôt)
+- [Projets présentés](#projets-présentés)
+- [Points d'attention](#points-dattention)
+- [Contact](#contact)
 
 ---
 
-## 🎨 Design & Thème
+## Aperçu
 
-- **Primaire** : `#e61c3c` (Rouge)
-- **Secondaire** : `#a855f7` (Pourpre)
-- **Typographie** : Manrope + Sora
+| Fenêtre | Contenu |
+| --- | --- |
+| **Accueil** | Présentation et accès rapide aux sections |
+| **CV** | Parcours, formation, expériences, lien vers le PDF |
+| **Skills** | Compétences par catégorie : Front-end, Back-end, Ops & Outils |
+| **Projets** | Finder avec catégories (web, applications, à venir) et fiches détaillées |
+| **Contact** | E-mail, GitHub, LinkedIn |
+| **Launchpad** | Grille de lancement des applications |
+| **Navigateur** | Navigateur intégré pour ouvrir les projets en ligne |
+| **Réglages** | Thème et fond d'écran |
+
+Fonctionnalités : thème clair/sombre mémorisé, fond d'écran au choix, fenêtres déplaçables, animations GSAP, réduction des animations via `prefers-reduced-motion`.
 
 ---
 
-## 🚀 Démarrage rapide
+## Stack technique
+
+Le site en ligne est du **HTML/CSS/JavaScript « vanilla »**, sans étape de build.
+
+- **HTML5** et **CSS3** (variables CSS, thèmes, glassmorphism)
+- **JavaScript ES6+** (aucun framework)
+- **[GSAP 3.12.5](https://gsap.com/)** et ScrollTrigger, chargés depuis cdnjs
+- **Hébergement :** GitHub Pages
+
+> Le dépôt contient aussi un prototype **Next.js / React / Three.js** (`app/`, `components/`, `stores/`, `lib/`). Il n'est **pas** utilisé par le site en ligne.
+
+---
+
+## Lancer le projet
+
+Aucune installation n'est nécessaire pour le site en ligne : il suffit de le servir en statique.
 
 ```bash
-# Cloner et lancer
-git clone https://github.com/yohanstm-dev/yohanstm-dev.github.io.git
+git clone https://github.com/YohanSTM-dev/yohanstm-dev.github.io.git
 cd yohanstm-dev.github.io
 
-# Servir localement
+# au choix
 python -m http.server 8000
-# Ou npx http-server public
+npx http-server .
 ```
 
-Accédez à `http://localhost:8000`
+Puis ouvrir <http://localhost:8000>.
+
+Pour le prototype Next.js (facultatif) :
+
+```bash
+npm install
+npm run dev
+```
 
 ---
 
-## 📊 Stack technique
+## Structure du dépôt
 
-- **Frontend** : HTML5, CSS3, JavaScript ES6+
-- **Framework** : Tailwind CSS (CDN) + Custom CSS
-- **No Build Step** : Vanilla JS, pas de dépendances npm requises
+Fichiers qui font fonctionner le site en ligne :
+
+```text
+.
+├── index.html            # Page unique (bureau macOS)
+├── portfolio-new.css     # Styles principaux
+├── portfolio-new.js      # Logique : fenêtres, Finder, thèmes, données des projets
+├── images/               # Captures, logos et fonds d'écran
+├── documents/            # CV au format PDF
+└── projets/              # Pages de détail de chaque projet
+    ├── app-action.html
+    ├── ironpulse.html
+    ├── resolution-mate.html
+    └── ...
+```
+
+Autres dossiers présents dans le dépôt :
+
+| Dossier | Rôle | Statut |
+| --- | --- | --- |
+| `app/`, `components/`, `stores/`, `lib/` | Prototype Next.js | Non utilisé en production |
+| `public/` | Ancienne organisation du site (v2.0.0) | Obsolète, doublon |
+| `IronPulse/`, `appAction--/`, `resolution_mate/` | Code source des projets | À terme, un dépôt par projet |
+| `docs/` | Documentation interne | Voir [STRUCTURE.md](docs/STRUCTURE.md) |
 
 ---
 
-## 📱 Responsive & Accessible
+## Projets présentés
 
-✅ Mobile-first responsive design  
-✅ WCAG 2.1 AA accessibility  
-✅ SEO optimized (Schema.org)  
-✅ Fast loading (optimized images, minimal JS)
+| Projet | Technologies | Type |
+| --- | --- | --- |
+| FC Fulbert | HTML, CSS, SEO | Site web |
+| Zoo Fulbert | HTML, CSS, JavaScript | Site web |
+| Site BND | HTML, CSS, JavaScript | Site web |
+| Site Photizo Agency | HTML, CSS, JavaScript | Site web |
+| Présentation BTS | Reveal.js, HTML, CSS | Site web |
+| Portfolio macOS | HTML, CSS, GSAP, Vanilla JS | Site web |
+| IronPulse | React Native, Expo, Python, FastAPI | Application mobile |
+| App Action | React, API REST, Sequelize, Docker | Application |
+| Resolution Mate | Flutter, Dart, Firebase | Application mobile |
+| Mini Wiki PHP | PHP, MySQL | Application |
+| AppGestionWiki | .NET, C#, SQL Server | Application |
+| App Grand Monarque | React, Vite, Node.js | Application |
+| Projet Rust | Rust, WebAssembly | Application |
 
 ---
 
-## 📞 Contact
+## Points d'attention
+
+- Les noms de fichiers sont **sensibles à la casse** sur GitHub Pages (Linux), contrairement à Windows : `ironpulse2.png` et `ironPulse2.png` sont deux fichiers différents.
+- Plusieurs images dans `images/` dépassent 1 Mo. Une conversion en WebP est prévue.
+
+---
+
+## Contact
 
 - 📧 [yohan.saint-marc@hotmail.com](mailto:yohan.saint-marc@hotmail.com)
-- 🐙 [@yohanstm-dev](https://github.com/yohanstm-dev)
+- 🐙 [github.com/yohanstm-dev](https://github.com/yohanstm-dev)
+- 💼 [linkedin.com/in/yohan-saint-marc](https://www.linkedin.com/in/yohan-saint-marc)
 - 📍 Chartres, France
 
 © 2026 Yohan Saint Marc
