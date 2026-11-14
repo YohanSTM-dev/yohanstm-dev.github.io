@@ -81,7 +81,9 @@ Fichiers qui font fonctionner le site en ligne :
 ├── index.html            # Page unique (bureau macOS)
 ├── portfolio-new.css     # Styles principaux
 ├── portfolio-new.js      # Logique : fenêtres, Finder, thèmes, données des projets
-├── images/               # Captures, logos et fonds d'écran
+├── images/               # Captures, logos et fonds d'écran (WebP)
+│   ├── dock/             # Icônes du dock et du Launchpad (SVG dessinés pour le projet)
+│   └── skills/           # Logos des technologies (SVG)
 ├── documents/            # CV au format PDF
 └── projets/              # Pages de détail de chaque projet
     ├── app-action.html
@@ -124,7 +126,16 @@ Autres dossiers présents dans le dépôt :
 ## Points d'attention
 
 - Les noms de fichiers sont **sensibles à la casse** sur GitHub Pages (Linux), contrairement à Windows : `ironpulse2.png` et `ironPulse2.png` sont deux fichiers différents.
-- Plusieurs images dans `images/` dépassent 1 Mo. Une conversion en WebP est prévue.
+- Les images lourdes (fonds d'écran, captures) existent en version `.webp`, utilisée par le site. Les anciens `.jpg` et `.png` d'origine sont encore dans `images/` et ne sont plus référencés.
+- La page principale n'utilise aucune ressource hébergée chez un tiers, hormis GSAP chargé depuis cdnjs. Les pages de détail des projets (`projets/`) chargent encore des polices Google Fonts.
+
+---
+
+## Crédits
+
+- Logos des technologies : [Devicon](https://devicon.dev/) (licence MIT) et [Simple Icons](https://simpleicons.org/) (licence CC0, logo GSAP). Les logos restent la propriété de leurs marques respectives.
+- Fonds d'écran : certains sont des images de macOS (propriété d'Apple), utilisées ici à titre d'illustration. La provenance des autres images n'est pas documentée.
+- Icônes du dock : dessinées pour ce projet, dans l'esprit de macOS.
 
 ---
 
