@@ -991,6 +991,18 @@ function initWallpaperPicker() {
 
     const savedId = localStorage.getItem(WALLPAPER_KEY) || 'macfond1';
 
+    const currentPreview = document.getElementById('wallpaperCurrentPreview');
+    const currentName = document.getElementById('wallpaperCurrentName');
+    const showCurrent = (wp) => {
+        if (currentPreview) {
+            currentPreview.style.background = wp.type === 'image'
+                ? `url('${wp.src}') center/cover no-repeat`
+                : wp.value;
+        }
+        if (currentName) { currentName.textContent = wp.label; }
+    };
+    showCurrent(wallpapers.find((wp) => wp.id === savedId) || wallpapers[0]);
+
     wallpapers.forEach((wp) => {
         const thumb = document.createElement('button');
         thumb.className = 'wallpaper-thumb' + (wp.id === savedId ? ' is-active' : '');
@@ -1020,6 +1032,7 @@ function initWallpaperPicker() {
 
         thumb.addEventListener('click', () => {
             applyWallpaper(wp);
+            showCurrent(wp);
             localStorage.setItem(WALLPAPER_KEY, wp.id);
             grid.querySelectorAll('.wallpaper-thumb').forEach((t) => t.classList.remove('is-active'));
             thumb.classList.add('is-active');
@@ -1038,6 +1051,8 @@ function initWallpaperPicker() {
                 settingsWindow.querySelectorAll('.settings-panel').forEach((p) => p.hidden = true);
                 const panel = settingsWindow.querySelector(`#panel-${btn.dataset.settingsPanel}`);
                 if (panel) panel.hidden = false;
+                const settingsTitle = document.getElementById('windowSettingsTitle');
+                if (settingsTitle) { settingsTitle.textContent = btn.textContent.trim(); }
             });
         });
 

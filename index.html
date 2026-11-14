@@ -770,12 +770,19 @@ n>
                     <button class="traffic-lights__button traffic-lights__button--minimize" type="button"></button>
                     <button class="traffic-lights__button traffic-lights__button--maximize" type="button" data-center-window></button>
                 </div>
-                <p class="mac-window__title" id="windowSettingsTitle">Réglages Système</p>
+                <p class="mac-window__title" id="windowSettingsTitle">Fond d’écran</p>
                 <span class="mac-window__meta">Personnalisation</span>
             </header>
 
             <div class="settings-window">
                 <aside class="settings-sidebar" aria-label="Catégories des réglages">
+                    <div class="settings-profile">
+                        <span class="settings-profile__avatar" aria-hidden="true">YS</span>
+                        <span class="settings-profile__text">
+                            <span class="settings-profile__name">Yohan Saint-Marc</span>
+                            <span class="settings-profile__sub">Portfolio</span>
+                        </span>
+                    </div>
                     <div class="settings-sidebar__section">
                         <p class="settings-sidebar__label">Bureau</p>
                         <button class="settings-sidebar__item is-active" type="button" data-settings-panel="wallpaper">
@@ -793,11 +800,11 @@ n>
                     </div>
                     <div class="settings-sidebar__section">
                         <p class="settings-sidebar__label">Général</p>
-                        <button class="settings-sidebar__item" type="button" data-settings-panel="dock">
-                            <span class="settings-sidebar__icon" style="background:linear-gradient(135deg,#34C759,#007AFF)" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="15" width="20" height="7" rx="3" stroke="currentColor" stroke-width="2"/><rect x="6" y="2" width="4" height="10" rx="2" stroke="currentColor" stroke-width="1.6"/><rect x="14" y="2" width="4" height="10" rx="2" stroke="currentColor" stroke-width="1.6"/></svg>
+                        <button class="settings-sidebar__item" type="button" data-settings-panel="about">
+                            <span class="settings-sidebar__icon" style="background:linear-gradient(135deg,#8E8E93,#636366)" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 11v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="7.5" r="1.2" fill="currentColor"/></svg>
                             </span>
-                            Dock &amp; Barre
+                            À propos
                         </button>
                     </div>
                 </aside>
@@ -805,7 +812,14 @@ n>
                 <main class="settings-main" id="settingsMain">
                     <!-- Panel: Fond d'écran -->
                     <div class="settings-panel" id="panel-wallpaper">
-                        <p class="settings-section__title">Fond d’écran</p>
+                        <div class="wallpaper-current">
+                            <span class="wallpaper-current__preview" id="wallpaperCurrentPreview" aria-hidden="true"></span>
+                            <span class="wallpaper-current__text">
+                                <span class="wallpaper-current__name" id="wallpaperCurrentName"></span>
+                                <span class="wallpaper-current__hint">Choisissez une image ou une couleur ci-dessous.</span>
+                            </span>
+                        </div>
+                        <p class="settings-subsection__label">Images et couleurs</p>
                         <div class="wallpaper-grid" id="wallpaperGrid">
                             <!-- Injected by JS -->
                         </div>
@@ -831,13 +845,17 @@ n>
                         </div>
                     </div>
 
-                    <!-- Panel: Dock (hidden by default) -->
-                    <div class="settings-panel" id="panel-dock" hidden>
-                        <p class="settings-section__title">Dock &amp; Barre de menus</p>
-                        <div class="cv-bento-card" style="max-width:400px">
-                            <p class="cv-bento-card__eyebrow">Dock</p>
-                            <p class="cv-bento-card__text">Le Dock se trouve en bas de l’écran. Survolez les icônes pour les agrandir.</p>
+                    <!-- Panel: À propos (hidden by default) -->
+                    <div class="settings-panel" id="panel-about" hidden>
+                        <p class="settings-section__title">À propos</p>
+                        <div class="settings-group">
+                            <div class="settings-row"><span class="settings-row__label">Nom</span><span class="settings-row__value">Yohan Saint-Marc</span></div>
+                            <div class="settings-row"><span class="settings-row__label">Formation</span><span class="settings-row__value">BTS SIO, option SLAM</span></div>
+                            <div class="settings-row"><span class="settings-row__label">Localisation</span><span class="settings-row__value">Chartres, France</span></div>
+                            <div class="settings-row"><span class="settings-row__label">E-mail</span><a class="settings-row__value settings-row__link" href="mailto:yohan.saint-marc@hotmail.com">yohan.saint-marc@hotmail.com</a></div>
+                            <div class="settings-row"><span class="settings-row__label">GitHub</span><a class="settings-row__value settings-row__link" href="https://github.com/yohanstm-dev" target="_blank" rel="noopener">yohanstm-dev</a></div>
                         </div>
+                        <p class="settings-footnote">Ce portfolio est écrit en HTML, CSS et JavaScript, avec GSAP pour les animations.</p>
                     </div>
                 </main>
             </div>
