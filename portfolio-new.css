@@ -119,7 +119,6 @@ body.is-dragging-window * {
     cursor: grabbing !important;
 }
 
-body,
 button,
 input,
 textarea {
