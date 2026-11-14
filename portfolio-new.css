@@ -1164,6 +1164,13 @@ html[data-theme="light"] .glass-link {
     height: 72px;
 }
 
+.launchpad__icon img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.35));
+}
+
 .launchpad__label {
     font-size: 0.82rem;
     color: var(--text-secondary);
