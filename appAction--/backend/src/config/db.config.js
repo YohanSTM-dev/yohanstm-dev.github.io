@@ -1,9 +1,20 @@
+// Les identifiants de la base ne sont pas dans le dépôt : ils sont lus dans
+// l'environnement. Copier .env.example en .env et le renseigner, puis lancer :
+//   node --env-file=.env src/server.js
+const required = (name) => {
+  const value = process.env[name];
+  if (!value) {
+    throw new Error(`Variable d'environnement manquante : ${name} (voir .env.example)`);
+  }
+  return value;
+};
+
 export default {
-  HOST: "192.168.56.102",
-  USER: "userAction",
-  PASSWORD: "userAction",
-  DB: "appAction",
-  PORT: 3306,
+  HOST: required("DB_HOST"),
+  USER: required("DB_USER"),
+  PASSWORD: required("DB_PASSWORD"),
+  DB: required("DB_NAME"),
+  PORT: Number(process.env.DB_PORT || 3306),
   dialect: "mysql",
   pool: {
     max: 5,

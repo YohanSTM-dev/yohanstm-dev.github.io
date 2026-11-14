@@ -18,4 +18,4 @@ db.models = initModels(sequelize);
 
 export default db;
 
-// Note -> commande à utiliser pour le model : npx sequelize-auto -h 192.168.56.102 -d appAction -u userAction -x userAction -p 3306 --dialect mysql -o "./src/models" -l esm
+// Note -> pour régénérer les modèles : npx sequelize-auto -h <hôte> -d <base> -u <utilisateur> -x <mot_de_passe> -p 3306 --dialect mysql -o "./src/models" -l esm
