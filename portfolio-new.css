@@ -3364,8 +3364,8 @@ html[data-theme="light"] .timeline-card__body:hover {
     border-radius: 999px;
     font-size: 0.72rem;
     font-weight: 600;
-    background: var(--panel-bg);
-    border: 1px solid var(--panel-border);
+    background: rgba(122, 167, 255, 0.14);
+    border: 1px solid rgba(122, 167, 255, 0.18);
     color: var(--text-secondary);
 }
 
