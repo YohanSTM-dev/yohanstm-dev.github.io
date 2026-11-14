@@ -20,9 +20,9 @@ const finderProjects = {
             summary: "Projet de référencement SEO autour du mot-clé « FC Fulbert », réalisé durant le BTS SIO avec <a href='https://mesangeantoine.fr/' target='_blank' rel='noopener'>Antoine Mesange</a>.",
             href: 'https://fcfulbertchartres.github.io/',
             accent: ['#1D4ED8', '#1e3a8a'],
-            logo: 'images/logoFCFulbert.png',
+            logo: 'images/logoFCFulbert.webp',
             screenshots: [
-                { src: 'images/fcfulbert1.png', label: 'Page d’accueil' },
+                { src: 'images/fcfulbert1.webp', label: 'Page d’accueil' },
             ],
 
         },
@@ -36,7 +36,7 @@ const finderProjects = {
             href: 'https://zoofulbert.com/',
             accent: ['#15803D', '#14532d'],
             screenshots: [
-                { src: 'images/zoofulbert1.png', label: 'Page d’accueil' },
+                { src: 'images/zoofulbert1.webp', label: 'Page d’accueil' },
             ],
 
         },
@@ -74,7 +74,7 @@ const finderProjects = {
             href: 'https://yohanstm-dev.github.io/PresentationBTS/#/home',
             accent: ['#1D4ED8', '#1e3a8a'],
             screenshots: [
-                { src: 'images/capPresentationBts.png', label: 'Page d’accueil' },
+                { src: 'images/capPresentationBts.webp', label: 'Page d’accueil' },
             ],
         },
         {
@@ -88,7 +88,7 @@ const finderProjects = {
             accent: ['#4F46E5', '#312e81'],
             logo: 'images/logoSansTitre.jpg',
             screenshots: [
-                { src: 'images/capPresentationBts.png', label: 'Page d’accueil' },
+                { src: 'images/capPresentationBts.webp', label: 'Page d’accueil' },
             ]
         }
     ],
@@ -237,10 +237,10 @@ const _projectMap = {};
 // ── Wallpaper definitions ─────────────────────────────────────────
 const WALLPAPER_KEY = 'yohan-wallpaper-id';
 const wallpapers = [
-    { id: 'macfond1', type: 'image', src: 'images/macFond1.jpg',                                    label: 'Mac Fond 1' },
+    { id: 'macfond1', type: 'image', src: 'images/macFond1.webp',                                    label: 'Mac Fond 1' },
     { id: 'macfond2', type: 'image', src: 'images/macFond2.jpg',                                    label: 'Mac Fond 2' },
     { id: 'magenta',  type: 'image', src: 'images/magenta-nature-fantasy-landscape%20(1).jpg',      label: 'Magenta Nature' },
-    { id: 'fond',     type: 'image', src: 'images/fond.jpg',                                        label: 'Fond Violet' },
+    { id: 'fond',     type: 'image', src: 'images/fond.webp',                                        label: 'Fond Violet' },
     { id: 'aurora',  type: 'gradient', value: 'radial-gradient(ellipse at 20% 10%,#0d1b44 0%,#1a0533 40%,#0a0118 100%) center/cover', label: 'Aurora' },
     { id: 'sunset',  type: 'gradient', value: 'radial-gradient(ellipse at 70% 20%,#ff6b35 0%,#ff1493 40%,#1a0533 100%) center/cover', label: 'Coucher de soleil' },
     { id: 'ocean',   type: 'gradient', value: 'linear-gradient(160deg,#0a0e2e 0%,#0d3b5e 40%,#1a0533 100%) center/cover', label: 'Océan Profond' },

@@ -20,7 +20,7 @@
     --font-ui: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     --menu-height: 30px;
     --dock-height: 110px;
-    --wallpaper-bg: url("images/macFond1.jpg") center center / cover no-repeat;
+    --wallpaper-bg: url("images/macFond1.webp") center center / cover no-repeat;
     --radius-window: 20px;
     --radius-card: 22px;
     --radius-control: 999px;
