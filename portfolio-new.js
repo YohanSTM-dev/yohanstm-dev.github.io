@@ -239,7 +239,7 @@ const WALLPAPER_KEY = 'yohan-wallpaper-id';
 const wallpapers = [
     { id: 'macfond1', type: 'image', src: 'images/macFond1.webp',                                    label: 'Mac Fond 1' },
     { id: 'macfond2', type: 'image', src: 'images/macFond2.jpg',                                    label: 'Mac Fond 2' },
-    { id: 'magenta',  type: 'image', src: 'images/magenta-nature-fantasy-landscape%20(1).jpg',      label: 'Magenta Nature' },
+    { id: 'magenta',  type: 'image', src: 'images/magenta-nature.webp',      label: 'Magenta Nature' },
     { id: 'fond',     type: 'image', src: 'images/fond.webp',                                        label: 'Fond Violet' },
     { id: 'aurora',  type: 'gradient', value: 'radial-gradient(ellipse at 20% 10%,#0d1b44 0%,#1a0533 40%,#0a0118 100%) center/cover', label: 'Aurora' },
     { id: 'sunset',  type: 'gradient', value: 'radial-gradient(ellipse at 70% 20%,#ff6b35 0%,#ff1493 40%,#1a0533 100%) center/cover', label: 'Coucher de soleil' },
